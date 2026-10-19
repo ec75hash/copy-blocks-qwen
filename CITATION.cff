@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite this versioned weight-scan release."
+title: "Repeated blocks in Qwen-family checkpoints: pinned weight scans"
+type: dataset
+authors:
+  - family-names: Shorthill
+    given-names: Jeffrey
+version: 0.1.0
+date-released: 2026-10-19
+license: CC-BY-4.0
+repository-code: "https://github.com/ec75hash/copy-blocks-qwen"
+url: "https://huggingface.co/datasets/ec75hash/copy-blocks-qwen"
