@@ -4,10 +4,10 @@ Jeffrey Shorthill · 2026-10-19 · release v0.1.0 (`/Volumes/ExternalSSD/copy-bl
 
 ## The finding in one paragraph
 
-Fifteen Qwen-family checkpoints contain a stretch of decoder blocks whose weights repeat, block
-for block, at a fixed offset. Inside that stretch, layer *l* and layer *l + K* have the same
+Sixteen Qwen-family checkpoints (seventeen counting SOLAR) contain a stretch of decoder blocks
+whose weights repeat, block for block, at a fixed offset. Inside that stretch, layer *l* and layer *l + K* have the same
 attention, DeltaNet, and router weights to a cosine of 0.25–0.98 depending on the model and
-tensor; outside it, and in every other layer pair, the cosine is zero. Nineteen other Qwen
+tensor; outside it, and in every other layer pair, the cosine is zero. Seventeen other Qwen
 checkpoints show nothing of the kind. SOLAR-10.7B, which Upstage built by copying a block and
 training further, shows the same signature at 0.87. The measurement reads raw weights only; it
 says the paired blocks were once the same weights, and nothing about how or when, or what they
