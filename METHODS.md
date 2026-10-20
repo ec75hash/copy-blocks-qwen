@@ -30,19 +30,26 @@ excluded from rankings and figures; that is a reporting rule, not a significance
 Each lock entry carries a *period* K and a *region* [first, last]: the block hypothesis for
 that checkpoint, taken from the September 2026 survey of the family (the chart this release
 re-measures). The scanner does not use them to select data; it uses them only to split the
-pairs at offsets K and 2K into *within-block* pairs (both ends inside the region) and
-*off-block* pairs, so the two means can be compared. For checkpoints without a proposed block
+pairs at offsets K and 2K into *within-block* pairs (matching positions in the declared block groups) and
+*off-block* pairs, so the two means can be compared. Explicit `segments` and `pair_groups`
+keep KAT's two independent pairs separate; membership is not determined solely by both
+endpoints falling inside the overall region. For checkpoints without a proposed block
 the region is the whole decoder.
 
 `scripts/make_report.py` turns the measurements into a verdict per family with fixed rules:
 
 - a proposed block is **confirmed** when the top-ranked offset for the family is K or 2K, the
-  within-block mean at K is at least 0.10, and off-block pairs at K average below 0.05;
-- a no-block row **holds** when no rank-eligible offset mean reaches 0.05.
+  within-block flattened mean at K is at least 0.10, and it exceeds the same-offset
+  off-block flattened mean by at least 0.10 (a missing off-block mean is treated as zero);
+- a no-block family **holds** when the largest eligible offset mean minus the mean of its
+  two eligible neighboring offsets is below 0.05. Where no neighboring triplet exists,
+  the maximum eligible mean must be below 0.05. A family with no eligible offsets is
+  reported as **no eligible offsets** rather than assigned a family-level verdict.
 
 The thresholds are stated in the script and in `RESULTS.md`. They are conservative for the
-positive cases in this survey (within-block means run from about 0.15 to 0.98) and loose for
-the negative ones (off-block and no-block means sit at the third decimal place).
+positive cases in this survey. For negative families with eligible neighboring offsets,
+the largest measured spike is 0.010175; smooth router baselines can be much larger in
+absolute cosine and are handled by the spike rule.
 
 ## Capture
 
@@ -53,7 +60,9 @@ HTTP `Range` request. A response is accepted only with status 206, the requested
 `Content-Range`, and the exact byte length; a server that returns the whole shard is rejected
 before its body is read. Each tensor is recorded with its source shard, dtype, shape,
 absolute byte range, shard-header hash and payload hash in `data/provenance.json`. BF16 is
-decoded exactly to float32 and the linear algebra runs in float32 NumPy.
+decoded exactly to float32, then converted to float64 before normalization and dot
+products. Both flattened and row-aligned cosines use float64 accumulation. Before clipping
+the Gram matrix to [-1, 1], the scanner requires its diagonal to lie within 1e-9 of one.
 
 Tensor selection is anchored to the declared decoder namespace (`model.layers.N.` or
 `model.language_model.layers.N.`), so auxiliary multi-token-prediction blocks (`mtp.layers.*`)
@@ -80,8 +89,8 @@ No model is executed and no complete shard is downloaded. Tensor bytes are cache
 
 ## What the measurement does and does not establish
 
-A block-localized similarity peak at one offset, absent elsewhere and absent in same-family
-controls, supports shared ancestry between the paired blocks: at some point they were the
+Elevated similarity between aligned block pairs, relative to other pairs at the same offset
+and to the surveyed controls, supports shared ancestry between the paired blocks: at some point they were the
 same weights. It does not establish how the model was built, when the copying happened
 relative to training, how much training followed it, or whether the blocks now compute the
 same function. Cosine magnitude is not a clock. Claims of that kind are outside this release.

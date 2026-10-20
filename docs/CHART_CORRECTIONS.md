@@ -43,14 +43,16 @@ the corresponding-block pairs in `data/pairs.csv` (A↔B; B↔C where a third bl
 |---|---|---|---|
 | Qwen2.5-32B | k_proj copies 0.31–0.52 | k_proj 0.424 (per-pair range 0.31–0.52) | agrees |
 | KAT-V1-40B | two K=8 copies at 0.98 | k_proj 0.984 and 0.978 | agrees |
-| Qwen3-30B-A3B | copies 0.51 / 0.55; router rows 0.87 | k_proj 0.512 / 0.552; router rows 0.873 / 0.883 | agrees |
+| Qwen3-30B-A3B | copies 0.51 / 0.55; router rows 0.87 | k_proj 0.512 / 0.552; router rows 0.876 / 0.887 | block pattern confirmed; router statistic clarified |
 | Qwen3-32B | copies 0.25 | k_proj 0.254 | agrees |
-| Qwen3-Next-80B-A3B | aligned cos 0.71 / 0.56 | conv1d 0.934 / 0.947; k_proj 0.594 / 0.669; router rows 0.899 / 0.939 | superseded: the September statistic is not one of these families and was not reproducible; block positions agree |
+| Qwen3-Next-80B-A3B | aligned cos 0.71 / 0.56 | conv1d 0.934 / 0.947; k_proj 0.594 / 0.669; router rows 0.901 / 0.941 | superseded: the September statistic is not one of these families and was not reproducible; block positions agree |
 | Qwen3-235B-A22B | K=34, nested sub-blocks at offsets 20 and 54 | router: offset 34 0.600; spikes also at 20 (0.576 vs 0.37 neighbours) and 54 (0.483 vs 0.29) | agrees; the nested offsets are real but not drawn |
-| Qwen3.5/3.6-27B | copies 0.25 / 0.37 | k_proj 0.250 / 0.369; conv1d 0.840 / 0.877 | agrees |
+| Qwen3.5/3.6-27B | copies 0.25 / 0.37 | 3.5: k_proj 0.250 / 0.369, conv1d 0.842 / 0.877; 3.6: k_proj 0.250 / 0.369, conv1d 0.840 / 0.877 | agrees at the original annotation precision |
 | Qwen3.5/3.6-35B-A3B | copies 0.52; router rows 0.79; 3.5 = 3.6 to 0.004 | k_proj 0.522 / 0.524; router rows 0.794 / 0.795; Base 0.794 | agrees |
 | Qwen3.8-Flash-Next | K=16 | conv1d 0.97; k_proj 0.83; router rows 0.90 | agrees, now with numbers |
 | Qwen3.8-2.4T-A95B | copies 0.53; router rows 0.84 | k_proj 0.53; router rows 0.839 | agrees |
-| all "no block" rows | no block | largest spike above neighbouring offsets ≤ 0.010 in every tensor | agrees |
+| all "no block" rows | no block | largest eligible neighboring-offset spike 0.010175; two small-hybrid attention families have no eligible offsets | agrees |
 
-Every September annotation except the Qwen3-Next statistic is reproduced by the pinned scan.
+The pinned scan confirms the reported block locations. The table gives the current
+statistics explicitly; the hand-typed router annotation and the superseded Qwen3-Next
+statistic should not be treated as exact reproductions.

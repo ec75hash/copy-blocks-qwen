@@ -191,7 +191,7 @@ def draw_family(specs, summaries, out):
         if proposes_block(spec):
             outs = [v["outside"] for v in fams.values() if v["outside"] is not None]
             if outs:
-                bits.append(f"off-block at K {(0.0 if abs(max(outs)) < 0.005 else max(outs)):.2f}")
+                bits.append(f"max off-block flat {(0.0 if abs(max(outs)) < 0.005 else max(outs)):.2f}")
             k = spec["period"]
             lead = f"K={k}" + ("" if all(v == "confirmed" for v in verdicts.values()) else " (not all families confirm)")
             text = f"{depth} layers · {lead} · " + " · ".join(bits)
@@ -219,7 +219,7 @@ def draw_family(specs, summaries, out):
     fig.text(0.01, 0.005,
              "Segments are the lock's block hypothesis, drawn solid only where this scan's top-ranked offset is K or 2K, the within-block mean at K is ≥ "
              f"{CONFIRM_INSIDE:.2f}, and it exceeds the same-offset off-block mean by ≥ {CONFIRM_EXCESS:.2f}.\n"
-             "Numbers: within-block mean cosine at offset K (flattened weights; router rows = mean over aligned expert rows) and the off-block mean at the same offset. "
+             "Numbers: within-block mean cosine at offset K (flattened weights; router rows = mean over aligned expert rows) and the largest flattened off-block family mean at the same offset. "
              f"No-block rows show the largest spike (an offset's mean minus the mean of its two neighbours; < {NO_BLOCK_SPIKE:.2f} means no repetition).\n"
              "Source: data/pairs.csv, data/offsets.csv, data/summary.json; checkpoints pinned in models.lock.json.",
              fontsize=7.6, color=COL["ink2"], va="bottom")
