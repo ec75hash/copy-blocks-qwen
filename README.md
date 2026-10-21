@@ -36,7 +36,7 @@ calibration. The grouped positive rows are Qwen3.5-35B Base/Instruct with Qwen3.
 Qwen3.5/3.6/3.8-27B, Qwen3-30B with its 2507 variant, and Qwen2.5-32B with R1 and KAT;
 the negative rows group Qwen2.5-7B with Math-7B. Every checkpoint is measured separately.
 
-Jeffrey Shorthill · independent interpretability research · 2026-10-21 · v0.1.1
+Jeffrey Shorthill · independent interpretability research · 2026-10-21 · v0.1.2
 
 ![Repeated blocks across the Qwen family](figures/family_blocks.png)
 

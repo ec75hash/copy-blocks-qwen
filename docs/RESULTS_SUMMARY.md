@@ -1,6 +1,6 @@
 # Qwen copy-block survey — results summary
 
-Jeffrey Shorthill · release v0.1.1 · documentation checked 2026-10-21
+Jeffrey Shorthill · release v0.1.2 · documentation checked 2026-10-21
 
 The pinned survey measures repeated block patterns in 16 Qwen or Qwen-derived checkpoints,
 plus SOLAR as a disclosed depth-upscaling control; 17 other checkpoints show no repeated
