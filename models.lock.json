@@ -14,11 +14,12 @@
         55
       ],
       "tensors": [
-        "self_attn.k_proj.weight"
+        "self_attn.k_proj.weight",
+        "self_attn.v_proj.weight"
       ],
       "min_pairs": 6,
       "role": "primary",
-      "note": "Goodfire neuron audits; chart: L32-55 ~ L8-31",
+      "note": "Goodfire neuron audits; chart: L32-55 ~ L8-31; v_proj added 2026-10-21 as a second attention family (reviewer request)",
       "metadata_sha256": {
         "config.json": "97e295b63283935788fac5e4f8860862a56d4089538cafc93f0431f2ebe483bb",
         "model.safetensors.index.json": "bed42c6c55274bc08a1f616bceb3bcb84b3f02cb6584c573bd18c6519291ecd0"
@@ -87,11 +88,12 @@
         47
       ],
       "tensors": [
-        "self_attn.k_proj.weight"
+        "self_attn.k_proj.weight",
+        "self_attn.v_proj.weight"
       ],
       "min_pairs": 6,
       "role": "primary",
-      "note": "Dadfar's model; chart: L32-47 ~ L16-31",
+      "note": "Dadfar's model; chart: L32-47 ~ L16-31; v_proj added 2026-10-21 as a second attention family (reviewer request)",
       "metadata_sha256": {
         "config.json": "2c003fe40b13d2d1f372254d77177ed753176150f3d424d1b5ad22ff1d78a987",
         "model.safetensors.index.json": "487c27978b0bad77946ba1a5093acfc7747a62bd5e256d3a083345d133fc3042"

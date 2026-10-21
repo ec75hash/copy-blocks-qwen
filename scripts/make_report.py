@@ -60,7 +60,7 @@ LABEL = {
     "qwen35-397b-a17b": "Qwen3.5-397B-A17B", "qwen38-27b": "Qwen3.8-27B", "qwen38-flash-next": "Qwen3.8-Flash-Next",
     "qwen38-2p4t-a95b": "Qwen3.8-2.4T-A95B", "solar-10p7b": "SOLAR-10.7B-v1.0",
 }
-FAMILY_SHORT = {"self_attn.k_proj.weight": "k_proj", "linear_attn.conv1d.weight": "conv1d", "mlp.gate.weight": "router"}
+FAMILY_SHORT = {"self_attn.k_proj.weight": "k_proj", "self_attn.v_proj.weight": "v_proj", "linear_attn.conv1d.weight": "conv1d", "mlp.gate.weight": "router"}
 
 
 def load(data_dirs):
@@ -184,7 +184,7 @@ def draw_family(specs, summaries, out):
         ax.text(-1.0, y, LABEL.get(value, value), ha="right", va="center", fontsize=9.5, color=COL["ink"])
         # Measured annotation: within-block mean at the period for each family, plus the same-offset off-block mean.
         bits = []
-        for fam in ("self_attn.k_proj.weight", "linear_attn.conv1d.weight", "mlp.gate.weight"):
+        for fam in ("self_attn.k_proj.weight", "self_attn.v_proj.weight", "linear_attn.conv1d.weight", "mlp.gate.weight"):
             if fam not in fams:
                 continue
             v = fams[fam]

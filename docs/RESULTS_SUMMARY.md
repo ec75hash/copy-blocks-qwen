@@ -66,3 +66,5 @@ Family totals: 35 confirmed, 26 no-block and 2 with no eligible offsets.
 
 [Chart](../figures/family_blocks.png) · [full table](../RESULTS.md) · [methods](../METHODS.md)
 · [corrections](CHART_CORRECTIONS.md) · [independent check](INDEPENDENT_CHECK.md)
+
+Addendum 2026-10-21: the value projection (`v_proj`) was scanned for Qwen3-32B and Qwen2.5-32B as a second attention family; within-block 0.447 and 0.544 against 0.000 off-block at the same offsets, spectrum peaking only at K, higher than the key projection in both. Trained together with `k_proj`, so corroborating rather than independent; the rest of each layer is unmeasured.

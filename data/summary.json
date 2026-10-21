@@ -54,9 +54,9 @@
           "inside_min": 0.15934210823255507,
           "inside_max": 0.3282364312173659,
           "inside_row_mean": 0.2268150515300348,
+          "outside_row_mean": -0.00013327207236197297,
           "n_outside": 16,
-          "outside_mean": -0.00014059079399895999,
-          "outside_row_mean": -0.00013327207236197297
+          "outside_mean": -0.00014059079399895999
         },
         "48": {
           "n_pairs": 16,
@@ -66,9 +66,9 @@
           "inside_min": null,
           "inside_max": null,
           "inside_row_mean": null,
+          "outside_row_mean": -4.9661263396853026e-05,
           "n_outside": 16,
-          "outside_mean": -4.423366948815291e-05,
-          "outside_row_mean": -4.9661263396853026e-05
+          "outside_mean": -4.423366948815291e-05
         }
       },
       "segments": [
@@ -89,6 +89,471 @@
       ],
       "n_aligned_pairs_measured": 24,
       "global_pair_mean": 0.003026968751329367,
+      "tensor_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "model_slug": "qwen3-32b",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+      "tensor": "self_attn.v_proj.weight",
+      "depth": 64,
+      "decoder_prefix": "model.layers.",
+      "period": 24,
+      "region": [
+        8,
+        55
+      ],
+      "role": "primary",
+      "min_rank_pairs": 6,
+      "top_offsets": [
+        {
+          "offset": 24,
+          "n_pairs": 40,
+          "mean_cosine": 0.26792041640107617,
+          "mean_row_mean_cosine": 0.2591260259055374,
+          "rank_eligible": true
+        },
+        {
+          "offset": 53,
+          "n_pairs": 11,
+          "mean_cosine": 0.00019218232092041464,
+          "mean_row_mean_cosine": 0.00016602737573311282,
+          "rank_eligible": true
+        },
+        {
+          "offset": 49,
+          "n_pairs": 15,
+          "mean_cosine": 0.00015815486528159668,
+          "mean_row_mean_cosine": 0.00016731787497278503,
+          "rank_eligible": true
+        },
+        {
+          "offset": 47,
+          "n_pairs": 17,
+          "mean_cosine": 0.00015445016911252424,
+          "mean_row_mean_cosine": 0.00015903407065807315,
+          "rank_eligible": true
+        }
+      ],
+      "periods": {
+        "24": {
+          "n_pairs": 40,
+          "all_valid_mean": 0.26792041640107617,
+          "n_inside": 24,
+          "inside_mean": 0.44652749991490553,
+          "inside_min": 0.3034106497426389,
+          "inside_max": 0.5487952408979277,
+          "inside_row_mean": 0.43187161615245,
+          "outside_row_mean": 7.640535168565138e-06,
+          "n_outside": 16,
+          "outside_mean": 9.791130332122856e-06
+        },
+        "48": {
+          "n_pairs": 16,
+          "all_valid_mean": 0.00010193963067922437,
+          "n_inside": 0,
+          "inside_mean": null,
+          "inside_min": null,
+          "inside_max": null,
+          "inside_row_mean": null,
+          "outside_row_mean": 0.0001440720874796222,
+          "n_outside": 16,
+          "outside_mean": 0.00010193963067922437
+        }
+      },
+      "segments": [
+        [
+          8,
+          31
+        ],
+        [
+          32,
+          55
+        ]
+      ],
+      "pair_groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_aligned_pairs_measured": 24,
+      "global_pair_mean": 0.005316595071786243,
+      "tensor_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-32B",
+      "model_slug": "qwen25-32b",
+      "revision": "1818d35814b8319459f4bd55ed1ac8709630f003",
+      "tensor": "self_attn.k_proj.weight",
+      "depth": 64,
+      "decoder_prefix": "model.layers.",
+      "period": 16,
+      "region": [
+        16,
+        47
+      ],
+      "role": "primary",
+      "min_rank_pairs": 6,
+      "top_offsets": [
+        {
+          "offset": 16,
+          "n_pairs": 48,
+          "mean_cosine": 0.14156709961226252,
+          "mean_row_mean_cosine": 0.11767660153219599,
+          "rank_eligible": true
+        },
+        {
+          "offset": 56,
+          "n_pairs": 8,
+          "mean_cosine": 0.00034590870916999196,
+          "mean_row_mean_cosine": 0.0003535210794246748,
+          "rank_eligible": true
+        },
+        {
+          "offset": 53,
+          "n_pairs": 11,
+          "mean_cosine": 0.00021741379379097684,
+          "mean_row_mean_cosine": 0.00016974123852862852,
+          "rank_eligible": true
+        },
+        {
+          "offset": 22,
+          "n_pairs": 42,
+          "mean_cosine": 0.0002080086981651737,
+          "mean_row_mean_cosine": 0.0002476500260978432,
+          "rank_eligible": true
+        }
+      ],
+      "periods": {
+        "16": {
+          "n_pairs": 48,
+          "all_valid_mean": 0.14156709961226252,
+          "n_inside": 16,
+          "inside_mean": 0.4241451911359485,
+          "inside_min": 0.3127050627605488,
+          "inside_max": 0.5249217344085341,
+          "inside_row_mean": 0.35228980355099815,
+          "outside_row_mean": 0.00037000052279489846,
+          "n_outside": 32,
+          "outside_mean": 0.0002780538504195615
+        },
+        "32": {
+          "n_pairs": 32,
+          "all_valid_mean": 0.00020440826416599824,
+          "n_inside": 0,
+          "inside_mean": null,
+          "inside_min": null,
+          "inside_max": null,
+          "inside_row_mean": null,
+          "outside_row_mean": 0.00035588429501580215,
+          "n_outside": 32,
+          "outside_mean": 0.00020440826416599824
+        }
+      },
+      "segments": [
+        [
+          16,
+          31
+        ],
+        [
+          32,
+          47
+        ]
+      ],
+      "pair_groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_aligned_pairs_measured": 16,
+      "global_pair_mean": 0.003367146558493571,
+      "tensor_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-32B",
+      "model_slug": "qwen25-32b",
+      "revision": "1818d35814b8319459f4bd55ed1ac8709630f003",
+      "tensor": "self_attn.v_proj.weight",
+      "depth": 64,
+      "decoder_prefix": "model.layers.",
+      "period": 16,
+      "region": [
+        16,
+        47
+      ],
+      "role": "primary",
+      "min_rank_pairs": 6,
+      "top_offsets": [
+        {
+          "offset": 16,
+          "n_pairs": 48,
+          "mean_cosine": 0.18116324477465143,
+          "mean_row_mean_cosine": 0.17702265402388848,
+          "rank_eligible": true
+        },
+        {
+          "offset": 1,
+          "n_pairs": 63,
+          "mean_cosine": 0.00017594084412610305,
+          "mean_row_mean_cosine": 0.00017525842600635532,
+          "rank_eligible": true
+        },
+        {
+          "offset": 52,
+          "n_pairs": 12,
+          "mean_cosine": 0.00012549294105822822,
+          "mean_row_mean_cosine": 0.0001246760982081876,
+          "rank_eligible": true
+        },
+        {
+          "offset": 47,
+          "n_pairs": 17,
+          "mean_cosine": 0.00011928465332943785,
+          "mean_row_mean_cosine": 0.00014186129363484036,
+          "rank_eligible": true
+        }
+      ],
+      "periods": {
+        "16": {
+          "n_pairs": 48,
+          "all_valid_mean": 0.18116324477465143,
+          "n_inside": 16,
+          "inside_mean": 0.5436008512259128,
+          "inside_min": 0.4158098119261909,
+          "inside_max": 0.6285880621492382,
+          "inside_row_mean": 0.5311598155803922,
+          "outside_row_mean": -4.5926754363359594e-05,
+          "n_outside": 32,
+          "outside_mean": -5.555845097927912e-05
+        },
+        "32": {
+          "n_pairs": 32,
+          "all_valid_mean": 2.2379872936069096e-05,
+          "n_inside": 0,
+          "inside_mean": null,
+          "inside_min": null,
+          "inside_max": null,
+          "inside_row_mean": null,
+          "outside_row_mean": 2.6702294886662035e-05,
+          "n_outside": 32,
+          "outside_mean": 2.2379872936069096e-05
+        }
+      },
+      "segments": [
+        [
+          16,
+          31
+        ],
+        [
+          32,
+          47
+        ]
+      ],
+      "pair_groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_aligned_pairs_measured": 16,
+      "global_pair_mean": 0.0042922189408046,
       "tensor_layers": [
         0,
         1,
@@ -860,161 +1325,6 @@
         37,
         38,
         39
-      ]
-    },
-    {
-      "model": "Qwen/Qwen2.5-32B",
-      "model_slug": "qwen25-32b",
-      "revision": "1818d35814b8319459f4bd55ed1ac8709630f003",
-      "tensor": "self_attn.k_proj.weight",
-      "depth": 64,
-      "decoder_prefix": "model.layers.",
-      "period": 16,
-      "region": [
-        16,
-        47
-      ],
-      "role": "primary",
-      "min_rank_pairs": 6,
-      "top_offsets": [
-        {
-          "offset": 16,
-          "n_pairs": 48,
-          "mean_cosine": 0.14156709961226252,
-          "mean_row_mean_cosine": 0.11767660153219599,
-          "rank_eligible": true
-        },
-        {
-          "offset": 56,
-          "n_pairs": 8,
-          "mean_cosine": 0.00034590870916999196,
-          "mean_row_mean_cosine": 0.0003535210794246748,
-          "rank_eligible": true
-        },
-        {
-          "offset": 53,
-          "n_pairs": 11,
-          "mean_cosine": 0.00021741379379097684,
-          "mean_row_mean_cosine": 0.00016974123852862852,
-          "rank_eligible": true
-        },
-        {
-          "offset": 22,
-          "n_pairs": 42,
-          "mean_cosine": 0.0002080086981651737,
-          "mean_row_mean_cosine": 0.0002476500260978432,
-          "rank_eligible": true
-        }
-      ],
-      "periods": {
-        "16": {
-          "n_pairs": 48,
-          "all_valid_mean": 0.14156709961226252,
-          "n_inside": 16,
-          "inside_mean": 0.4241451911359485,
-          "inside_min": 0.3127050627605488,
-          "inside_max": 0.5249217344085341,
-          "inside_row_mean": 0.35228980355099815,
-          "n_outside": 32,
-          "outside_mean": 0.0002780538504195615,
-          "outside_row_mean": 0.00037000052279489846
-        },
-        "32": {
-          "n_pairs": 32,
-          "all_valid_mean": 0.00020440826416599824,
-          "n_inside": 0,
-          "inside_mean": null,
-          "inside_min": null,
-          "inside_max": null,
-          "inside_row_mean": null,
-          "n_outside": 32,
-          "outside_mean": 0.00020440826416599824,
-          "outside_row_mean": 0.00035588429501580215
-        }
-      },
-      "segments": [
-        [
-          16,
-          31
-        ],
-        [
-          32,
-          47
-        ]
-      ],
-      "pair_groups": [
-        [
-          0,
-          1
-        ]
-      ],
-      "n_aligned_pairs_measured": 16,
-      "global_pair_mean": 0.003367146558493571,
-      "tensor_layers": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32,
-        33,
-        34,
-        35,
-        36,
-        37,
-        38,
-        39,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45,
-        46,
-        47,
-        48,
-        49,
-        50,
-        51,
-        52,
-        53,
-        54,
-        55,
-        56,
-        57,
-        58,
-        59,
-        60,
-        61,
-        62,
-        63
       ]
     },
     {

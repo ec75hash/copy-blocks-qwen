@@ -14,6 +14,7 @@ Within/off-block cosine columns use flattened decoder-only tensors; the two row-
 | Qwen2.5-Math-7B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 16 | 21 (0.001, n=7) | — (0) | 0.000 | — | 0.000 | 0.001 | **no block** |
 | Qwen2.5-14B | no_block_reported | `self_attn.k_proj.weight` | 48/48 | 16 | 16 (0.000, n=32) | 0.000 (32) | — | 0.000 | — | 0.000 | **no block** |
 | Qwen2.5-32B | primary | `self_attn.k_proj.weight` | 64/64 | 16 | 16 (0.142, n=48) | 0.424 (16) | 0.000 | 0.352 | 0.000 | 0.142 | **confirmed** |
+| Qwen2.5-32B | primary | `self_attn.v_proj.weight` | 64/64 | 16 | 16 (0.181, n=48) | 0.544 (16) | -0.000 | 0.531 | -0.000 | 0.181 | **confirmed** |
 | DeepSeek-R1-Distill-Qwen-32B | derivative_of_qwen25_32b | `self_attn.k_proj.weight` | 64/64 | 16 | 16 (0.141, n=48) | 0.422 (16) | 0.000 | 0.351 | 0.000 | 0.141 | **confirmed** |
 | KAT-V1-40B (grown from Qwen2.5-32B) | disclosed_upscale_of_qwen25_32b | `self_attn.k_proj.weight` | 80/80 | 8 | 8 (0.218, n=72) | 0.981 (16) | -0.000 | 0.974 | -0.000 | 0.218 | **confirmed** |
 | Qwen3-0.6B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 8 | 14 (0.001, n=14) | -0.000 (16) | 0.000 | -0.000 | 0.001 | 0.001 | **no block** |
@@ -26,6 +27,7 @@ Within/off-block cosine columns use flattened decoder-only tensors; the two row-
 | Qwen3-30B-A3B-Instruct-2507 | primary_post_trained_variant | `self_attn.k_proj.weight` | 48/48 | 12 | 12 (0.354, n=36) | 0.530 (24) | -0.000 | 0.474 | 0.000 | 0.354 | **confirmed** |
 | Qwen3-30B-A3B-Instruct-2507 | primary_post_trained_variant | `mlp.gate.weight` | 48/48 | 12 | 12 (0.693, n=36) | 0.878 (24) | 0.322 | 0.883 | 0.329 | 0.301 | **confirmed** |
 | Qwen3-32B | primary | `self_attn.k_proj.weight` | 64/64 | 24 | 24 (0.152, n=40) | 0.254 (24) | -0.000 | 0.227 | -0.000 | 0.152 | **confirmed** |
+| Qwen3-32B | primary | `self_attn.v_proj.weight` | 64/64 | 24 | 24 (0.268, n=40) | 0.447 (24) | 0.000 | 0.432 | 0.000 | 0.268 | **confirmed** |
 | Qwen3-Next-80B-A3B | primary | `linear_attn.conv1d.weight` | 36/48 | 12 | 12 (0.625, n=27) | 0.940 (18) | -0.005 | — | — | 0.623 | **confirmed** |
 | Qwen3-Next-80B-A3B | primary | `self_attn.k_proj.weight` | 12/48 | 12 | 12 (0.421, n=9) | 0.632 (6) | -0.000 | 0.590 | -0.001 | — | **confirmed** |
 | Qwen3-Next-80B-A3B | primary | `mlp.gate.weight` | 48/48 | 12 | 12 (0.705, n=36) | 0.919 (24) | 0.278 | 0.921 | 0.284 | 0.315 | **confirmed** |
@@ -113,6 +115,7 @@ The two near-identical offset-8 pairs and the lower-cosine offset-24/32 correspo
 - **Qwen2.5-Math-7B**, `self_attn.k_proj.weight`: k=21: 0.0006 (n=7); k=7: 0.0006 (n=21); k=10: 0.0004 (n=18); k=13: 0.0003 (n=15)
 - **Qwen2.5-14B**, `self_attn.k_proj.weight`: k=16: 0.0003 (n=32); k=6: 0.0002 (n=42); k=28: 0.0002 (n=20); k=40: 0.0002 (n=8)
 - **Qwen2.5-32B**, `self_attn.k_proj.weight`: k=16: 0.1416 (n=48); k=56: 0.0003 (n=8); k=53: 0.0002 (n=11); k=22: 0.0002 (n=42)
+- **Qwen2.5-32B**, `self_attn.v_proj.weight`: k=16: 0.1812 (n=48); k=1: 0.0002 (n=63); k=52: 0.0001 (n=12); k=47: 0.0001 (n=17)
 - **DeepSeek-R1-Distill-Qwen-32B**, `self_attn.k_proj.weight`: k=16: 0.1410 (n=48); k=56: 0.0003 (n=8); k=53: 0.0002 (n=11); k=22: 0.0002 (n=42)
 - **KAT-V1-40B (grown from Qwen2.5-32B)**, `self_attn.k_proj.weight`: k=8: 0.2177 (n=72); k=32: 0.1375 (n=48); k=24: 0.1185 (n=56); k=72: 0.0003 (n=8)
 - **Qwen3-0.6B**, `self_attn.k_proj.weight`: k=14: 0.0007 (n=14); k=5: 0.0007 (n=23); k=21: 0.0006 (n=7); k=18: 0.0005 (n=10)
@@ -125,6 +128,7 @@ The two near-identical offset-8 pairs and the lower-cosine offset-24/32 correspo
 - **Qwen3-30B-A3B-Instruct-2507**, `self_attn.k_proj.weight`: k=12: 0.3535 (n=36); k=24: 0.1800 (n=24); k=14: 0.0009 (n=34); k=26: 0.0009 (n=22)
 - **Qwen3-30B-A3B-Instruct-2507**, `mlp.gate.weight`: k=12: 0.6929 (n=36); k=24: 0.5247 (n=24); k=1: 0.4553 (n=47); k=2: 0.4434 (n=46)
 - **Qwen3-32B**, `self_attn.k_proj.weight`: k=24: 0.1524 (n=40); k=1: 0.0003 (n=63); k=6: 0.0003 (n=58); k=5: 0.0002 (n=59)
+- **Qwen3-32B**, `self_attn.v_proj.weight`: k=24: 0.2679 (n=40); k=53: 0.0002 (n=11); k=49: 0.0002 (n=15); k=47: 0.0002 (n=17)
 - **Qwen3-Next-80B-A3B**, `linear_attn.conv1d.weight`: k=12: 0.6254 (n=27); k=24: 0.4504 (n=18); k=37: 0.0064 (n=6); k=25: 0.0035 (n=12)
 - **Qwen3-Next-80B-A3B**, `self_attn.k_proj.weight`: k=12: 0.4209 (n=9); k=24: 0.2674 (n=6); k=4: 0.0002 (n=11); k=16: 0.0001 (n=8)
 - **Qwen3-Next-80B-A3B**, `mlp.gate.weight`: k=12: 0.7052 (n=36); k=24: 0.5546 (n=24); k=1: 0.4605 (n=47); k=2: 0.4335 (n=46)

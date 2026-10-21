@@ -9,6 +9,7 @@ similarity between every pair of blocks. Three families are used:
 | Family | Tensor suffix | Where it exists | Why it is used |
 |---|---|---|---|
 | Attention key projection | `self_attn.k_proj.weight` | every block of a standard transformer; the full-attention blocks of a hybrid | present in every model in the survey, so it is the common yardstick |
+| Attention value projection | `self_attn.v_proj.weight` | Qwen3-32B and Qwen2.5-32B only (added 2026-10-21) | a second attention tensor family for the two dense checkpoints; trained together with `k_proj`, so it corroborates rather than independently replicates, and the query/output projections and MLP stay unmeasured |
 | DeltaNet short convolution | `linear_attn.conv1d.weight` | the linear-attention blocks of Qwen3.5/3.6/3.8 and Qwen3-Next hybrids | small (tens of thousands of parameters), sharply block-local, and the family that showed the pattern first |
 | MoE router | `mlp.gate.weight` | every block of a mixture-of-experts model | one row per expert, so its cosine is also computed row-aligned: a copied router keeps its expert ordering |
 

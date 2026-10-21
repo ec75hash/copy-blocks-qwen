@@ -48,9 +48,9 @@ explicitly labeled router-row values, which use aligned per-row cosines for both
 
 | Checkpoint | Layers | Corresponding blocks | Tensor | Within-block | Same-offset, off-block |
 |---|---:|---|---|---:|---:|
-| Qwen3-32B | 64 | 8–31 ↔ 32–55 | attention k_proj | 0.254 (n=24) | 0.000 (n=16) |
+| Qwen3-32B | 64 | 8–31 ↔ 32–55 | attention k_proj / v_proj | 0.254 (n=24) / 0.447 (n=24) | 0.000 (n=16) / 0.000 (n=16) |
 | Qwen3.6-35B-A3B (3.5 Instruct and Base within 0.002) | 40 | 8–19 ↔ 20–31 | DeltaNet conv1d / k_proj / router rows | 0.896 (n=9) / 0.524 (n=3) / 0.795 (n=12) | -0.001 (n=12) / 0.000 (n=4) / 0.260 (n=16) |
-| Qwen2.5-32B (and DeepSeek-R1-Distill-Qwen-32B) | 64 | 16–31 ↔ 32–47 | attention k_proj | 0.424 / 0.422 (n=16 each) | 0.000 (n=32 each) |
+| Qwen2.5-32B (and DeepSeek-R1-Distill-Qwen-32B) | 64 | 16–31 ↔ 32–47 | attention k_proj; v_proj (2.5-32B only) | 0.424 / 0.422 (n=16 each); v_proj 0.544 (n=16) | 0.000 (n=32 each); v_proj 0.000 (n=32) |
 | Qwen3.6-27B (3.5/3.8 measured separately; values here are 3.6) | 64 | 8–23 ↔ 24–39 ↔ 40–55 | DeltaNet conv1d / k_proj | 0.859 (n=24) / 0.309 (n=8) | 0.001 (n=12) / 0.000 (n=4) |
 | SOLAR-10.7B-v1.0 (disclosed up-scaling, calibration) | 48 | 8–23 ↔ 24–39 | attention k_proj | 0.871 (n=16) | 0.000 (n=16) |
 | KAT-V1-40B (Qwen2.5-32B expanded, per its report) | 80 | 24–31 ↔ 32–39 and 40–47 ↔ 48–55 | attention k_proj | 0.984 / 0.978 (n=8 each; 16 total) | 0.000 (n=56) |
@@ -59,6 +59,15 @@ Counts refer to the displayed means. The 27B row pools the two consecutive block
 12 convolution pairs and 4 attention pairs per comparison. KAT displays its two independent
 8-pair means separately; Qwen2.5-32B, its R1 derivative, and SOLAR contribute 16 pairs
 per 16-layer segment comparison.
+The value projection (`v_proj`) was added for Qwen3-32B and Qwen2.5-32B on 2026-10-21 at a
+reviewer's request as a second attention tensor family. Measured against its own same-offset
+background, it shows elevated similarity at the same corresponding positions as the key
+projection (within-block 0.447 and 0.544, off-block 0.000, offset spectrum peaking only at K),
+and in both checkpoints the value projection retains more of the shared start than the key
+projection does. Keys and values are trained together, so this corroborates rather than
+independently replicates the key-projection result; the query and output projections and the
+MLP of those layers remain unmeasured.
+
 Under the inherited-block interpretation, KAT also predicts offsets 16+8=24 and
 16+2×8=32; the four observed 8-pair correspondences are listed in
 [RESULTS.md](RESULTS.md#kat-inherited-block-arithmetic).
@@ -146,7 +155,7 @@ largest correction in the earlier Qwen3.6-27B release is SOLAR's within-block me
 - Weights only. No activations, no behaviour, no claim about function.
 - Consistent with shared initialisation, not a recipe. Qwen has not published how these checkpoints were built; the
   reading "copied, then trained" rests on the SOLAR calibration and the off-block floor.
-- One tensor family per claim. Dense models are read through `k_proj`; hybrids add the DeltaNet
+- One tensor family per claim (two, `k_proj` and `v_proj`, for Qwen3-32B and Qwen2.5-32B). Dense models are read through `k_proj`; hybrids add the DeltaNet
   `conv1d`; MoEs add the router. Other tensors may tell a more or less similar story.
 - Routers have a non-zero baseline between any two layers, so their numbers are only meaningful
   against the same-offset off-block value printed beside them.
