@@ -56,6 +56,21 @@ class ScannerTests(unittest.TestCase):
         rows_1d, _, _ = scan.similarities({0: a, 12: b}, 24, 12, (0, 23), 1, shape=[4])
         self.assertIsNone(rows_1d[0]["row_mean_cosine"])
 
+    def test_off_block_row_mean_stays_distinct_from_flattened_mean(self):
+        tensors = {0: np.array([1., 0., 0., 1.]),
+                   1: np.array([2., 0., 0., 3.]),
+                   2: np.array([0., 4., 0., 1.])}
+        _, _, result = scan.similarities(tensors, 3, 1, (0, 1), 1, shape=[2, 2])
+        at_k = result["periods"]["1"]
+        self.assertAlmostEqual(at_k["inside_row_mean"], 1.)
+        self.assertAlmostEqual(at_k["outside_row_mean"], .5)
+        self.assertAlmostEqual(at_k["outside_mean"], 3. / np.sqrt(13. * 17.))
+        self.assertEqual(at_k["n_outside"], 1)
+        self.assertIsNone(result["periods"]["2"]["inside_row_mean"])
+        self.assertAlmostEqual(result["periods"]["2"]["outside_row_mean"], .5)
+        _, _, flat = scan.similarities(tensors, 3, 1, (0, 1), 1, shape=[4])
+        self.assertIsNone(flat["periods"]["1"]["outside_row_mean"])
+
     def test_resolve_shards_trusts_headers_over_index(self):
         # KAT-V1-40B's index names the wrong shard for most attention tensors.
         weight_map = {"a": "s1", "b": "s1", "c": "s2"}

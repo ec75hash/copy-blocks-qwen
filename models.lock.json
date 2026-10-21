@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "purpose": "Pinned byte-range weight scan for repeated (depth-upscaled) blocks across Qwen-family checkpoints",
+  "purpose": "Pinned byte-range weight scan for repeated blocks across Qwen-family checkpoints",
   "models": [
     {
       "repo_id": "Qwen/Qwen3-32B",

@@ -2,73 +2,106 @@
 
 Regenerated from `data/summary.json`, `data/offsets.csv` and `data/pairs.csv` by `scripts/make_report.py`.
 
-Cosines use flattened decoder-only tensors; the row-mean column is the mean over aligned rows (experts, for a router). Within-block means use the aligned pairs between corresponding blocks of the lock's hypothesis; off-block means use the remaining pairs at the same offset. A proposed block counts as confirmed when the top-ranked offset is K or 2K, the within-block mean at K is ≥ 0.10 and exceeds the off-block mean at K by ≥ 0.10. A no-block row holds when no offset's mean stands more than 0.05 above the mean of its two neighbouring offsets (the spike column); routers in every Qwen MoE share a smooth 0.3–0.5 similarity between neighbouring layers, which is drift, not repetition. These are reporting rules, not significance tests.
+Within/off-block cosine columns use flattened decoder-only tensors; the two row-mean columns instead average aligned-row cosines (experts, for a router), using the same within/off-block pair sets. Within-block means use the aligned pairs between corresponding blocks of the lock's hypothesis; off-block means use the remaining pairs at the same offset. A proposed block counts as confirmed when the top-ranked offset is K or 2K, the within-block mean at K is ≥ 0.10 and exceeds the off-block mean at K by ≥ 0.10. For a family without a proposed block, the maximum eligible neighboring-offset spike must be < 0.05; if no eligible neighboring triplet exists, the maximum eligible mean must be < 0.05. Otherwise its verdict is unexpected peak; a family with no eligible offsets is reported separately. Across the surveyed MoEs, flattened router means at offset 1 round to 0.26–0.51. These are reporting rules, not significance tests.
 
-| Checkpoint | Role | Tensor | Blocks with tensor | K | Top offset (mean, pairs) | Within-block mean at K (pairs) | Off-block mean at K | Row-mean at K | Max spike | Verdict |
-|---|---|---|---:|---:|---|---|---:|---:|---:|---|
-| Qwen1.5-MoE-A2.7B | no_block_reported | `self_attn.k_proj.weight` | 24/24 | 8 | 1 (0.000, n=23) | 0.000 (16) | — | 0.000 | 0.001 | **no block** |
-| Qwen1.5-MoE-A2.7B | no_block_reported | `mlp.gate.weight` | 24/24 | 8 | 1 (0.389, n=23) | 0.258 (16) | — | 0.260 | 0.003 | **no block** |
-| Qwen2-57B-A14B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 8 | 7 (0.001, n=21) | -0.000 (16) | -0.001 | 0.000 | 0.001 | **no block** |
-| Qwen2-57B-A14B | no_block_reported | `mlp.gate.weight` | 28/28 | 8 | 1 (0.323, n=27) | 0.058 (16) | 0.105 | 0.049 | 0.003 | **no block** |
-| Qwen2.5-7B | negative_control | `self_attn.k_proj.weight` | 28/28 | 16 | 6 (0.001, n=22) | — (0) | 0.000 | — | 0.000 | **no block** |
-| Qwen2.5-Math-7B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 16 | 21 (0.001, n=7) | — (0) | 0.000 | — | 0.001 | **no block** |
-| Qwen2.5-14B | no_block_reported | `self_attn.k_proj.weight` | 48/48 | 16 | 16 (0.000, n=32) | 0.000 (32) | — | 0.000 | 0.000 | **no block** |
-| Qwen2.5-32B | primary | `self_attn.k_proj.weight` | 64/64 | 16 | 16 (0.142, n=48) | 0.424 (16) | 0.000 | 0.352 | 0.142 | **confirmed** |
-| DeepSeek-R1-Distill-Qwen-32B | derivative_of_qwen25_32b | `self_attn.k_proj.weight` | 64/64 | 16 | 16 (0.141, n=48) | 0.422 (16) | 0.000 | 0.351 | 0.141 | **confirmed** |
-| KAT-V1-40B (grown from Qwen2.5-32B) | disclosed_upscale_of_qwen25_32b | `self_attn.k_proj.weight` | 80/80 | 8 | 8 (0.218, n=72) | 0.981 (16) | -0.000 | 0.974 | 0.218 | **confirmed** |
-| Qwen3-0.6B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 8 | 14 (0.001, n=14) | -0.000 (16) | 0.000 | -0.000 | 0.001 | **no block** |
-| Qwen3-1.7B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 8 | 11 (0.000, n=17) | 0.000 (16) | -0.000 | 0.000 | 0.000 | **no block** |
-| Qwen3-4B | no_block_reported | `self_attn.k_proj.weight` | 36/36 | 12 | 30 (0.001, n=6) | -0.000 (24) | — | -0.000 | 0.001 | **no block** |
-| Qwen3-8B | no_block_reported | `self_attn.k_proj.weight` | 36/36 | 12 | 30 (0.000, n=6) | -0.000 (24) | — | -0.000 | 0.000 | **no block** |
-| Qwen3-14B | no_block_reported | `self_attn.k_proj.weight` | 40/40 | 8 | 3 (0.000, n=37) | -0.000 (32) | — | -0.000 | 0.000 | **no block** |
-| Qwen3-30B-A3B | primary | `self_attn.k_proj.weight` | 48/48 | 12 | 12 (0.355, n=36) | 0.532 (24) | -0.000 | 0.475 | 0.355 | **confirmed** |
-| Qwen3-30B-A3B | primary | `mlp.gate.weight` | 48/48 | 12 | 12 (0.694, n=36) | 0.878 (24) | 0.326 | 0.882 | 0.297 | **confirmed** |
-| Qwen3-30B-A3B-Instruct-2507 | primary_post_trained_variant | `self_attn.k_proj.weight` | 48/48 | 12 | 12 (0.354, n=36) | 0.530 (24) | -0.000 | 0.474 | 0.354 | **confirmed** |
-| Qwen3-30B-A3B-Instruct-2507 | primary_post_trained_variant | `mlp.gate.weight` | 48/48 | 12 | 12 (0.693, n=36) | 0.878 (24) | 0.322 | 0.883 | 0.301 | **confirmed** |
-| Qwen3-32B | primary | `self_attn.k_proj.weight` | 64/64 | 24 | 24 (0.152, n=40) | 0.254 (24) | -0.000 | 0.227 | 0.152 | **confirmed** |
-| Qwen3-Next-80B-A3B | primary | `linear_attn.conv1d.weight` | 36/48 | 12 | 12 (0.625, n=27) | 0.940 (18) | -0.005 | — | 0.623 | **confirmed** |
-| Qwen3-Next-80B-A3B | primary | `self_attn.k_proj.weight` | 12/48 | 12 | 12 (0.421, n=9) | 0.632 (6) | -0.000 | 0.590 | — | **confirmed** |
-| Qwen3-Next-80B-A3B | primary | `mlp.gate.weight` | 48/48 | 12 | 12 (0.705, n=36) | 0.919 (24) | 0.278 | 0.921 | 0.315 | **confirmed** |
-| Qwen3-235B-A22B | primary | `self_attn.k_proj.weight` | 94/94 | 34 | 34 (0.299, n=60) | 0.528 (34) | -0.000 | 0.484 | 0.299 | **confirmed** |
-| Qwen3-235B-A22B | primary | `mlp.gate.weight` | 94/94 | 34 | 34 (0.600, n=60) | 0.881 (34) | 0.231 | 0.883 | 0.250 | **confirmed** |
-| Qwen3-Coder-480B-A35B | no_block_reported | `self_attn.k_proj.weight` | 62/62 | 16 | 39 (0.000, n=23) | 0.000 (32) | 0.000 | 0.000 | 0.000 | **no block** |
-| Qwen3-Coder-480B-A35B | no_block_reported | `mlp.gate.weight` | 62/62 | 16 | 1 (0.513, n=61) | 0.144 (32) | 0.298 | 0.146 | 0.001 | **no block** |
-| Qwen3.5-0.8B | no_block_reported | `linear_attn.conv1d.weight` | 18/24 | 8 | 13 (0.008, n=6) | 0.000 (12) | — | — | 0.005 | **no block** |
-| Qwen3.5-0.8B | no_block_reported | `self_attn.k_proj.weight` | 6/24 | 8 | — | 0.000 (4) | — | -0.002 | — | **no eligible offsets** |
-| Qwen3.5-2B | no_block_reported | `linear_attn.conv1d.weight` | 18/24 | 8 | 13 (0.006, n=6) | -0.003 (12) | — | — | 0.006 | **no block** |
-| Qwen3.5-2B | no_block_reported | `self_attn.k_proj.weight` | 6/24 | 8 | — | -0.000 (4) | — | -0.001 | — | **no eligible offsets** |
-| Qwen3.5-4B | no_block_reported | `linear_attn.conv1d.weight` | 24/32 | 8 | 19 (0.007, n=6) | -0.003 (18) | — | — | 0.010 | **no block** |
-| Qwen3.5-4B | no_block_reported | `self_attn.k_proj.weight` | 8/32 | 8 | 4 (0.001, n=7) | 0.001 (6) | — | 0.000 | — | **no block** |
-| Qwen3.5-9B | negative_control | `linear_attn.conv1d.weight` | 24/32 | 16 | 19 (0.007, n=6) | -0.000 (12) | — | — | 0.010 | **no block** |
-| Qwen3.5-9B | negative_control | `self_attn.k_proj.weight` | 8/32 | 16 | 8 (0.001, n=6) | 0.000 (4) | — | -0.000 | — | **no block** |
-| Qwen3.5-27B | primary | `linear_attn.conv1d.weight` | 48/64 | 16 | 16 (0.574, n=36) | 0.860 (24) | 0.001 | — | 0.573 | **confirmed** |
-| Qwen3.5-27B | primary | `self_attn.k_proj.weight` | 16/64 | 16 | 16 (0.206, n=12) | 0.310 (8) | -0.000 | 0.290 | — | **confirmed** |
-| Qwen3.6-27B | primary | `linear_attn.conv1d.weight` | 48/64 | 16 | 16 (0.573, n=36) | 0.859 (24) | 0.001 | — | 0.572 | **confirmed** |
-| Qwen3.6-27B | primary | `self_attn.k_proj.weight` | 16/64 | 16 | 16 (0.206, n=12) | 0.309 (8) | -0.000 | 0.290 | — | **confirmed** |
-| Qwen3.5-35B-A3B-Base | primary_base_variant | `linear_attn.conv1d.weight` | 30/40 | 12 | 12 (0.384, n=21) | 0.897 (9) | -0.001 | — | 0.382 | **confirmed** |
-| Qwen3.5-35B-A3B-Base | primary_base_variant | `self_attn.k_proj.weight` | 10/40 | 12 | 12 (0.224, n=7) | 0.522 (3) | -0.001 | 0.475 | — | **confirmed** |
-| Qwen3.5-35B-A3B-Base | primary_base_variant | `mlp.gate.weight` | 40/40 | 12 | 12 (0.485, n=28) | 0.789 (12) | 0.256 | 0.794 | 0.169 | **confirmed** |
-| Qwen3.5-35B-A3B | primary | `linear_attn.conv1d.weight` | 30/40 | 12 | 12 (0.383, n=21) | 0.896 (9) | -0.001 | — | 0.381 | **confirmed** |
-| Qwen3.5-35B-A3B | primary | `self_attn.k_proj.weight` | 10/40 | 12 | 12 (0.223, n=7) | 0.522 (3) | -0.001 | 0.475 | — | **confirmed** |
-| Qwen3.5-35B-A3B | primary | `mlp.gate.weight` | 40/40 | 12 | 12 (0.485, n=28) | 0.789 (12) | 0.257 | 0.794 | 0.169 | **confirmed** |
-| Qwen3.6-35B-A3B | primary | `linear_attn.conv1d.weight` | 30/40 | 12 | 12 (0.383, n=21) | 0.896 (9) | -0.001 | — | 0.381 | **confirmed** |
-| Qwen3.6-35B-A3B | primary | `self_attn.k_proj.weight` | 10/40 | 12 | 12 (0.224, n=7) | 0.524 (3) | -0.000 | 0.477 | — | **confirmed** |
-| Qwen3.6-35B-A3B | primary | `mlp.gate.weight` | 40/40 | 12 | 12 (0.483, n=28) | 0.791 (12) | 0.251 | 0.795 | 0.175 | **confirmed** |
-| Qwen3.5-122B-A10B | no_block_reported | `linear_attn.conv1d.weight` | 36/48 | 16 | 35 (0.004, n=6) | -0.000 (24) | — | — | 0.005 | **no block** |
-| Qwen3.5-122B-A10B | no_block_reported | `self_attn.k_proj.weight` | 12/48 | 16 | 4 (0.000, n=11) | -0.000 (8) | — | -0.000 | — | **no block** |
-| Qwen3.5-122B-A10B | no_block_reported | `mlp.gate.weight` | 48/48 | 16 | 1 (0.409, n=47) | 0.107 (32) | — | 0.108 | 0.003 | **no block** |
-| Qwen3.5-397B-A17B | no_block_reported | `linear_attn.conv1d.weight` | 45/60 | 16 | 35 (0.004, n=12) | 0.001 (24) | 0.001 | — | 0.005 | **no block** |
-| Qwen3.5-397B-A17B | no_block_reported | `self_attn.k_proj.weight` | 15/60 | 16 | 4 (0.000, n=14) | -0.001 (8) | 0.000 | -0.000 | — | **no block** |
-| Qwen3.5-397B-A17B | no_block_reported | `mlp.gate.weight` | 60/60 | 16 | 1 (0.476, n=59) | 0.239 (32) | 0.233 | 0.245 | 0.006 | **no block** |
-| Qwen3.8-27B | primary_post_trained_variant | `linear_attn.conv1d.weight` | 48/64 | 16 | 16 (0.572, n=36) | 0.858 (24) | 0.001 | — | 0.571 | **confirmed** |
-| Qwen3.8-27B | primary_post_trained_variant | `self_attn.k_proj.weight` | 16/64 | 16 | 16 (0.202, n=12) | 0.303 (8) | -0.000 | 0.283 | — | **confirmed** |
-| Qwen3.8-Flash-Next | primary | `linear_attn.conv1d.weight` | 36/48 | 16 | 16 (0.484, n=24) | 0.969 (12) | -0.001 | — | 0.486 | **confirmed** |
-| Qwen3.8-Flash-Next | primary | `self_attn.k_proj.weight` | 12/48 | 16 | 16 (0.415, n=8) | 0.830 (4) | -0.001 | 0.810 | — | **confirmed** |
-| Qwen3.8-Flash-Next | primary | `mlp.gate.weight` | 48/48 | 16 | 16 (0.486, n=32) | 0.898 (16) | 0.074 | 0.900 | 0.322 | **confirmed** |
-| Qwen3.8-2.4T-A95B | primary | `linear_attn.conv1d.weight` | 69/92 | 32 | 32 (0.507, n=45) | 0.950 (24) | 0.000 | — | 0.507 | **confirmed** |
-| Qwen3.8-2.4T-A95B | primary | `self_attn.k_proj.weight` | 23/92 | 32 | 32 (0.284, n=15) | 0.532 (8) | -0.000 | 0.503 | — | **confirmed** |
-| Qwen3.8-2.4T-A95B | primary | `mlp.gate.weight` | 92/92 | 32 | 32 (0.491, n=60) | 0.837 (32) | 0.095 | 0.839 | 0.236 | **confirmed** |
-| SOLAR-10.7B-v1.0 | disclosed_duplication_control | `self_attn.k_proj.weight` | 48/48 | 16 | 16 (0.436, n=32) | 0.871 (16) | 0.000 | 0.821 | 0.436 | **confirmed** |
+| Checkpoint | Role | Tensor | Blocks with tensor | K | Top offset (mean, pairs) | Within-block mean at K (pairs) | Off-block mean at K | Row-mean within at K | Row-mean off at K | Max spike | Verdict |
+|---|---|---|---:|---:|---|---|---:|---:|---:|---:|---|
+| Qwen1.5-MoE-A2.7B | no_block_reported | `self_attn.k_proj.weight` | 24/24 | 8 | 1 (0.000, n=23) | 0.000 (16) | — | 0.000 | — | 0.001 | **no block** |
+| Qwen1.5-MoE-A2.7B | no_block_reported | `mlp.gate.weight` | 24/24 | 8 | 1 (0.389, n=23) | 0.258 (16) | — | 0.260 | — | 0.003 | **no block** |
+| Qwen2-57B-A14B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 8 | 7 (0.001, n=21) | -0.000 (16) | -0.001 | 0.000 | -0.000 | 0.001 | **no block** |
+| Qwen2-57B-A14B | no_block_reported | `mlp.gate.weight` | 28/28 | 8 | 1 (0.323, n=27) | 0.058 (16) | 0.105 | 0.049 | 0.103 | 0.003 | **no block** |
+| Qwen2.5-7B | negative_control | `self_attn.k_proj.weight` | 28/28 | 16 | 6 (0.001, n=22) | — (0) | 0.000 | — | 0.000 | 0.000 | **no block** |
+| Qwen2.5-Math-7B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 16 | 21 (0.001, n=7) | — (0) | 0.000 | — | 0.000 | 0.001 | **no block** |
+| Qwen2.5-14B | no_block_reported | `self_attn.k_proj.weight` | 48/48 | 16 | 16 (0.000, n=32) | 0.000 (32) | — | 0.000 | — | 0.000 | **no block** |
+| Qwen2.5-32B | primary | `self_attn.k_proj.weight` | 64/64 | 16 | 16 (0.142, n=48) | 0.424 (16) | 0.000 | 0.352 | 0.000 | 0.142 | **confirmed** |
+| DeepSeek-R1-Distill-Qwen-32B | derivative_of_qwen25_32b | `self_attn.k_proj.weight` | 64/64 | 16 | 16 (0.141, n=48) | 0.422 (16) | 0.000 | 0.351 | 0.000 | 0.141 | **confirmed** |
+| KAT-V1-40B (grown from Qwen2.5-32B) | disclosed_upscale_of_qwen25_32b | `self_attn.k_proj.weight` | 80/80 | 8 | 8 (0.218, n=72) | 0.981 (16) | -0.000 | 0.974 | -0.000 | 0.218 | **confirmed** |
+| Qwen3-0.6B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 8 | 14 (0.001, n=14) | -0.000 (16) | 0.000 | -0.000 | 0.001 | 0.001 | **no block** |
+| Qwen3-1.7B | no_block_reported | `self_attn.k_proj.weight` | 28/28 | 8 | 11 (0.000, n=17) | 0.000 (16) | -0.000 | 0.000 | -0.000 | 0.000 | **no block** |
+| Qwen3-4B | no_block_reported | `self_attn.k_proj.weight` | 36/36 | 12 | 30 (0.001, n=6) | -0.000 (24) | — | -0.000 | — | 0.001 | **no block** |
+| Qwen3-8B | no_block_reported | `self_attn.k_proj.weight` | 36/36 | 12 | 30 (0.000, n=6) | -0.000 (24) | — | -0.000 | — | 0.000 | **no block** |
+| Qwen3-14B | no_block_reported | `self_attn.k_proj.weight` | 40/40 | 8 | 3 (0.000, n=37) | -0.000 (32) | — | -0.000 | — | 0.000 | **no block** |
+| Qwen3-30B-A3B | primary | `self_attn.k_proj.weight` | 48/48 | 12 | 12 (0.355, n=36) | 0.532 (24) | -0.000 | 0.475 | 0.000 | 0.355 | **confirmed** |
+| Qwen3-30B-A3B | primary | `mlp.gate.weight` | 48/48 | 12 | 12 (0.694, n=36) | 0.878 (24) | 0.326 | 0.882 | 0.333 | 0.297 | **confirmed** |
+| Qwen3-30B-A3B-Instruct-2507 | primary_post_trained_variant | `self_attn.k_proj.weight` | 48/48 | 12 | 12 (0.354, n=36) | 0.530 (24) | -0.000 | 0.474 | 0.000 | 0.354 | **confirmed** |
+| Qwen3-30B-A3B-Instruct-2507 | primary_post_trained_variant | `mlp.gate.weight` | 48/48 | 12 | 12 (0.693, n=36) | 0.878 (24) | 0.322 | 0.883 | 0.329 | 0.301 | **confirmed** |
+| Qwen3-32B | primary | `self_attn.k_proj.weight` | 64/64 | 24 | 24 (0.152, n=40) | 0.254 (24) | -0.000 | 0.227 | -0.000 | 0.152 | **confirmed** |
+| Qwen3-Next-80B-A3B | primary | `linear_attn.conv1d.weight` | 36/48 | 12 | 12 (0.625, n=27) | 0.940 (18) | -0.005 | — | — | 0.623 | **confirmed** |
+| Qwen3-Next-80B-A3B | primary | `self_attn.k_proj.weight` | 12/48 | 12 | 12 (0.421, n=9) | 0.632 (6) | -0.000 | 0.590 | -0.001 | — | **confirmed** |
+| Qwen3-Next-80B-A3B | primary | `mlp.gate.weight` | 48/48 | 12 | 12 (0.705, n=36) | 0.919 (24) | 0.278 | 0.921 | 0.284 | 0.315 | **confirmed** |
+| Qwen3-235B-A22B | primary | `self_attn.k_proj.weight` | 94/94 | 34 | 34 (0.299, n=60) | 0.528 (34) | -0.000 | 0.484 | -0.000 | 0.299 | **confirmed** |
+| Qwen3-235B-A22B | primary | `mlp.gate.weight` | 94/94 | 34 | 34 (0.600, n=60) | 0.881 (34) | 0.231 | 0.883 | 0.236 | 0.250 | **confirmed** |
+| Qwen3-Coder-480B-A35B | no_block_reported | `self_attn.k_proj.weight` | 62/62 | 16 | 39 (0.000, n=23) | 0.000 (32) | 0.000 | 0.000 | 0.001 | 0.000 | **no block** |
+| Qwen3-Coder-480B-A35B | no_block_reported | `mlp.gate.weight` | 62/62 | 16 | 1 (0.513, n=61) | 0.144 (32) | 0.298 | 0.146 | 0.299 | 0.001 | **no block** |
+| Qwen3.5-0.8B | no_block_reported | `linear_attn.conv1d.weight` | 18/24 | 8 | 13 (0.008, n=6) | 0.000 (12) | — | — | — | 0.005 | **no block** |
+| Qwen3.5-0.8B | no_block_reported | `self_attn.k_proj.weight` | 6/24 | 8 | — | 0.000 (4) | — | -0.002 | — | — | **no eligible offsets** |
+| Qwen3.5-2B | no_block_reported | `linear_attn.conv1d.weight` | 18/24 | 8 | 13 (0.006, n=6) | -0.003 (12) | — | — | — | 0.006 | **no block** |
+| Qwen3.5-2B | no_block_reported | `self_attn.k_proj.weight` | 6/24 | 8 | — | -0.000 (4) | — | -0.001 | — | — | **no eligible offsets** |
+| Qwen3.5-4B | no_block_reported | `linear_attn.conv1d.weight` | 24/32 | 8 | 19 (0.007, n=6) | -0.003 (18) | — | — | — | 0.010 | **no block** |
+| Qwen3.5-4B | no_block_reported | `self_attn.k_proj.weight` | 8/32 | 8 | 4 (0.001, n=7) | 0.001 (6) | — | 0.000 | — | — | **no block** |
+| Qwen3.5-9B | negative_control | `linear_attn.conv1d.weight` | 24/32 | 16 | 19 (0.007, n=6) | -0.000 (12) | — | — | — | 0.010 | **no block** |
+| Qwen3.5-9B | negative_control | `self_attn.k_proj.weight` | 8/32 | 16 | 8 (0.001, n=6) | 0.000 (4) | — | -0.000 | — | — | **no block** |
+| Qwen3.5-27B | primary | `linear_attn.conv1d.weight` | 48/64 | 16 | 16 (0.574, n=36) | 0.860 (24) | 0.001 | — | — | 0.573 | **confirmed** |
+| Qwen3.5-27B | primary | `self_attn.k_proj.weight` | 16/64 | 16 | 16 (0.206, n=12) | 0.310 (8) | -0.000 | 0.290 | -0.000 | — | **confirmed** |
+| Qwen3.6-27B | primary | `linear_attn.conv1d.weight` | 48/64 | 16 | 16 (0.573, n=36) | 0.859 (24) | 0.001 | — | — | 0.572 | **confirmed** |
+| Qwen3.6-27B | primary | `self_attn.k_proj.weight` | 16/64 | 16 | 16 (0.206, n=12) | 0.309 (8) | -0.000 | 0.290 | -0.000 | — | **confirmed** |
+| Qwen3.5-35B-A3B-Base | primary_base_variant | `linear_attn.conv1d.weight` | 30/40 | 12 | 12 (0.384, n=21) | 0.897 (9) | -0.001 | — | — | 0.382 | **confirmed** |
+| Qwen3.5-35B-A3B-Base | primary_base_variant | `self_attn.k_proj.weight` | 10/40 | 12 | 12 (0.224, n=7) | 0.522 (3) | -0.001 | 0.475 | -0.000 | — | **confirmed** |
+| Qwen3.5-35B-A3B-Base | primary_base_variant | `mlp.gate.weight` | 40/40 | 12 | 12 (0.485, n=28) | 0.789 (12) | 0.256 | 0.794 | 0.264 | 0.169 | **confirmed** |
+| Qwen3.5-35B-A3B | primary | `linear_attn.conv1d.weight` | 30/40 | 12 | 12 (0.383, n=21) | 0.896 (9) | -0.001 | — | — | 0.381 | **confirmed** |
+| Qwen3.5-35B-A3B | primary | `self_attn.k_proj.weight` | 10/40 | 12 | 12 (0.223, n=7) | 0.522 (3) | -0.001 | 0.475 | -0.000 | — | **confirmed** |
+| Qwen3.5-35B-A3B | primary | `mlp.gate.weight` | 40/40 | 12 | 12 (0.485, n=28) | 0.789 (12) | 0.257 | 0.794 | 0.264 | 0.169 | **confirmed** |
+| Qwen3.6-35B-A3B | primary | `linear_attn.conv1d.weight` | 30/40 | 12 | 12 (0.383, n=21) | 0.896 (9) | -0.001 | — | — | 0.381 | **confirmed** |
+| Qwen3.6-35B-A3B | primary | `self_attn.k_proj.weight` | 10/40 | 12 | 12 (0.224, n=7) | 0.524 (3) | -0.000 | 0.477 | -0.000 | — | **confirmed** |
+| Qwen3.6-35B-A3B | primary | `mlp.gate.weight` | 40/40 | 12 | 12 (0.483, n=28) | 0.791 (12) | 0.251 | 0.795 | 0.260 | 0.175 | **confirmed** |
+| Qwen3.5-122B-A10B | no_block_reported | `linear_attn.conv1d.weight` | 36/48 | 16 | 35 (0.004, n=6) | -0.000 (24) | — | — | — | 0.005 | **no block** |
+| Qwen3.5-122B-A10B | no_block_reported | `self_attn.k_proj.weight` | 12/48 | 16 | 4 (0.000, n=11) | -0.000 (8) | — | -0.000 | — | — | **no block** |
+| Qwen3.5-122B-A10B | no_block_reported | `mlp.gate.weight` | 48/48 | 16 | 1 (0.409, n=47) | 0.107 (32) | — | 0.108 | — | 0.003 | **no block** |
+| Qwen3.5-397B-A17B | no_block_reported | `linear_attn.conv1d.weight` | 45/60 | 16 | 35 (0.004, n=12) | 0.001 (24) | 0.001 | — | — | 0.005 | **no block** |
+| Qwen3.5-397B-A17B | no_block_reported | `self_attn.k_proj.weight` | 15/60 | 16 | 4 (0.000, n=14) | -0.001 (8) | 0.000 | -0.000 | 0.001 | — | **no block** |
+| Qwen3.5-397B-A17B | no_block_reported | `mlp.gate.weight` | 60/60 | 16 | 1 (0.476, n=59) | 0.239 (32) | 0.233 | 0.245 | 0.240 | 0.006 | **no block** |
+| Qwen3.8-27B | primary_post_trained_variant | `linear_attn.conv1d.weight` | 48/64 | 16 | 16 (0.572, n=36) | 0.858 (24) | 0.001 | — | — | 0.571 | **confirmed** |
+| Qwen3.8-27B | primary_post_trained_variant | `self_attn.k_proj.weight` | 16/64 | 16 | 16 (0.202, n=12) | 0.303 (8) | -0.000 | 0.283 | -0.001 | — | **confirmed** |
+| Qwen3.8-Flash-Next | primary | `linear_attn.conv1d.weight` | 36/48 | 16 | 16 (0.484, n=24) | 0.969 (12) | -0.001 | — | — | 0.486 | **confirmed** |
+| Qwen3.8-Flash-Next | primary | `self_attn.k_proj.weight` | 12/48 | 16 | 16 (0.415, n=8) | 0.830 (4) | -0.001 | 0.810 | -0.001 | — | **confirmed** |
+| Qwen3.8-Flash-Next | primary | `mlp.gate.weight` | 48/48 | 16 | 16 (0.486, n=32) | 0.898 (16) | 0.074 | 0.900 | 0.078 | 0.322 | **confirmed** |
+| Qwen3.8-2.4T-A95B | primary | `linear_attn.conv1d.weight` | 69/92 | 32 | 32 (0.507, n=45) | 0.950 (24) | 0.000 | — | — | 0.507 | **confirmed** |
+| Qwen3.8-2.4T-A95B | primary | `self_attn.k_proj.weight` | 23/92 | 32 | 32 (0.284, n=15) | 0.532 (8) | -0.000 | 0.503 | -0.000 | — | **confirmed** |
+| Qwen3.8-2.4T-A95B | primary | `mlp.gate.weight` | 92/92 | 32 | 32 (0.491, n=60) | 0.837 (32) | 0.095 | 0.839 | 0.098 | 0.236 | **confirmed** |
+| SOLAR-10.7B-v1.0 | disclosed_duplication_control | `self_attn.k_proj.weight` | 48/48 | 16 | 16 (0.436, n=32) | 0.871 (16) | 0.000 | 0.821 | 0.000 | 0.436 | **confirmed** |
+
+## Router raw-rank gate margins
+
+The gate ranks eligible offsets by their raw flattened mean, not by baseline-corrected spike or within-minus-off contrast. The margin below is the best eligible mean at K or 2K minus the largest eligible mean at any other offset; positive values mean the K/2K candidate wins that comparison. Offsets require at least six pairs for ranking, and exact raw-mean ties are resolved by smaller offset. The within/off thresholds remain additional gates.
+
+| Checkpoint | Best K/2K offset | Raw mean | Strongest other offset | Raw mean | Gate margin |
+|---|---:|---:|---:|---:|---:|
+| Qwen3-30B-A3B | 12 | 0.693964 | 1 | 0.461589 | +0.232375 |
+| Qwen3-30B-A3B-Instruct-2507 | 12 | 0.692936 | 1 | 0.455284 | +0.237652 |
+| Qwen3-Next-80B-A3B | 12 | 0.705250 | 1 | 0.460462 | +0.244788 |
+| Qwen3-235B-A22B | 34 | 0.599629 | 20 | 0.576136 | +0.023493 |
+| Qwen3.5-35B-A3B-Base | 12 | 0.484674 | 1 | 0.450223 | +0.034451 |
+| Qwen3.5-35B-A3B | 12 | 0.484547 | 1 | 0.450072 | +0.034476 |
+| Qwen3.6-35B-A3B | 12 | 0.482826 | 1 | 0.440045 | +0.042781 |
+| Qwen3.8-Flash-Next | 16 | 0.485857 | 1 | 0.262562 | +0.223295 |
+| Qwen3.8-2.4T-A95B | 32 | 0.490857 | 1 | 0.411185 | +0.079672 |
+
+## Qwen3-235B multi-offset structure
+
+The declared K=34 correspondence scores part of a multi-offset structure: the attention-key and router spectra also contain peaks at offsets 20, 54 and 14. The K=34 verdict is not an exhaustive segmentation of that structure.
+
+## KAT inherited-block arithmetic
+
+Under the inherited-block interpretation, the parent Qwen2.5-32B's 16-layer correspondence plus one or two inserted 8-layer segments predicts offsets 16+8=24 and 16+2×8=32. KAT's own attention-key weights match this within-checkpoint prediction at the ranges below; each mean uses eight aligned layer pairs.
+
+| First range | Second range | Offset | Mean flattened cosine | Pairs |
+|---|---|---:|---:|---:|
+| 16–23 | 40–47 | 24 | 0.393917 | 8 |
+| 16–23 | 48–55 | 32 | 0.390970 | 8 |
+| 24–31 | 56–63 | 32 | 0.433987 | 8 |
+| 32–39 | 56–63 | 24 | 0.435326 | 8 |
+
+The two near-identical offset-8 pairs and the lower-cosine offset-24/32 correspondences are reported separately. All values are measured within KAT; inheritance is the interpretation tested by this arithmetic.
 
 ## Strongest offsets per family
 

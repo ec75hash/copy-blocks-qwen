@@ -227,6 +227,7 @@ def similarities(tensors: dict[int, np.ndarray], depth: int, period: int,
         inside = [r["cosine"] for r in selected if r["both_inside_region"]]
         outside = [r["cosine"] for r in selected if not r["both_inside_region"]]
         inside_rows = [r["row_mean_cosine"] for r in selected if r["both_inside_region"]] if row_means else []
+        outside_rows = [r["row_mean_cosine"] for r in selected if not r["both_inside_region"]] if row_means else []
         by_period[str(offset)] = {
             "n_pairs": len(selected),
             "all_valid_mean": float(np.mean([r["cosine"] for r in selected])) if selected else None,
@@ -234,6 +235,7 @@ def similarities(tensors: dict[int, np.ndarray], depth: int, period: int,
             "inside_min": min(inside) if inside else None,
             "inside_max": max(inside) if inside else None,
             "inside_row_mean": float(np.mean(inside_rows)) if inside_rows else None,
+            "outside_row_mean": float(np.mean(outside_rows)) if outside_rows else None,
             "n_outside": len(outside), "outside_mean": float(np.mean(outside)) if outside else None}
     return rows, spectrum, {"top_offsets": ranked[:4], "periods": by_period,
                              "segments": segments, "pair_groups": pair_groups,

@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "models_lock_sha256": "4c07ef1ab9895c11facf38e6b2d5d9abf4f9f0549501984a6160b77e58495f33",
-  "scanner_sha256": "b9fe7222cc5d4f9c751f7c0dd0c6b1e2641129f1c380ccd31b1377eabd117ef3",
+  "models_lock_sha256": "34cfeb1d6e7053db8d171658fb7a468c647d0af1a19819ce434cff1af987cd53",
+  "scanner_sha256": "71042fd810b9cc938a3679fdc19426b13cabc4b08191c7f0357d8e756f293a1e",
   "python": "3.14.4",
   "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
   "packages": {
@@ -33569,5 +33569,23 @@
         }
       ]
     }
-  ]
+  ],
+  "models_lock_sha256_at_capture": "4c07ef1ab9895c11facf38e6b2d5d9abf4f9f0549501984a6160b77e58495f33",
+  "models_lock_description_amendment": {
+    "date": "2026-10-21",
+    "field": "purpose",
+    "previous_value": "Pinned byte-range weight scan for repeated (depth-upscaled) blocks across Qwen-family checkpoints",
+    "current_value": "Pinned byte-range weight scan for repeated blocks across Qwen-family checkpoints",
+    "scan_specifications_unchanged": true,
+    "reason": "Remove parenthetical construction interpretation from the descriptive title; no rescan or tensor changes."
+  },
+  "scanner_sha256_at_capture": "b9fe7222cc5d4f9c751f7c0dd0c6b1e2641129f1c380ccd31b1377eabd117ef3",
+  "scanner_reporting_amendment": {
+    "date": "2026-10-21",
+    "change": "Add outside_row_mean to period summaries and future scanner output.",
+    "source": "Saved data/pairs.csv row_mean_cosine values on off-block pairs at the selected offset; no weight rescan.",
+    "capture_scanner_sha256": "b9fe7222cc5d4f9c751f7c0dd0c6b1e2641129f1c380ccd31b1377eabd117ef3",
+    "capture_pair_and_offset_tables_unchanged": true,
+    "original_summary_fields_unchanged": true
+  }
 }

@@ -6,7 +6,7 @@ pretty_name: Repeated blocks in Qwen-family checkpoints
 tags:
   - interpretability
   - model-analysis
-  - depth-upscaling
+  - weight-similarity
   - qwen
 configs:
   - config_name: layer_pairs
@@ -21,15 +21,20 @@ configs:
 
 # Repeated blocks in Qwen-family checkpoints
 
-**Several Qwen checkpoints contain a stretch of decoder blocks whose weights repeat, block for
-block, at a fixed offset: layers 32–55 of Qwen3-32B line up with layers 8–31, layers 20–31 of
+**Several Qwen checkpoints contain a stretch of decoder blocks whose weights are far more similar,
+block for block, to the stretch a fixed offset away than any other pair of blocks at that offset:
+layers 32–55 of Qwen3-32B line up with layers 8–31, layers 20–31 of
 Qwen3.5/3.6-35B-A3B line up with 8–19, layers 32–47 of Qwen2.5-32B line up with 16–31, and so on
 across the surveyed checkpoints.** Corresponding pairs show elevated cosine relative to
 the other pairs at the same offset. Routers also have a nonzero background, and some checkpoints
 have additional structure at other offsets. SOLAR-10.7B provides a disclosed depth-upscaling
 comparison in the same tensor family. This release measures that pattern in 34 pinned checkpoints with nothing but HTTP byte-range
 reads of their public weight files, and ships the data, the scanner and a verifier so anyone can
-check it on a laptop.
+check it on a laptop. For survey counting, grouping related variants and derivatives gives
+about **9 Qwen base/lineage groups with a block and 16 without**, plus SOLAR as a separate
+calibration. The grouped positive rows are Qwen3.5-35B Base/Instruct with Qwen3.6-35B,
+Qwen3.5/3.6/3.8-27B, Qwen3-30B with its 2507 variant, and Qwen2.5-32B with R1 and KAT;
+the negative rows group Qwen2.5-7B with Math-7B. Every checkpoint is measured separately.
 
 Jeffrey Shorthill · independent interpretability research · 2026-10-19 · v0.1.0
 
@@ -43,16 +48,24 @@ explicitly labeled router-row values, which use aligned per-row cosines for both
 
 | Checkpoint | Layers | Corresponding blocks | Tensor | Within-block | Same-offset, off-block |
 |---|---:|---|---|---:|---:|
-| Qwen3-32B | 64 | 8–31 ↔ 32–55 | attention k_proj | 0.254 | 0.000 |
-| Qwen3.6-35B-A3B (3.5 Instruct and Base within 0.002) | 40 | 8–19 ↔ 20–31 | DeltaNet conv1d / k_proj / router rows | 0.896 / 0.524 / 0.795 | -0.001 / 0.000 / 0.260 |
-| Qwen2.5-32B (and DeepSeek-R1-Distill-Qwen-32B) | 64 | 16–31 ↔ 32–47 | attention k_proj | 0.424 / 0.422 | 0.000 |
-| Qwen3.6-27B (3.5/3.8 measured separately; values here are 3.6) | 64 | 8–23 ↔ 24–39 ↔ 40–55 | DeltaNet conv1d / k_proj | 0.859 / 0.309 | 0.001 / 0.000 |
-| SOLAR-10.7B-v1.0 (disclosed up-scaling, calibration) | 48 | 8–23 ↔ 24–39 | attention k_proj | 0.871 | 0.000 |
-| KAT-V1-40B (Qwen2.5-32B expanded, per its report) | 80 | 24–31 ↔ 32–39 and 40–47 ↔ 48–55 | attention k_proj | 0.984 / 0.978 | 0.000 |
+| Qwen3-32B | 64 | 8–31 ↔ 32–55 | attention k_proj | 0.254 (n=24) | 0.000 (n=16) |
+| Qwen3.6-35B-A3B (3.5 Instruct and Base within 0.002) | 40 | 8–19 ↔ 20–31 | DeltaNet conv1d / k_proj / router rows | 0.896 (n=9) / 0.524 (n=3) / 0.795 (n=12) | -0.001 (n=12) / 0.000 (n=4) / 0.260 (n=16) |
+| Qwen2.5-32B (and DeepSeek-R1-Distill-Qwen-32B) | 64 | 16–31 ↔ 32–47 | attention k_proj | 0.424 / 0.422 (n=16 each) | 0.000 (n=32 each) |
+| Qwen3.6-27B (3.5/3.8 measured separately; values here are 3.6) | 64 | 8–23 ↔ 24–39 ↔ 40–55 | DeltaNet conv1d / k_proj | 0.859 (n=24) / 0.309 (n=8) | 0.001 (n=12) / 0.000 (n=4) |
+| SOLAR-10.7B-v1.0 (disclosed up-scaling, calibration) | 48 | 8–23 ↔ 24–39 | attention k_proj | 0.871 (n=16) | 0.000 (n=16) |
+| KAT-V1-40B (Qwen2.5-32B expanded, per its report) | 80 | 24–31 ↔ 32–39 and 40–47 ↔ 48–55 | attention k_proj | 0.984 / 0.978 (n=8 each; 16 total) | 0.000 (n=56) |
 
-Routers in every Qwen MoE share a smooth 0.3–0.5 similarity between neighbouring layers whether
-or not a block repeats; that is drift, and the table and chart compare each router's within-block
-value against the same-offset off-block value for that reason. The checkpoints with no repeat
+Counts refer to the displayed means. The 27B row pools the two consecutive block comparisons:
+12 convolution pairs and 4 attention pairs per comparison. KAT displays its two independent
+8-pair means separately; Qwen2.5-32B, its R1 derivative, and SOLAR contribute 16 pairs
+per 16-layer segment comparison.
+Under the inherited-block interpretation, KAT also predicts offsets 16+8=24 and
+16+2×8=32; the four observed 8-pair correspondences are listed in
+[RESULTS.md](RESULTS.md#kat-inherited-block-arithmetic).
+
+Across the surveyed MoEs, flattened router means at offset 1 round to 0.26–0.51.
+The table and chart compare within-block similarity against the same-offset off-block
+background; the raw-rank gate's margins are reported in [RESULTS.md](RESULTS.md#router-raw-rank-gate-margins). The checkpoints with no repeat
 (every model at or below 14B, Qwen3.5-122B and 397B, Qwen3-Coder-480B, Qwen1.5/2 MoEs) show no
 eligible neighboring-offset spike above 0.010175. Two small-hybrid attention families
 have no offset with six pairs and remain explicitly unranked; their convolution families
@@ -61,10 +74,11 @@ support the model-level no-block result.
 ## What this does and does not establish
 
 Elevated similarity between aligned block pairs, relative to other pairs at the same offset
-and to the surveyed controls, supports shared ancestry between the paired blocks: at some point
-they were the same weights, as in a depth up-scaling. It does not establish how or when the model
-was built, how much training followed the copy, or whether the paired blocks now compute the same
-function. Cosine is not a clock. The release makes no claim beyond the weights.
+and to the surveyed controls, is consistent with the paired blocks having started from the same
+weights, as happens in the two disclosed depth up-scalings measured here (SOLAR, KAT). The weights
+alone cannot show that this is what happened, how or when the model was built, how much training
+followed any copy, or whether the paired blocks now compute the same function. Cosine is not a
+clock. The release makes no claim beyond the weights.
 
 ## Check it yourself
 
@@ -117,7 +131,8 @@ coexist. The complete survey was run with 48 GB of RAM.
 ## Independent reproduction
 
 A second scanner, written separately in a Codex (GPT-6) session with its own tensor cache and
-its own pair table, measured 33 of these checkpoints at the same revisions. All 38,540 layer
+its own pair table, measured 33 of these checkpoints at the same revisions; its roster omitted
+DeepSeek-R1-Distill-Qwen-32B. All 38,540 layer
 pairs the two tables share agree to within 4 × 10⁻¹⁵, and all 1,552 shared tensor payload hashes
 match. Details in [docs/INDEPENDENT_CHECK.md](docs/INDEPENDENT_CHECK.md). That comparison also
 caught a real bug: on this platform a float32 Gram matrix of 32 or more multi-million-element
@@ -129,7 +144,7 @@ largest correction in the earlier Qwen3.6-27B release is SOLAR's within-block me
 ## Limitations
 
 - Weights only. No activations, no behaviour, no claim about function.
-- Shared ancestry, not a recipe. Qwen has not published how these checkpoints were built; the
+- Consistent with shared initialisation, not a recipe. Qwen has not published how these checkpoints were built; the
   reading "copied, then trained" rests on the SOLAR calibration and the off-block floor.
 - One tensor family per claim. Dense models are read through `k_proj`; hybrids add the DeltaNet
   `conv1d`; MoEs add the router. Other tensors may tell a more or less similar story.
@@ -149,8 +164,12 @@ largest correction in the earlier Qwen3.6-27B release is SOLAR's within-block me
 - `data/pairs.csv`: 56,950 layer pairs: model, revision, tensor, layer_a, layer_b, offset,
   cosine, row-mean cosine, whether the pair is a corresponding-block pair.
 - `data/offsets.csv`, `data/summary.json`: per-offset means and the per-family summaries.
+  The summary's `inside_row_mean` and `outside_row_mean` provide the matched row-mean
+  comparison shown in RESULTS and the README router row (0.795 versus 0.260 for Qwen3.6-35B).
 - `data/provenance.json`: every tensor's shard, dtype, shape, absolute byte range, payload and
   header SHA-256, plus scanner and lock hashes, package versions and run time.
+  Capture-time hashes are retained alongside recorded reporting amendments; the added
+  off-block row means were aggregated from the saved pair table without a new weight scan.
 - `provenance/metadata/`: the pinned `config.json` and index files (no tensor data).
 - `checksums.json`: SHA-256 of every tracked file except the manifest itself; `scripts/verify_release.py` checks it.
 - `figures/`: the family chart, per-family offset spectra, and six heat maps.

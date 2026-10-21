@@ -22,8 +22,9 @@ ROOT = Path(__file__).resolve().parents[1]
 # Reporting rules (not significance tests): a proposed block is "confirmed" when the top-ranked
 # offset for the family is the lock period or twice it, the within-block mean at the period is at
 # least CONFIRM_INSIDE, and it exceeds the same-offset off-block mean by at least CONFIRM_EXCESS
-# (routers in every Qwen MoE share a 0.25-0.35 baseline between any two layers, so an absolute
-# off-block ceiling would be the wrong test for them). A no-block row holds when no offset's mean
+# (surveyed routers have nonzero backgrounds; their flattened offset-1 means round to
+# 0.26-0.51, so an absolute off-block ceiling would be the wrong test for them).
+# A no-block row holds when no offset's mean
 # stands more than NO_BLOCK_SPIKE above the mean of its two neighbouring offsets.
 CONFIRM_INSIDE = 0.10
 CONFIRM_EXCESS = 0.10
@@ -115,11 +116,16 @@ def family_verdict(spec, analysis, offsets):
     means = {int(o["offset"]): fnum(o["mean_cosine"]) for o in eligible}
     max_any = max(means.values(), default=None)
     # Spike: how far an offset's mean stands above its two neighbours. Adjacent-layer drift
-    # (routers sit at 0.3-0.5 between neighbouring layers in every Qwen MoE) decays smoothly and
+    # (surveyed routers' flattened offset-1 means round to 0.26-0.51) decays smoothly and
     # produces no spike; a copied block produces one at K.
     spikes = {k: v - 0.5 * (means[k - 1] + means[k + 1]) for k, v in means.items()
               if k - 1 in means and k + 1 in means}
     max_spike = max(spikes.values(), default=None)
+    # Keep the existing raw-mean rank gate and expose its margin for router interpretation.
+    ranked = sorted(means.items(), key=lambda item: (-item[1], item[0]))
+    target = next(((k, v) for k, v in ranked if k in (period, 2 * period)), None)
+    competitor = next(((k, v) for k, v in ranked if k not in (period, 2 * period)), None)
+    rank_margin = target[1] - competitor[1] if target and competitor else None
     inside, outside = at_k.get("inside_mean"), at_k.get("outside_mean")
     excess = None if inside is None else inside - (outside if outside is not None else 0.0)
     if proposes_block(spec):
@@ -136,7 +142,10 @@ def family_verdict(spec, analysis, offsets):
     return {"period": period, "peak": top["offset"] if top else None,
             "peak_mean": top["mean_cosine"] if top else None, "inside": inside, "outside": outside,
             "excess": excess, "inside_row_mean": at_k.get("inside_row_mean"), "max_any": max_any,
-            "max_spike": max_spike, "n_inside": at_k.get("n_inside"), "verdict": verdict}
+            "outside_row_mean": at_k.get("outside_row_mean"),
+            "max_spike": max_spike, "n_inside": at_k.get("n_inside"), "verdict": verdict,
+            "raw_rank_target": target, "raw_rank_competitor": competitor,
+            "raw_rank_margin": rank_margin}
 
 
 def model_summary(spec, analyses, offsets):
@@ -214,7 +223,7 @@ def draw_family(specs, summaries, out):
                        Patch(facecolor="none", edgecolor=COL["ink2"], hatch="////", label="proposed block, not confirmed by this scan"),
                        Patch(color=COL["track"], label="no repeated block found")],
               loc="upper right", frameon=False, fontsize=8.5)
-    ax.set_title("Repeated (depth-upscaled) blocks across Qwen-family checkpoints, from pinned weight scans",
+    ax.set_title("Repeated blocks across Qwen-family checkpoints, from pinned weight scans",
                  loc="left", fontsize=12.5, color=COL["ink"])
     fig.text(0.01, 0.005,
              "Segments are the lock's block hypothesis, drawn solid only where this scan's top-ranked offset is K or 2K, the within-block mean at K is ≥ "
@@ -302,17 +311,17 @@ def draw_heatmaps(specs, analyses, pairs, out, panels):
     plt.close(fig)
 
 
-def write_results(specs, summaries, analyses, report):
+def write_results(specs, summaries, analyses, pairs, report):
     lines = ["# Numerical results", "",
              "Regenerated from `data/summary.json`, `data/offsets.csv` and `data/pairs.csv` by `scripts/make_report.py`.", "",
-             "Cosines use flattened decoder-only tensors; the row-mean column is the mean over aligned rows (experts, for a router). "
+             "Within/off-block cosine columns use flattened decoder-only tensors; the two row-mean columns instead average aligned-row cosines (experts, for a router), using the same within/off-block pair sets. "
              "Within-block means use the aligned pairs between corresponding blocks of the lock's hypothesis; off-block means use the remaining pairs at the same offset. "
              f"A proposed block counts as confirmed when the top-ranked offset is K or 2K, the within-block mean at K is ≥ {CONFIRM_INSIDE:.2f} "
-             f"and exceeds the off-block mean at K by ≥ {CONFIRM_EXCESS:.2f}. A no-block row holds when no offset's mean stands more than {NO_BLOCK_SPIKE:.2f} "
-             "above the mean of its two neighbouring offsets (the spike column); routers in every Qwen MoE share a smooth 0.3–0.5 similarity between neighbouring layers, "
-             "which is drift, not repetition. These are reporting rules, not significance tests.", "",
-             "| Checkpoint | Role | Tensor | Blocks with tensor | K | Top offset (mean, pairs) | Within-block mean at K (pairs) | Off-block mean at K | Row-mean at K | Max spike | Verdict |",
-             "|---|---|---|---:|---:|---|---|---:|---:|---:|---|"]
+             f"and exceeds the off-block mean at K by ≥ {CONFIRM_EXCESS:.2f}. For a family without a proposed block, the maximum eligible neighboring-offset spike must be < {NO_BLOCK_SPIKE:.2f}; "
+             f"if no eligible neighboring triplet exists, the maximum eligible mean must be < {NO_BLOCK_SPIKE:.2f}. Otherwise its verdict is unexpected peak; a family with no eligible offsets is reported separately. "
+             "Across the surveyed MoEs, flattened router means at offset 1 round to 0.26–0.51. These are reporting rules, not significance tests.", "",
+             "| Checkpoint | Role | Tensor | Blocks with tensor | K | Top offset (mean, pairs) | Within-block mean at K (pairs) | Off-block mean at K | Row-mean within at K | Row-mean off at K | Max spike | Verdict |",
+             "|---|---|---|---:|---:|---|---|---:|---:|---:|---:|---|"]
     for header, slugs in DISPLAY:
         for slug in slugs:
             if slug not in specs:
@@ -324,7 +333,40 @@ def write_results(specs, summaries, analyses, report):
                     return "—" if x is None else f"{x:.{nd}f}"
                 top = "—" if v["peak"] is None else f"{v['peak']} ({v['peak_mean']:.3f}, n={a['top_offsets'][0]['n_pairs']})"
                 lines.append(f"| {LABEL.get(slug, slug)} | {spec['role']} | `{a['tensor']}` | {len(a['tensor_layers'])}/{a['depth']} | {v['period']} | {top} | "
-                             f"{f(v['inside'])} ({v['n_inside'] or 0}) | {f(v['outside'])} | {f(v['inside_row_mean'])} | {f(v['max_spike'])} | **{v['verdict']}** |")
+                             f"{f(v['inside'])} ({v['n_inside'] or 0}) | {f(v['outside'])} | {f(v['inside_row_mean'])} | {f(v['outside_row_mean'])} | {f(v['max_spike'])} | **{v['verdict']}** |")
+    lines += ["", "## Router raw-rank gate margins", "",
+              "The gate ranks eligible offsets by their raw flattened mean, not by baseline-corrected spike or within-minus-off contrast. "
+              "The margin below is the best eligible mean at K or 2K minus the largest eligible mean at any other offset; positive values mean the K/2K candidate wins that comparison. "
+              "Offsets require at least six pairs for ranking, and exact raw-mean ties are resolved by smaller offset. The within/off thresholds remain additional gates.", "",
+              "| Checkpoint | Best K/2K offset | Raw mean | Strongest other offset | Raw mean | Gate margin |",
+              "|---|---:|---:|---:|---:|---:|"]
+    for header, slugs in DISPLAY:
+        for slug in slugs:
+            if slug not in specs or not proposes_block(specs[slug]):
+                continue
+            v = summaries[slug].get("mlp.gate.weight")
+            if v is None or v["raw_rank_margin"] is None:
+                continue
+            target, competitor = v["raw_rank_target"], v["raw_rank_competitor"]
+            lines.append(f"| {LABEL[slug]} | {target[0]} | {target[1]:.6f} | {competitor[0]} | {competitor[1]:.6f} | {v['raw_rank_margin']:+.6f} |")
+    if "qwen3-235b-a22b" in specs:
+        lines += ["", "## Qwen3-235B multi-offset structure", "",
+                  "The declared K=34 correspondence scores part of a multi-offset structure: the attention-key and router spectra also contain peaks at offsets 20, 54 and 14. "
+                  "The K=34 verdict is not an exhaustive segmentation of that structure."]
+    if "kat-v1-40b" in specs:
+        lines += ["", "## KAT inherited-block arithmetic", "",
+                  "Under the inherited-block interpretation, the parent Qwen2.5-32B's 16-layer correspondence plus one or two inserted 8-layer segments predicts offsets 16+8=24 and 16+2×8=32. "
+                  "KAT's own attention-key weights match this within-checkpoint prediction at the ranges below; each mean uses eight aligned layer pairs.", "",
+                  "| First range | Second range | Offset | Mean flattened cosine | Pairs |",
+                  "|---|---|---:|---:|---:|"]
+        # Use the selected --data input, including when reproducing a subset of the release.
+        kat_pairs = {(int(row["layer_a"]), int(row["layer_b"])): float(row["cosine"])
+                     for row in pairs if row["model_slug"] == "kat-v1-40b"
+                     and row["tensor"] == "self_attn.k_proj.weight"}
+        for left, right in [(16, 40), (16, 48), (24, 56), (32, 56)]:
+            values = [kat_pairs[(left + i, right + i)] for i in range(8)]
+            lines.append(f"| {left}–{left+7} | {right}–{right+7} | {right-left} | {np.mean(values):.6f} | 8 |")
+        lines += ["", "The two near-identical offset-8 pairs and the lower-cosine offset-24/32 correspondences are reported separately. All values are measured within KAT; inheritance is the interpretation tested by this arithmetic."]
     lines += ["", "## Strongest offsets per family", ""]
     for header, slugs in DISPLAY:
         for slug in slugs:
@@ -359,7 +401,7 @@ def main():
         ("qwen25-7b", "self_attn.k_proj.weight", "Qwen2.5-7B · no block (control)"),
         ("qwen35-9b", "linear_attn.conv1d.weight", "Qwen3.5-9B · no block (control)"),
     ])
-    write_results(specs, summaries, analyses, args.report)
+    write_results(specs, summaries, analyses, pairs, args.report)
     print(f"Wrote figures to {args.out} and {args.report} for {len(specs)} checkpoints")
 
 

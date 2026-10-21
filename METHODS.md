@@ -25,7 +25,7 @@ An *offset* is the difference between two zero-based decoder block indices, enum
 1 to depth−1 using the original block IDs (not positions in the sparse list of blocks that
 carry a tensor). For each family and offset the scanner records the mean cosine over all
 pairs at that offset. Offsets with fewer than six pairs stay in `data/offsets.csv` but are
-excluded from rankings and figures; that is a reporting rule, not a significance test.
+excluded from offset rankings and spectrum plots; that is a reporting rule, not a significance test.
 
 Each lock entry carries a *period* K and a *region* [first, last]: the block hypothesis for
 that checkpoint, taken from the September 2026 survey of the family (the chart this release
@@ -36,15 +36,22 @@ keep KAT's two independent pairs separate; membership is not determined solely b
 endpoints falling inside the overall region. For checkpoints without a proposed block
 the region is the whole decoder.
 
+Within-block means have no separate pair minimum: the sub-six `k_proj` means use 3 pairs
+for each of Qwen3.5-35B-A3B Base/Instruct and Qwen3.6-35B-A3B, and 4 for
+Qwen3.8-Flash-Next; individual block-pair and 2K means use 3 pairs for Qwen3-Next-80B-A3B
+and 4 for each of Qwen3.5/3.6/3.8-27B (their pooled K means use 6 and 8 pairs respectively).
+
 `scripts/make_report.py` turns the measurements into a verdict per family with fixed rules:
 
 - a proposed block is **confirmed** when the top-ranked offset for the family is K or 2K, the
   within-block flattened mean at K is at least 0.10, and it exceeds the same-offset
   off-block flattened mean by at least 0.10 (a missing off-block mean is treated as zero);
-- a no-block family **holds** when the largest eligible offset mean minus the mean of its
-  two eligible neighboring offsets is below 0.05. Where no neighboring triplet exists,
-  the maximum eligible mean must be below 0.05. A family with no eligible offsets is
-  reported as **no eligible offsets** rather than assigned a family-level verdict.
+- for a family without a proposed block, compute each eligible offset's mean minus the
+  mean of its two eligible neighboring offsets, then take the maximum over all such
+  triplets. The verdict is **no block** when this maximum is below 0.05, and **unexpected
+  peak** otherwise. If no eligible neighboring triplet exists, use the maximum eligible
+  offset mean instead: **no block** below 0.05, **unexpected peak** otherwise. A family
+  with no eligible offsets is reported as **no eligible offsets**.
 
 The thresholds are stated in the script and in `RESULTS.md`. They are conservative for the
 positive cases in this survey. For negative families with eligible neighboring offsets,
@@ -84,16 +91,21 @@ No model is executed and no complete shard is downloaded. Tensor bytes are cache
   to a 40B-parameter variant via a targeted layer-wise expansion strategy": a second disclosed
   up-scaling, this time of a checkpoint that already carries a block. Only KAT's own
   within-checkpoint structure is measured here; cross-model similarity is not.
+  Under an inherited-block interpretation, the parent's 16-layer correspondence plus
+  one or two inserted 8-layer segments predicts offsets 24 and 32; KAT's own k_proj
+  matches at 16–23↔40–47, 16–23↔48–55, 24–31↔56–63 and 32–39↔56–63 have eight pairs
+  each and means 0.394, 0.391, 0.434 and 0.435, respectively (see RESULTS.md).
 - **Qwen2.5-7B, Qwen3.5-9B** and the other no-block rows are same-family checkpoints scanned
   with the same families; they show the off-block floor.
 
 ## What the measurement does and does not establish
 
 Elevated similarity between aligned block pairs, relative to other pairs at the same offset
-and to the surveyed controls, supports shared ancestry between the paired blocks: at some point they were the
-same weights. It does not establish how the model was built, when the copying happened
-relative to training, how much training followed it, or whether the blocks now compute the
-same function. Cosine magnitude is not a clock. Claims of that kind are outside this release.
+and to the surveyed controls, is consistent with the paired blocks having started from the same
+weights; the two disclosed up-scalings in the survey (SOLAR, KAT) show what that produces in the
+same tensor family. It does not establish that this is how the model was built, when any copying
+happened relative to training, how much training followed it, or whether the blocks now compute
+the same function. Cosine magnitude is not a clock. Claims of that kind are outside this release.
 
 Rows within a checkpoint share weights and are not independent samples; there are no
 confidence intervals here. The scan is a deterministic measurement of a pinned artifact,
