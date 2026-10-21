@@ -36,7 +36,7 @@ calibration. The grouped positive rows are Qwen3.5-35B Base/Instruct with Qwen3.
 Qwen3.5/3.6/3.8-27B, Qwen3-30B with its 2507 variant, and Qwen2.5-32B with R1 and KAT;
 the negative rows group Qwen2.5-7B with Math-7B. Every checkpoint is measured separately.
 
-Jeffrey Shorthill · independent interpretability research · 2026-10-19 · v0.1.0
+Jeffrey Shorthill · independent interpretability research · 2026-10-21 · v0.1.1
 
 ![Repeated blocks across the Qwen family](figures/family_blocks.png)
 
@@ -63,9 +63,9 @@ The value projection (`v_proj`) was added for Qwen3-32B and Qwen2.5-32B on 2026-
 reviewer's request as a second attention tensor family. Measured against its own same-offset
 background, it shows elevated similarity at the same corresponding positions as the key
 projection (within-block 0.447 and 0.544, off-block 0.000, offset spectrum peaking only at K),
-and in both checkpoints the value projection retains more of the shared start than the key
-projection does. Keys and values are trained together, so this corroborates rather than
-independently replicates the key-projection result; the query and output projections and the
+and in both checkpoints, corresponding value projections have higher within-block cosine
+similarity than corresponding key projections. Keys and values are trained together, so this
+corroborates rather than independently replicates the key-projection result; the query and output projections and the
 MLP of those layers remain unmeasured.
 
 Under the inherited-block interpretation, KAT also predicts offsets 16+8=24 and
@@ -131,8 +131,10 @@ print("Matched", len(a), "pairs within 1e-9")
 PY
 ```
 
-All 34 checkpoints are 9.8 GB of range reads (2,336 tensors) and took about 40 minutes on a
-home connection; the recompute from the local cache takes 13 minutes. Hardware used here:
+The current release covers 34 checkpoints and 2,464 tensors (11.1 GB of tensor payloads).
+The original v0.1.0 capture covered 2,336 tensors (9.8 GB) and took about 40 minutes on a
+home connection; its recompute from the local cache took 13 minutes. The v0.1.1 extension
+adds 128 value-projection tensors (1.34 GB). Hardware used here:
 Apple M5 Max, 48 GB, macOS 27.0.1, Python 3.14.4, NumPy 2.4.2 (Accelerate BLAS). The largest normalized input stack is 80 × 5,242,880 values in float64 (3.36 GB);
 peak memory is higher because decoded weights, stacked copies and conversion temporaries
 coexist. The complete survey was run with 48 GB of RAM.
@@ -170,7 +172,7 @@ largest correction in the earlier Qwen3.6-27B release is SOLAR's within-block me
 
 - `models.lock.json`: 34 checkpoints, full commit SHAs, SHA-256 of each `config.json` and index,
   tensor families, and the block hypothesis (period and region, or explicit segments) per row.
-- `data/pairs.csv`: 56,950 layer pairs: model, revision, tensor, layer_a, layer_b, offset,
+- `data/pairs.csv`: 60,982 layer pairs: model, revision, tensor, layer_a, layer_b, offset,
   cosine, row-mean cosine, whether the pair is a corresponding-block pair.
 - `data/offsets.csv`, `data/summary.json`: per-offset means and the per-family summaries.
   The summary's `inside_row_mean` and `outside_row_mean` provide the matched row-mean

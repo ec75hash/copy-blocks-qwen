@@ -1,6 +1,6 @@
 # Qwen copy-block survey — results summary
 
-Jeffrey Shorthill · release v0.1.0 · documentation checked 2026-10-20
+Jeffrey Shorthill · release v0.1.1 · documentation checked 2026-10-21
 
 The pinned survey measures repeated block patterns in 16 Qwen or Qwen-derived checkpoints,
 plus SOLAR as a disclosed depth-upscaling control; 17 other checkpoints show no repeated
@@ -45,11 +45,11 @@ Qwen2.5-7B, Qwen3.5-9B, Qwen3-Coder-480B-A35B, Qwen3.5-122B-A10B, Qwen3.5-397B-A
 The largest eligible neighboring-offset spike is 0.010175 (below the 0.05 reporting
 threshold). Two small-hybrid attention families lack six same-offset pairs and are
 explicitly unranked; their convolution families support the model-level result.
-Family totals: 35 confirmed, 26 no-block and 2 with no eligible offsets.
+Family totals: 37 confirmed, 26 no-block and 2 with no eligible offsets.
 
 ## Validation and scope
 
-- 34 pinned checkpoints; 2,336 selected tensors; 56,950 layer pairs.
+- 34 pinned checkpoints; 2,464 selected tensors; 60,982 layer pairs.
 - All 38,540 shared full-tensor pairs agree with a separately extended scanner within
   4 × 10⁻¹⁵; all 1,552 shared tensor payload hashes match.
 - Both scanners use float64 normalization/accumulation and a Gram-diagonal guard.
@@ -58,9 +58,9 @@ Family totals: 35 confirmed, 26 no-block and 2 with no eligible offsets.
   scanner/lock hashes and exact regeneration of RESULTS.md.
 - Routers have nonzero backgrounds, and additional offsets are present in some
   checkpoints. The evidence is the localized aligned-versus-baseline contrast.
-- These measurements support a shared-block-ancestry interpretation within each
-  checkpoint; the construction history is an inference. No activation or behavioral
-  measurement is part of this weight-scan package.
+- These measurements are consistent with paired blocks having started from the same
+  weights, as in the disclosed SOLAR and KAT up-scalings. The weights alone cannot
+  establish that history. No activation or behavioral measurement is part of this package.
 
 ## Files
 

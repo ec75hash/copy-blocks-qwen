@@ -35400,5 +35400,48 @@
     },
     "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
     "python": "3.14.4"
-  }
+  },
+  "documentation_amendments": [
+    {
+      "date": "2026-10-21",
+      "recorded_utc": "2026-10-21T17:26:21.571884+00:00",
+      "reason": "User-requested documentation correction after v0.1.1 review: describe measured similarity without asserting construction history; refresh summary bookkeeping.",
+      "based_on_github_commit": "22a9d44486b059a12422dcb757eda9810bfbce0b",
+      "based_on_hub_commit": "08261da2a7878ee534dc62a52f625acb557675d9",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256_before": "9d9cf54bbc70bd793c47c284e69a8c2a81915d2001b23621976b8109983e7328",
+          "sha256_after": "e77870025a3aa093a6cdec9c4adc6402f9911c12f58116b56576bf25b7e90026",
+          "changes": [
+            "Replace shared-start retention claim with measured within-block V-versus-K similarity.",
+            "Update version label and tensor/pair/byte totals; label old runtime as v0.1.0."
+          ]
+        },
+        {
+          "path": "docs/RESULTS_SUMMARY.md",
+          "sha256_before": "bf564af6be101641fc857156375f0154a6c2576633dd64ce63ad7b9fb1dfa6b5",
+          "sha256_after": "675b8eca71a6e8f80645602e71843a35a4cd92fae3c4a324d4560307343752c0",
+          "changes": [
+            "Update version/date, confirmed-family total from 35 to 37, tensors from 2,336 to 2,464 and pairs from 56,950 to 60,982.",
+            "Replace older ancestry wording with consistent-with shared initialisation and explicit uncertainty about construction history."
+          ]
+        }
+      ],
+      "verified_release_totals": {
+        "checkpoints": 34,
+        "tensor_payloads": 2464,
+        "tensor_payload_bytes": 11097210880,
+        "layer_pairs": 60982,
+        "family_analyses": 65,
+        "confirmed_families": 37,
+        "no_block_families": 26,
+        "no_eligible_offsets_families": 2
+      },
+      "tensor_manifests_and_measurement_files_unchanged": true,
+      "scanner_and_models_lock_unchanged": true,
+      "new_weight_capture": false,
+      "existing_version_tags_unchanged": true
+    }
+  ]
 }
