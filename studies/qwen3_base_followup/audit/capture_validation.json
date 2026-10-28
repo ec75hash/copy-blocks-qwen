@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "gate_pairs": 168,
+  "gate_neuron_rows": 91392,
+  "gate_valid_rows_per_pair": [
+    544
+  ],
+  "tests_passed": 7,
+  "all_downloaded_payload_bytes": 1187512320,
+  "rerun_downloaded_payload_bytes": 0,
+  "new_inference": false
+}

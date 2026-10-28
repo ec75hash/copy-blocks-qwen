@@ -85,7 +85,7 @@ remain unchanged.
 
 ## Downloaded evidence
 
-[data/capture/](https://huggingface.co/datasets/ec75hash/copy-blocks-qwen/tree/a4aeff1c9ed627ec45474e917fa5ce47af43e864/studies/qwen3_response/data/capture) contains the frozen exact text/token inputs, layout,
+[data/capture/](https://huggingface.co/datasets/ec75hash/copy-blocks-qwen/tree/7c0de5a888abb984eed09e9f43bca0a0d3860144/studies/qwen3_response/data/capture) contains the frozen exact text/token inputs, layout,
 centered covariance checkpoint, per-window peaks/positions/sign counts/mean-RMS,
 all 512 retained raw paired-channel windows, instrumentation, as-run code and reports.
 It is roughly 3.5 GB (3.3 GiB), with no model weights or full source shard included.

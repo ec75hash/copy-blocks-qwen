@@ -43,13 +43,39 @@ configs:
       - split: analysis
         path: studies/qwen25_weights/analysis/mapping_summary.csv
 
+  - config_name: qwen3_base_attention_pairs
+    data_files:
+      - split: analysis
+        path: studies/qwen3_base_followup/data/attention_mapped_pairs.csv
+  - config_name: qwen3_base_gate_pairs
+    data_files:
+      - split: analysis
+        path: studies/qwen3_base_followup/data/gate_mapped_pairs.csv
+  - config_name: qwen3_base30_layer_pairs
+    data_files:
+      - split: analysis
+        path: studies/qwen3_base_followup/data/base30_within_pairs.csv
+
 ---
 
-> Lightweight GitHub mirror of [HF v0.2.1](https://huggingface.co/datasets/ec75hash/copy-blocks-qwen/tree/a4aeff1c9ed627ec45474e917fa5ce47af43e864). Large response arrays and raw recordings remain on the Hub; see [mirror contents](MIRROR.md).
+> Lightweight GitHub mirror of [HF v0.3.0](https://huggingface.co/datasets/ec75hash/copy-blocks-qwen/tree/7c0de5a888abb984eed09e9f43bca0a0d3860144). Large response arrays and raw recordings remain on the Hub; see [mirror contents](MIRROR.md).
 
 # Repeated blocks in Qwen-family checkpoints: pinned weights and neuron responses
 
 [v0.2.1 packaging note](docs/PATCH_V021.md): checksum metadata corrected; measurements unchanged.
+
+## New in v0.3.0: Base-reference checks
+
+Using the published Qwen3-14B-Base instead of Qwen3-14B as the reference against
+the same Qwen3-32B target changes the primary key/value and sampled gate-row mean
+similarities by **less than 0.0002**. The best matching layer is unchanged for every
+source layer in both full key/value maps. A separate scan inside the published
+Qwen3-30B-A3B-Base finds its strongest eligible offset at **12 layers** in both
+keys and routers. [Results, methods and data](studies/qwen3_base_followup/README.md).
+
+This is a separate weight study. It retains the recorded prediction without scoring
+it and adds no neuron-response measurements. The earlier studies and original survey
+measurements are unchanged. [v0.3.0 changes](docs/UPDATE_V030.md).
 
 ## New in v0.2.0, part 1: the 14B/32B weight maps
 
@@ -108,10 +134,11 @@ windows and **0 of the top 10**. [Response results and full evidence](studies/qw
 | Qwen2.5-14B ↔ 32B weights | Six 48×64 cosine matrices, all 18,432 pair values, original capture, pinned tensor hashes and CPU reproduction | [Qwen2.5 findings](studies/qwen25_weights/README.md) |
 | Qwen3-32B MLP and Qwen3-14B ↔ 32B weights | All-pair MLP measurements, K/V maps, aligned gate rows, higher-index-channel and head checks | [Qwen3 findings](studies/qwen3_weights/README.md) |
 | Qwen3-32B Q8 responses | All 288 sampled pairs, 10,000 fixed windows, full retained measurements and 512 raw paired-channel windows | [Response findings](studies/qwen3_response/README.md) |
+| Qwen3 Base-reference follow-up | Six full K/V maps, 544 sampled gate rows, Base/non-Base calibration and Base 30B within-checkpoint scan | [Base follow-up](studies/qwen3_base_followup/README.md) |
 | Original 34-checkpoint survey | Original within-checkpoint K/V, router and convolution tables, scanner and figures | [Survey results](RESULTS.md) |
 
 **Read the tables and plots online without downloading the large arrays.**
-The two weight studies' offline table checks need under 50 MB of study files,
+The weight studies' offline table checks need under 70 MB of study files,
 plus Python dependencies. Fresh tensor remeasurement is a separate download.
 Reading the response tables is also lightweight, but re-deriving them needs
 the retained capture files, about 3.5 GB (3.3 GiB). No model weights are bundled.
@@ -144,7 +171,7 @@ calibration. The grouped positive rows are Qwen3.5-35B Base/Instruct with Qwen3.
 Qwen3.5/3.6/3.8-27B, Qwen3-30B with its 2507 variant, and Qwen2.5-32B with R1 and KAT;
 the negative rows group Qwen2.5-7B with Math-7B. Every checkpoint is measured separately.
 
-Jeffrey Shorthill · independent interpretability research · 2026-10-27 · v0.2.1
+Jeffrey Shorthill · independent interpretability research · 2026-10-27 · v0.3.0
 
 ![Repeated blocks across the Qwen family](figures/family_blocks.png)
 

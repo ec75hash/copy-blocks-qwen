@@ -1,0 +1,64 @@
+{
+ "checks": {
+  "sample_rows": "544 rows, 17 contiguous 32-row chunks inside 0-17407, all distinct",
+  "followup_payloads": {
+   "tasks": 856,
+   "hash_or_size_failures": 0
+  },
+  "reused_release_tensors_hash_verified": 312
+ },
+ "comparisons": {
+  "self_attn.k_proj.weight": {
+   "base14_to_32_max_abs_diff_vs_codex": 0.0,
+   "it14_to_32_max_abs_diff_vs_codex": 0.0,
+   "base14_to_it14_max_abs_diff_vs_codex": 0.0,
+   "base_mean": 0.7014204661816855,
+   "it_mean": 0.7016064411942201,
+   "paired_difference_mean": -0.00018597501253439855,
+   "base_to_it_same_layer_mean": 0.9961457189732086,
+   "codex_base_mean": 0.7014204661816855,
+   "codex_it_mean": 0.7016064411942201,
+   "codex_calibration": 0.9961457189732086
+  },
+  "self_attn.v_proj.weight": {
+   "base14_to_32_max_abs_diff_vs_codex": 0.0,
+   "it14_to_32_max_abs_diff_vs_codex": 0.0,
+   "base14_to_it14_max_abs_diff_vs_codex": 0.0,
+   "base_mean": 0.8063609346744026,
+   "it_mean": 0.8064656499303972,
+   "paired_difference_mean": -0.00010471525599450628,
+   "base_to_it_same_layer_mean": 0.9976930427771272,
+   "codex_base_mean": 0.8063609346744026,
+   "codex_it_mean": 0.8064656499303972,
+   "codex_calibration": 0.9976930427771272
+  },
+  "sampled_gate": {
+   "base_row_mean": 0.584147464520728,
+   "it_row_mean": 0.5842465072955936,
+   "paired_row_mean_difference": -9.904277486560975e-05,
+   "base_to_it_same_layer_row_mean": 0.9961242736878407,
+   "codex_base_row_mean": 0.584147464520728,
+   "codex_it_row_mean": 0.5842465072955937,
+   "codex_calibration": 0.996124273687841
+  },
+  "base30_self_attn.k_proj.weight": {
+   "inside_mean": 0.535278403708562,
+   "outside_mean": -5.6427960558854706e-05,
+   "inside_row_mean": 0.4786479234638225,
+   "codex_inside_mean": 0.535278403708562,
+   "codex_outside_mean": -5.6427960558854706e-05,
+   "top_offset": 12,
+   "codex_top_offset": 12
+  },
+  "base30_mlp.gate.weight": {
+   "inside_mean": 0.8806150805823877,
+   "outside_mean": 0.3291095187434239,
+   "inside_row_mean": 0.8851174441268524,
+   "codex_inside_mean": 0.8806150805823877,
+   "codex_outside_mean": 0.3291095187434239,
+   "top_offset": 12,
+   "codex_top_offset": 12
+  }
+ },
+ "scanner_sha256": "71042fd810b9cc938a3679fdc19426b13cabc4b08191c7f0357d8e756f293a1e"
+}

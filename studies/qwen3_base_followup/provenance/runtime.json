@@ -1,0 +1,8 @@
+{
+  "python": "3.14.4",
+  "numpy": "2.5.3",
+  "elapsed_s": 60.92659641600039,
+  "script_sha256": "6de1b34470e4b89d76cfbe6fe16a86b9f2af75ce96723d4e4519a5b5836c12cb",
+  "metrics_sha256": "507a557cac92b0fb4ee151ef0389f3dbcbd21d5b4f48278d09661e24f32745fa",
+  "new_inference": false
+}

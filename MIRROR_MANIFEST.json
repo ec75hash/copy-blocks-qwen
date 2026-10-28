@@ -1,8 +1,8 @@
 {
   "canonical_repo": "ec75hash/copy-blocks-qwen",
-  "canonical_commit": "a4aeff1c9ed627ec45474e917fa5ce47af43e864",
-  "canonical_tag": "v0.2.1",
-  "canonical_checksums_sha256": "5b5c45ac2c2fe9ec48a2a65f8dfb1e60758ef580688f0646bcbe0139f36e70ca",
+  "canonical_commit": "7c0de5a888abb984eed09e9f43bca0a0d3860144",
+  "canonical_tag": "v0.3.0",
+  "canonical_checksums_sha256": "7bbe9a35a423051a4c72596c4a43e9e0aa8f3b13f234adfbeddb9cce979c7dd5",
   "files": {
     ".gitignore": {
       "source_sha256": "531f127ede3baf57e4936a980924cf8e566702c627dedf929f3dbea9f8088cfc",
@@ -10,8 +10,8 @@
       "adaptation": null
     },
     "CITATION.cff": {
-      "source_sha256": "998f682d4d240070f20c4dbf08181a9f65d0b98fb3059b925455637a717d8ffc",
-      "mirror_sha256": "998f682d4d240070f20c4dbf08181a9f65d0b98fb3059b925455637a717d8ffc",
+      "source_sha256": "258e75481b58e7704c57f827b1906c598c5055da5436009b17e093193e97d386",
+      "mirror_sha256": "258e75481b58e7704c57f827b1906c598c5055da5436009b17e093193e97d386",
       "adaptation": null
     },
     "LICENSE": {
@@ -25,18 +25,18 @@
       "adaptation": null
     },
     "METHODS.md": {
-      "source_sha256": "3b788155fc4e1dc46710bd33cee4265997f29606ab10d446df6b756afbc6792b",
-      "mirror_sha256": "3b788155fc4e1dc46710bd33cee4265997f29606ab10d446df6b756afbc6792b",
+      "source_sha256": "44a7190325ff3099a748cd42cf5772c0722a70c67e21bdf206d4bcb9d1eadf22",
+      "mirror_sha256": "44a7190325ff3099a748cd42cf5772c0722a70c67e21bdf206d4bcb9d1eadf22",
       "adaptation": null
     },
     "NOTICE": {
-      "source_sha256": "1f4b6f3b5b4dbcbd4b6f6ad5a61ebefc0a8466adac2d4c0e9bf9dc68510183cd",
-      "mirror_sha256": "1f4b6f3b5b4dbcbd4b6f6ad5a61ebefc0a8466adac2d4c0e9bf9dc68510183cd",
+      "source_sha256": "616ce2889ce8ed21cd3936bad92e6ecd695aa6a5220088de55754a1036cd154d",
+      "mirror_sha256": "616ce2889ce8ed21cd3936bad92e6ecd695aa6a5220088de55754a1036cd154d",
       "adaptation": null
     },
     "README.md": {
-      "source_sha256": "473cdff526a5b196eabab4aac069becad2d78106efd8acac737521f62bcb5afa",
-      "mirror_sha256": "a2a666109946f4afb0e6d02b90746bf2a69fd1519f91fc09244fdbfa4c36d870",
+      "source_sha256": "fe4f2c1202a5fbf04bb26ab34e7dcf59b403152b27b76665b06673b2aada53c5",
+      "mirror_sha256": "5df09ef845989a0ea6f5d464722563f57d4d3bab25967bfeffaf78841ab2d1c6",
       "adaptation": "Mirror note and/or links to omitted canonical evidence"
     },
     "RESULTS.md": {
@@ -95,8 +95,8 @@
       "adaptation": null
     },
     "docs/REPRODUCTION_V020.md": {
-      "source_sha256": "8b833073ac29a88b84861f8891e288505bf05cb46bee35451d72c2b8bc55fcca",
-      "mirror_sha256": "8b833073ac29a88b84861f8891e288505bf05cb46bee35451d72c2b8bc55fcca",
+      "source_sha256": "c6c4ee11cd7fa8b47c520f88f07cc00ce5e4d2bbad6bef0c1a1c6e95baf2649b",
+      "mirror_sha256": "c6c4ee11cd7fa8b47c520f88f07cc00ce5e4d2bbad6bef0c1a1c6e95baf2649b",
       "adaptation": null
     },
     "docs/RESULTS_SUMMARY.md": {
@@ -112,6 +112,11 @@
     "docs/UPDATE_20261027.md": {
       "source_sha256": "00cfcd90d18f9e9494d4b9e7d06e0957f8020020077ed89d384de9c4d94d39de",
       "mirror_sha256": "00cfcd90d18f9e9494d4b9e7d06e0957f8020020077ed89d384de9c4d94d39de",
+      "adaptation": null
+    },
+    "docs/UPDATE_V030.md": {
+      "source_sha256": "d2059b56cfefaff771a17068a924c3181a378241fae80ddd381420fb10aa7883",
+      "mirror_sha256": "d2059b56cfefaff771a17068a924c3181a378241fae80ddd381420fb10aa7883",
       "adaptation": null
     },
     "figures/family_blocks.png": {
@@ -259,16 +264,6 @@
       "mirror_sha256": "53dd34fac4a29fc7ee58fa9d92c7892ea6884431c3bd3d0dc93def7bbd0b8b78",
       "adaptation": null
     },
-    "provenance/metadata/qwen3-30b-a3b/config.json": {
-      "source_sha256": "2850ddb3bf7aecad20b611e2d44f3077fc8193f4827c93beddd4c02ad63c2297",
-      "mirror_sha256": "2850ddb3bf7aecad20b611e2d44f3077fc8193f4827c93beddd4c02ad63c2297",
-      "adaptation": null
-    },
-    "provenance/metadata/qwen3-30b-a3b/model.safetensors.index.json": {
-      "source_sha256": "df0d481ec595c55a0ba58426d517390c6214a566ec4ff1c8fc4bbce9f57b3c24",
-      "mirror_sha256": "df0d481ec595c55a0ba58426d517390c6214a566ec4ff1c8fc4bbce9f57b3c24",
-      "adaptation": null
-    },
     "provenance/metadata/qwen3-30b-a3b-2507/config.json": {
       "source_sha256": "a1ee086a68d0cbfc87316da00ba4b8507bd1292978108e2496201a30a450f438",
       "mirror_sha256": "a1ee086a68d0cbfc87316da00ba4b8507bd1292978108e2496201a30a450f438",
@@ -277,6 +272,16 @@
     "provenance/metadata/qwen3-30b-a3b-2507/model.safetensors.index.json": {
       "source_sha256": "8dde190b862c7c80ec7403c6495de00c60bbaf246ed479cee4506284989c584c",
       "mirror_sha256": "8dde190b862c7c80ec7403c6495de00c60bbaf246ed479cee4506284989c584c",
+      "adaptation": null
+    },
+    "provenance/metadata/qwen3-30b-a3b/config.json": {
+      "source_sha256": "2850ddb3bf7aecad20b611e2d44f3077fc8193f4827c93beddd4c02ad63c2297",
+      "mirror_sha256": "2850ddb3bf7aecad20b611e2d44f3077fc8193f4827c93beddd4c02ad63c2297",
+      "adaptation": null
+    },
+    "provenance/metadata/qwen3-30b-a3b/model.safetensors.index.json": {
+      "source_sha256": "df0d481ec595c55a0ba58426d517390c6214a566ec4ff1c8fc4bbce9f57b3c24",
+      "mirror_sha256": "df0d481ec595c55a0ba58426d517390c6214a566ec4ff1c8fc4bbce9f57b3c24",
       "adaptation": null
     },
     "provenance/metadata/qwen3-32b/config.json": {
@@ -369,16 +374,6 @@
       "mirror_sha256": "aca8afed9da75b0f050b408d270766fd77627f1af401e240f61c3b47d0db02f9",
       "adaptation": null
     },
-    "provenance/metadata/qwen35-35b-a3b/config.json": {
-      "source_sha256": "5e4d7f74fec2f360eb9cfbfcd6ec0c4c76e684d3a11caaed259d9fd9bfbc7944",
-      "mirror_sha256": "5e4d7f74fec2f360eb9cfbfcd6ec0c4c76e684d3a11caaed259d9fd9bfbc7944",
-      "adaptation": null
-    },
-    "provenance/metadata/qwen35-35b-a3b/model.safetensors.index.json": {
-      "source_sha256": "d8d0b7ca4e61ae107e3e87a3ff21136b3ac7c789e64bb24267227ca804e04205",
-      "mirror_sha256": "d8d0b7ca4e61ae107e3e87a3ff21136b3ac7c789e64bb24267227ca804e04205",
-      "adaptation": null
-    },
     "provenance/metadata/qwen35-35b-a3b-base/config.json": {
       "source_sha256": "5e4d7f74fec2f360eb9cfbfcd6ec0c4c76e684d3a11caaed259d9fd9bfbc7944",
       "mirror_sha256": "5e4d7f74fec2f360eb9cfbfcd6ec0c4c76e684d3a11caaed259d9fd9bfbc7944",
@@ -387,6 +382,16 @@
     "provenance/metadata/qwen35-35b-a3b-base/model.safetensors.index.json": {
       "source_sha256": "a0359304182957280428cf714879ca6a58b81001f8b03c427f80bf1c5beebb8d",
       "mirror_sha256": "a0359304182957280428cf714879ca6a58b81001f8b03c427f80bf1c5beebb8d",
+      "adaptation": null
+    },
+    "provenance/metadata/qwen35-35b-a3b/config.json": {
+      "source_sha256": "5e4d7f74fec2f360eb9cfbfcd6ec0c4c76e684d3a11caaed259d9fd9bfbc7944",
+      "mirror_sha256": "5e4d7f74fec2f360eb9cfbfcd6ec0c4c76e684d3a11caaed259d9fd9bfbc7944",
+      "adaptation": null
+    },
+    "provenance/metadata/qwen35-35b-a3b/model.safetensors.index.json": {
+      "source_sha256": "d8d0b7ca4e61ae107e3e87a3ff21136b3ac7c789e64bb24267227ca804e04205",
+      "mirror_sha256": "d8d0b7ca4e61ae107e3e87a3ff21136b3ac7c789e64bb24267227ca804e04205",
       "adaptation": null
     },
     "provenance/metadata/qwen35-397b-a17b/config.json": {
@@ -492,6 +497,11 @@
     "provenance/update_20261027.json": {
       "source_sha256": "b594a0a4b93ea090e357672ecabbc66d901211a347bcb11bb57e6d9011eeb982",
       "mirror_sha256": "b594a0a4b93ea090e357672ecabbc66d901211a347bcb11bb57e6d9011eeb982",
+      "adaptation": null
+    },
+    "provenance/update_v030.json": {
+      "source_sha256": "90aef5cbd0f4fcabad7ce457c5203b98d9fbca43787df63b8e798cd852befc5e",
+      "mirror_sha256": "90aef5cbd0f4fcabad7ce457c5203b98d9fbca43787df63b8e798cd852befc5e",
       "adaptation": null
     },
     "requirements.txt": {
@@ -629,6 +639,316 @@
       "mirror_sha256": "0b4348a38307aa3e0e86dd83fe3c431564b626b968d9719bf3e3883d440250b6",
       "adaptation": null
     },
+    "studies/qwen3_base_followup/COLUMNS.md": {
+      "source_sha256": "e84ad28d74591f151439200f12f4d4c8b1633957f35c78aa5853a799bede8181",
+      "mirror_sha256": "e84ad28d74591f151439200f12f4d4c8b1633957f35c78aa5853a799bede8181",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/CORRECTIONS.md": {
+      "source_sha256": "50232fe7afd1cca9307e5447f9bf3a0a50aed2602eaf8c317a525f88552873f7",
+      "mirror_sha256": "50232fe7afd1cca9307e5447f9bf3a0a50aed2602eaf8c317a525f88552873f7",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/FETCH_PLAN.json": {
+      "source_sha256": "09ce464ff93d5fa2e0b7532b395c67daeca98f592a480e9ac61d3cfc9ec24292",
+      "mirror_sha256": "09ce464ff93d5fa2e0b7532b395c67daeca98f592a480e9ac61d3cfc9ec24292",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/README.md": {
+      "source_sha256": "4f060b482a8de0052ce8ebd6952558f213f6e0257b5a33f1661ef1c54d988bc6",
+      "mirror_sha256": "4f060b482a8de0052ce8ebd6952558f213f6e0257b5a33f1661ef1c54d988bc6",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/RESULTS.md": {
+      "source_sha256": "5316827cf76ebe625cb0198552313109b217250dfa7df44aaf06da87e665c25b",
+      "mirror_sha256": "5316827cf76ebe625cb0198552313109b217250dfa7df44aaf06da87e665c25b",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/audit/capture_validation.json": {
+      "source_sha256": "c157a61120b5ff4ac9608cea21a7c36795b05f3eab717f462900752ab551c81e",
+      "mirror_sha256": "c157a61120b5ff4ac9608cea21a7c36795b05f3eab717f462900752ab551c81e",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/audit/portable_changes.json": {
+      "source_sha256": "6a2d1a60398993d6b591c8fa2b6515928ce0d57061086df3a59da1d5718f6c3e",
+      "mirror_sha256": "6a2d1a60398993d6b591c8fa2b6515928ce0d57061086df3a59da1d5718f6c3e",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/audit/portable_check.json": {
+      "source_sha256": "b90e4f4548f7602831e4c31f846d7cb599d627e160e4d8e85f4a3367e5af2763",
+      "mirror_sha256": "b90e4f4548f7602831e4c31f846d7cb599d627e160e4d8e85f4a3367e5af2763",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/audit/same_bytes_check.json": {
+      "source_sha256": "f2f2b71cb2e733f563772acb059fd2e38d3defdcc4faa038e5ca796642545cf8",
+      "mirror_sha256": "f2f2b71cb2e733f563772acb059fd2e38d3defdcc4faa038e5ca796642545cf8",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/code/check_cached_weights.py": {
+      "source_sha256": "1fe46b1c1f7b2625a257a0b9dfd2c4768ccce55ab2f0465f093a1615593f3ebb",
+      "mirror_sha256": "1fe46b1c1f7b2625a257a0b9dfd2c4768ccce55ab2f0465f093a1615593f3ebb",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/code/metrics.py": {
+      "source_sha256": "507a557cac92b0fb4ee151ef0389f3dbcbd21d5b4f48278d09661e24f32745fa",
+      "mirror_sha256": "507a557cac92b0fb4ee151ef0389f3dbcbd21d5b4f48278d09661e24f32745fa",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/code/test_metrics.py": {
+      "source_sha256": "6162476151cc6854b6c6b2bc7db4cf8d9eba6715086d0649b6d6dd85ea46c9ec",
+      "mirror_sha256": "6162476151cc6854b6c6b2bc7db4cf8d9eba6715086d0649b6d6dd85ea46c9ec",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/code/verify_and_report.py": {
+      "source_sha256": "ea9dbe2e3e466d013a3ce59f1345912a1dc1a83294bb8710ea0a4f9194a27be4",
+      "mirror_sha256": "ea9dbe2e3e466d013a3ce59f1345912a1dc1a83294bb8710ea0a4f9194a27be4",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/attention_mapped_pairs.csv": {
+      "source_sha256": "231811f6f5f7a74a600990fc8c3a93221f2964f039d81ac33bf5deed98675fc3",
+      "mirror_sha256": "231811f6f5f7a74a600990fc8c3a93221f2964f039d81ac33bf5deed98675fc3",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/base30_offsets.csv": {
+      "source_sha256": "8dd80bf74b4680e1fa484490aa11cdab6ea13e1ebe880a8a5d85693c0d7240d4",
+      "mirror_sha256": "8dd80bf74b4680e1fa484490aa11cdab6ea13e1ebe880a8a5d85693c0d7240d4",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/base30_within_pairs.csv": {
+      "source_sha256": "73b7f3a9ecbad32346d0927b327a83fb9c14d2efdfe58e027bd4dce3b257f0d1",
+      "mirror_sha256": "73b7f3a9ecbad32346d0927b327a83fb9c14d2efdfe58e027bd4dce3b257f0d1",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/gate_mapped_pairs.csv": {
+      "source_sha256": "0d73da2e78fee5af07ac1cb6d1a867b4b107b116e7eb84987ebcef55c8c1fd0a",
+      "mirror_sha256": "0d73da2e78fee5af07ac1cb6d1a867b4b107b116e7eb84987ebcef55c8c1fd0a",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/gate_neuron_pairs.csv": {
+      "source_sha256": "3ec67510de6ba47b445e953177b90187803146ef5d2f30dbd38126ab4fde0349",
+      "mirror_sha256": "3ec67510de6ba47b445e953177b90187803146ef5d2f30dbd38126ab4fde0349",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/k_proj_base14_to_32.npy": {
+      "source_sha256": "f7552feda1b6f5f320e20db17f7be9ad76fa592f55204da1cc7db6d41b4d032a",
+      "mirror_sha256": "f7552feda1b6f5f320e20db17f7be9ad76fa592f55204da1cc7db6d41b4d032a",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/k_proj_base14_to_it14.npy": {
+      "source_sha256": "4f7008a9569610ce732200531cb3225a414f7ce088bf6e0a999beba9da614ead",
+      "mirror_sha256": "4f7008a9569610ce732200531cb3225a414f7ce088bf6e0a999beba9da614ead",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/k_proj_it14_to_32.npy": {
+      "source_sha256": "d098a77731d958abf9f243b36c8bdb4b95c29f290e55ed9c89d55fac604e3caa",
+      "mirror_sha256": "d098a77731d958abf9f243b36c8bdb4b95c29f290e55ed9c89d55fac604e3caa",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/summary.json": {
+      "source_sha256": "d3e2afcc1f77e49f1adf3b5ba27a646298ff92f9ab1c94ccfb1ce5931a13b5a3",
+      "mirror_sha256": "d3e2afcc1f77e49f1adf3b5ba27a646298ff92f9ab1c94ccfb1ce5931a13b5a3",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/v_proj_base14_to_32.npy": {
+      "source_sha256": "2857b7caec127cee3f7f4879931e0977d2c30ffc32158fbe50503939e6c893f4",
+      "mirror_sha256": "2857b7caec127cee3f7f4879931e0977d2c30ffc32158fbe50503939e6c893f4",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/v_proj_base14_to_it14.npy": {
+      "source_sha256": "480baf8de1d4ed9dad8818301bb3004f377ff8b58bcdea268854fa04fd220d2e",
+      "mirror_sha256": "480baf8de1d4ed9dad8818301bb3004f377ff8b58bcdea268854fa04fd220d2e",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/data/v_proj_it14_to_32.npy": {
+      "source_sha256": "882a881e136f2401fa44de81c7e487cf95a003252662e2c5ca70b1d3eb78970b",
+      "mirror_sha256": "882a881e136f2401fa44de81c7e487cf95a003252662e2c5ca70b1d3eb78970b",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/models.lock.json": {
+      "source_sha256": "ca0b1ac1528bbb9fbe1eb4d400a18dcf1114eaec6c3eaced13611c1517b47855",
+      "mirror_sha256": "ca0b1ac1528bbb9fbe1eb4d400a18dcf1114eaec6c3eaced13611c1517b47855",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/fetched_payloads.json": {
+      "source_sha256": "95ebde877c1b1e63e1e702737502620112dddcf5058ec1d77aa7b9aaca9de558",
+      "mirror_sha256": "95ebde877c1b1e63e1e702737502620112dddcf5058ec1d77aa7b9aaca9de558",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/README.md": {
+      "source_sha256": "dd321759a5304d5c2a253310585f3bfe1e011e9bb24202562d2cc306dde991ca",
+      "mirror_sha256": "dd321759a5304d5c2a253310585f3bfe1e011e9bb24202562d2cc306dde991ca",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/config.json": {
+      "source_sha256": "eb65771c8f108f88e4d87f771e1c9d40b7e35bc8070be8c97246c9446ccdf179",
+      "mirror_sha256": "eb65771c8f108f88e4d87f771e1c9d40b7e35bc8070be8c97246c9446ccdf179",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model-00001-of-00008.safetensors.header.json": {
+      "source_sha256": "0aec356b28806dcafbecf848be94ea7b72647c3f0795ef47bb9942bd34d2851c",
+      "mirror_sha256": "0aec356b28806dcafbecf848be94ea7b72647c3f0795ef47bb9942bd34d2851c",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model-00002-of-00008.safetensors.header.json": {
+      "source_sha256": "597af6ab8df5bacd8181d5859b5a8281f7197d53fad4bca53cae232d7b573bae",
+      "mirror_sha256": "597af6ab8df5bacd8181d5859b5a8281f7197d53fad4bca53cae232d7b573bae",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model-00003-of-00008.safetensors.header.json": {
+      "source_sha256": "c605837aaaf4039569fc9918a6308cbef06c5d8e513697798a97e171c3fbb5c4",
+      "mirror_sha256": "c605837aaaf4039569fc9918a6308cbef06c5d8e513697798a97e171c3fbb5c4",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model-00004-of-00008.safetensors.header.json": {
+      "source_sha256": "764ed3e5c63bff9aaeef9d8fc465650abbf6a1649e531e32678a17ce88c07a88",
+      "mirror_sha256": "764ed3e5c63bff9aaeef9d8fc465650abbf6a1649e531e32678a17ce88c07a88",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model-00005-of-00008.safetensors.header.json": {
+      "source_sha256": "a0dd866a79f2ae0e44d43fe57e5c5da29dc97cfd61ab83f28c577245fd8db2e7",
+      "mirror_sha256": "a0dd866a79f2ae0e44d43fe57e5c5da29dc97cfd61ab83f28c577245fd8db2e7",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model-00006-of-00008.safetensors.header.json": {
+      "source_sha256": "649ae30432a40875779d09eb3ee99ada0dc5a9c1810dffd5584043b845bfc0fc",
+      "mirror_sha256": "649ae30432a40875779d09eb3ee99ada0dc5a9c1810dffd5584043b845bfc0fc",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model-00007-of-00008.safetensors.header.json": {
+      "source_sha256": "e5c1ae384f6dd0ea826041d57446b6e86c65e33c82c01b380ca83b88d0aff7ac",
+      "mirror_sha256": "e5c1ae384f6dd0ea826041d57446b6e86c65e33c82c01b380ca83b88d0aff7ac",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b-base/model.safetensors.index.json": {
+      "source_sha256": "8bb45057e5de5b87096da94fab4492dfa0d7b9fc1b7fe9bc0d91cb9cd6c19bcb",
+      "mirror_sha256": "8bb45057e5de5b87096da94fab4492dfa0d7b9fc1b7fe9bc0d91cb9cd6c19bcb",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b/config.json": {
+      "source_sha256": "e73c3664ca09b10a673fef0c22e8a6b456201d49bd4713c9691f775720e8857a",
+      "mirror_sha256": "e73c3664ca09b10a673fef0c22e8a6b456201d49bd4713c9691f775720e8857a",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-14b/model.safetensors.index.json": {
+      "source_sha256": "62d7ad35757bae5e7baa452cb1483178b7daa50e869e923226b8da10871f7ebc",
+      "mirror_sha256": "62d7ad35757bae5e7baa452cb1483178b7daa50e869e923226b8da10871f7ebc",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/README.md": {
+      "source_sha256": "f1b62f378b4da12da42478f7d987239259842cdc22432e830f3143e07e7abd59",
+      "mirror_sha256": "f1b62f378b4da12da42478f7d987239259842cdc22432e830f3143e07e7abd59",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/config.json": {
+      "source_sha256": "7e4142150e976c6b4796adf88fce0a2a23e581ed63bcede7e1d69a645e73b362",
+      "mirror_sha256": "7e4142150e976c6b4796adf88fce0a2a23e581ed63bcede7e1d69a645e73b362",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00001-of-00016.safetensors.header.json": {
+      "source_sha256": "b63c45387fadca2896d79f5ed951ba1c3bf54239bce321c3bc014ce20f63f9db",
+      "mirror_sha256": "b63c45387fadca2896d79f5ed951ba1c3bf54239bce321c3bc014ce20f63f9db",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00002-of-00016.safetensors.header.json": {
+      "source_sha256": "91aedb89a0528b696df6fdceee8900ea7963302d2c52355302055483f3e7e4ac",
+      "mirror_sha256": "91aedb89a0528b696df6fdceee8900ea7963302d2c52355302055483f3e7e4ac",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00003-of-00016.safetensors.header.json": {
+      "source_sha256": "5c9a312ebc74fcef99035bb83ce8a6ca8a677abd97af283db30a279404c4efd0",
+      "mirror_sha256": "5c9a312ebc74fcef99035bb83ce8a6ca8a677abd97af283db30a279404c4efd0",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00004-of-00016.safetensors.header.json": {
+      "source_sha256": "db975d2bf0f9a3fed87fff41c3cf9ade9e81ee50d64267f15f63858807425c35",
+      "mirror_sha256": "db975d2bf0f9a3fed87fff41c3cf9ade9e81ee50d64267f15f63858807425c35",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00005-of-00016.safetensors.header.json": {
+      "source_sha256": "2775e827de1c9d9dd48d83f64acc7074051a3f8e245f7d20143a2e93758a72a0",
+      "mirror_sha256": "2775e827de1c9d9dd48d83f64acc7074051a3f8e245f7d20143a2e93758a72a0",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00006-of-00016.safetensors.header.json": {
+      "source_sha256": "56daa6ab5f3e3e638ad2855fbef9522132126ac3c15decf3a14fc49fc3c899b7",
+      "mirror_sha256": "56daa6ab5f3e3e638ad2855fbef9522132126ac3c15decf3a14fc49fc3c899b7",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00007-of-00016.safetensors.header.json": {
+      "source_sha256": "bfd87a3c91b377dc58e453896d7c0d8cb063bb4bcc5face545966ee6b4814ab6",
+      "mirror_sha256": "bfd87a3c91b377dc58e453896d7c0d8cb063bb4bcc5face545966ee6b4814ab6",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00008-of-00016.safetensors.header.json": {
+      "source_sha256": "bf8758df495a0266e34ffffe55813179637064eb58c94d3d4bb48a14c7d91571",
+      "mirror_sha256": "bf8758df495a0266e34ffffe55813179637064eb58c94d3d4bb48a14c7d91571",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00009-of-00016.safetensors.header.json": {
+      "source_sha256": "88582c03832149fa0c1e53533e6d0569a0acad47a77d753dc59bb3c3e68f2fe9",
+      "mirror_sha256": "88582c03832149fa0c1e53533e6d0569a0acad47a77d753dc59bb3c3e68f2fe9",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00010-of-00016.safetensors.header.json": {
+      "source_sha256": "c878ff9a0b67d3ee52abebe722a8a7288aa0fc94df154891b082948b396a59e9",
+      "mirror_sha256": "c878ff9a0b67d3ee52abebe722a8a7288aa0fc94df154891b082948b396a59e9",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00011-of-00016.safetensors.header.json": {
+      "source_sha256": "5cf8bdccd887b4c5fba83b91b6817196f5d4413f48cc0d214fc3aa0437894397",
+      "mirror_sha256": "5cf8bdccd887b4c5fba83b91b6817196f5d4413f48cc0d214fc3aa0437894397",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00012-of-00016.safetensors.header.json": {
+      "source_sha256": "989383993d29667e2bce2619a0635cea6fb33569abcb4cc49c233738ba499726",
+      "mirror_sha256": "989383993d29667e2bce2619a0635cea6fb33569abcb4cc49c233738ba499726",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00013-of-00016.safetensors.header.json": {
+      "source_sha256": "4c26db52facab5611d6d25805e2cbdcbc17ce24d5f3a0eb7389a64f342329055",
+      "mirror_sha256": "4c26db52facab5611d6d25805e2cbdcbc17ce24d5f3a0eb7389a64f342329055",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00014-of-00016.safetensors.header.json": {
+      "source_sha256": "7ddb6b0867a3e241be01f3723bb4d1a224a60c7890e30ecffaa2e80f35d3812e",
+      "mirror_sha256": "7ddb6b0867a3e241be01f3723bb4d1a224a60c7890e30ecffaa2e80f35d3812e",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model-00015-of-00016.safetensors.header.json": {
+      "source_sha256": "8400fdad284fb7decd34ddb2703010950f4391098f2f785263e9f5956c2b9008",
+      "mirror_sha256": "8400fdad284fb7decd34ddb2703010950f4391098f2f785263e9f5956c2b9008",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-30b-a3b-base/model.safetensors.index.json": {
+      "source_sha256": "df0d481ec595c55a0ba58426d517390c6214a566ec4ff1c8fc4bbce9f57b3c24",
+      "mirror_sha256": "df0d481ec595c55a0ba58426d517390c6214a566ec4ff1c8fc4bbce9f57b3c24",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-32b/config.json": {
+      "source_sha256": "97e295b63283935788fac5e4f8860862a56d4089538cafc93f0431f2ebe483bb",
+      "mirror_sha256": "97e295b63283935788fac5e4f8860862a56d4089538cafc93f0431f2ebe483bb",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/metadata/qwen3-32b/model.safetensors.index.json": {
+      "source_sha256": "bed42c6c55274bc08a1f616bceb3bcb84b3f02cb6584c573bd18c6519291ecd0",
+      "mirror_sha256": "bed42c6c55274bc08a1f616bceb3bcb84b3f02cb6584c573bd18c6519291ecd0",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/prediction.json": {
+      "source_sha256": "6461abcb7800857fc56ef874b2d68b37e4f12a06ee489ecd4769131528048e19",
+      "mirror_sha256": "6461abcb7800857fc56ef874b2d68b37e4f12a06ee489ecd4769131528048e19",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/runtime.json": {
+      "source_sha256": "25808df169117026647b629a690141b2e2f94ea44f7d5a50ba6946d07c4809f5",
+      "mirror_sha256": "25808df169117026647b629a690141b2e2f94ea44f7d5a50ba6946d07c4809f5",
+      "adaptation": null
+    },
+    "studies/qwen3_base_followup/provenance/verified_legacy_payloads.json": {
+      "source_sha256": "6fad3c7b1d8d554c57cf14d327e0aea08fbf13b50a7cf851dc2bf92757e70a12",
+      "mirror_sha256": "6fad3c7b1d8d554c57cf14d327e0aea08fbf13b50a7cf851dc2bf92757e70a12",
+      "adaptation": null
+    },
     "studies/qwen3_response/COLUMNS.md": {
       "source_sha256": "ae1994d1ebd414cd2a1defd5df0bb79c03e0a3af6ae6cd3774533312e10e099b",
       "mirror_sha256": "ae1994d1ebd414cd2a1defd5df0bb79c03e0a3af6ae6cd3774533312e10e099b",
@@ -641,7 +961,7 @@
     },
     "studies/qwen3_response/README.md": {
       "source_sha256": "10b8f2a281c5838a53762236cdcfe41e14bf4cf37aad12813f15087dc772d47b",
-      "mirror_sha256": "76a8ea35e94ec56d937599758b1c7e6fe391fff15662547faed43ec1458ce117",
+      "mirror_sha256": "e4b5d3c223192568ba796a7a31d900980ca9e63fd4034afac74a4d3b08f7774c",
       "adaptation": "Mirror note and/or links to omitted canonical evidence"
     },
     "studies/qwen3_response/READOUT.txt": {
@@ -1125,8 +1445,8 @@
       "adaptation": null
     },
     "checksums.json": {
-      "source_sha256": "5b5c45ac2c2fe9ec48a2a65f8dfb1e60758ef580688f0646bcbe0139f36e70ca",
-      "mirror_sha256": "5b5c45ac2c2fe9ec48a2a65f8dfb1e60758ef580688f0646bcbe0139f36e70ca",
+      "source_sha256": "7bbe9a35a423051a4c72596c4a43e9e0aa8f3b13f234adfbeddb9cce979c7dd5",
+      "mirror_sha256": "7bbe9a35a423051a4c72596c4a43e9e0aa8f3b13f234adfbeddb9cce979c7dd5",
       "adaptation": null
     }
   },

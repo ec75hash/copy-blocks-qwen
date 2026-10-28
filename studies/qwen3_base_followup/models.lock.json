@@ -1,0 +1,104 @@
+{
+  "models": [
+    {
+      "repo_id": "Qwen/Qwen3-14B",
+      "slug": "qwen3-14b",
+      "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "decoder_prefix": "model.layers.",
+      "depth": 40,
+      "period": 8,
+      "region": [
+        0,
+        39
+      ],
+      "tensors": [
+        "self_attn.k_proj.weight",
+        "self_attn.v_proj.weight",
+        "mlp.gate_proj.weight"
+      ],
+      "min_pairs": 6,
+      "role": "no_block_reported",
+      "note": "chart: no block",
+      "metadata_sha256": {
+        "config.json": "e73c3664ca09b10a673fef0c22e8a6b456201d49bd4713c9691f775720e8857a",
+        "model.safetensors.index.json": "62d7ad35757bae5e7baa452cb1483178b7daa50e869e923226b8da10871f7ebc"
+      },
+      "stage": 2
+    },
+    {
+      "repo_id": "Qwen/Qwen3-32B",
+      "slug": "qwen3-32b",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+      "decoder_prefix": "model.layers.",
+      "depth": 64,
+      "period": 24,
+      "region": [
+        8,
+        55
+      ],
+      "tensors": [
+        "self_attn.k_proj.weight",
+        "self_attn.v_proj.weight",
+        "mlp.gate_proj.weight"
+      ],
+      "min_pairs": 6,
+      "role": "primary",
+      "note": "chart: L32-55 ~ L8-31; v_proj added 2026-10-21 as a second attention family",
+      "metadata_sha256": {
+        "config.json": "97e295b63283935788fac5e4f8860862a56d4089538cafc93f0431f2ebe483bb",
+        "model.safetensors.index.json": "bed42c6c55274bc08a1f616bceb3bcb84b3f02cb6584c573bd18c6519291ecd0"
+      },
+      "stage": 1
+    },
+    {
+      "repo_id": "Qwen/Qwen3-14B-Base",
+      "slug": "qwen3-14b-base",
+      "revision": "0b0bd3732e2c374d483664439ea334928b65f304",
+      "decoder_prefix": "model.layers.",
+      "depth": 40,
+      "period": 8,
+      "region": [
+        0,
+        39
+      ],
+      "tensors": [
+        "self_attn.k_proj.weight",
+        "self_attn.v_proj.weight",
+        "mlp.gate_proj.weight"
+      ],
+      "min_pairs": 6,
+      "role": "base_followup_not_part_of_original_survey",
+      "metadata_sha256": {
+        "config.json": "eb65771c8f108f88e4d87f771e1c9d40b7e35bc8070be8c97246c9446ccdf179",
+        "model.safetensors.index.json": "8bb45057e5de5b87096da94fab4492dfa0d7b9fc1b7fe9bc0d91cb9cd6c19bcb",
+        "README.md": "dd321759a5304d5c2a253310585f3bfe1e011e9bb24202562d2cc306dde991ca"
+      },
+      "stage": 2
+    },
+    {
+      "repo_id": "Qwen/Qwen3-30B-A3B-Base",
+      "slug": "qwen3-30b-a3b-base",
+      "revision": "1b75feb79f60b8dc6c5bc769a898c206a1c6a4f9",
+      "decoder_prefix": "model.layers.",
+      "depth": 48,
+      "period": 12,
+      "region": [
+        6,
+        41
+      ],
+      "tensors": [
+        "self_attn.k_proj.weight",
+        "mlp.gate.weight"
+      ],
+      "min_pairs": 6,
+      "role": "base_followup_not_part_of_original_survey",
+      "metadata_sha256": {
+        "config.json": "7e4142150e976c6b4796adf88fce0a2a23e581ed63bcede7e1d69a645e73b362",
+        "model.safetensors.index.json": "df0d481ec595c55a0ba58426d517390c6214a566ec4ff1c8fc4bbce9f57b3c24",
+        "README.md": "f1b62f378b4da12da42478f7d987239259842cdc22432e830f3143e07e7abd59"
+      },
+      "stage": 2
+    }
+  ],
+  "scope": "Separate post-publication follow-up"
+}

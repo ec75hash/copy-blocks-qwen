@@ -1,23 +1,24 @@
-# Reproduce the v0.2.1 evidence
+# Reproduce the v0.3.0 evidence
 
 Use Python 3.11+ and the root `requirements.txt`. The full release contains about
 3.6 GB of evidence and documentation, including roughly 3.5 GB (3.3 GiB) of
 response-study files. Model weights are not included. Read tables and plots online
 without downloading the large arrays.
 
-## Weight studies only
+## Weight studies only (including the Base follow-up)
 
-The two weight studies' offline numerical reductions need under 50 MB of study
+The weight studies' offline numerical reductions need under 70 MB of study
 files, plus installed Python dependencies. A selective download omits the response
-archive. This command uses `hf` from `huggingface_hub` 1.x and the `v0.2.1` tag;
+archive. This command uses `hf` from `huggingface_hub` 1.x and the `v0.3.0` tag;
 if the tag is unavailable, use a verified release commit rather than an unpinned
 `main` revision. The version tag is created when the release is published:
 
 ```bash
-hf download ec75hash/copy-blocks-qwen --repo-type dataset --revision v0.2.1 --include "studies/qwen25_weights/**" --include "studies/qwen3_weights/**" --include "requirements.txt" --local-dir copy-blocks-qwen
+hf download ec75hash/copy-blocks-qwen --repo-type dataset --revision v0.3.0 --include "studies/qwen25_weights/**" --include "studies/qwen3_weights/**" --include "studies/qwen3_base_followup/**" --include "requirements.txt" --local-dir copy-blocks-qwen
 cd copy-blocks-qwen
 python studies/qwen25_weights/code/verify_and_plot.py --out reproduction/qwen25_weights_readout
 python studies/qwen3_weights/code/verify_and_plot.py --out reproduction/qwen3_weights_readout
+python studies/qwen3_base_followup/code/verify_and_report.py --out reproduction/qwen3_base_followup
 ```
 
 These checks verify retained matrices and tables. Fresh tensor-byte checks are
@@ -37,6 +38,7 @@ python -m unittest discover -s tests
 python scripts/verify_release.py
 python studies/qwen25_weights/code/verify_and_plot.py --out reproduction/qwen25_weights_readout
 python studies/qwen3_weights/code/verify_and_plot.py --out reproduction/qwen3_weights_readout
+python studies/qwen3_base_followup/code/verify_and_report.py --out reproduction/qwen3_base_followup
 python studies/qwen3_response/code/reduce_and_plot.py --out reproduction/qwen3_response
 python studies/qwen3_response/code/verify_capture.py
 python scripts/verify_update.py --reproduced reproduction
@@ -66,3 +68,5 @@ Portable paths do not establish fresh cross-platform inference reproducibility.
 figures are written into `reproduction/`. The completed as-run records under each
 study are historical; later corrections and metadata path redactions are recorded
 separately in [amendments](AMENDMENTS.json).
+
+The Base-study reducer independently checks saved cross matrices, mapped-pair tables, all 91,392 sampled row values and both Base 30B families, and regenerates its RESULTS.md. An optional checker remeasures the same raw cached payloads; those model-weight caches are not bundled. See the [Base study](../studies/qwen3_base_followup/README.md#reproduce) for its exact requirements.

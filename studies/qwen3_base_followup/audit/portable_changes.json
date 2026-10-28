@@ -1,0 +1,11 @@
+{
+  "original_check_script_sha256": "144bfd658c3c5f28a506a76957a7376851abb9c83106f6f0bf481e4bd26c248c",
+  "portable_check_script_sha256": "1fe46b1c1f7b2625a257a0b9dfd2c4768ccce55ab2f0465f093a1615593f3ebb",
+  "changes": [
+    "Input/output and cache roots are explicit CLI paths.",
+    "Uses the scanner shipped with this release.",
+    "Accepts only known reference cache entries; checks raw-range sidecar/published hashes.",
+    "Assertions enforce the observed comparison checks; mathematical unit_stack/row_cos functions unchanged."
+  ],
+  "new_model_inference": false
+}

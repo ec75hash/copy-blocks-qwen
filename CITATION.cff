@@ -5,7 +5,7 @@ type: dataset
 authors:
   - family-names: Shorthill
     given-names: Jeffrey
-version: 0.2.1
+version: 0.3.0
 date-released: 2026-10-27
 license: CC-BY-4.0
 repository-code: "https://github.com/ec75hash/copy-blocks-qwen"

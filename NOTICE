@@ -33,3 +33,5 @@ release measures, and the interpretation are Jeffrey Shorthill's.
 Version 0.2.0 adds the separately documented Qwen3-14B/32B weight comparisons and Qwen3-32B Q8 response measurements. WikiText-103 text excerpts retain their upstream license declarations and attribution; see studies/qwen3_response/corpus/NOTICE.md. Capture and reduction code was developed with Codex assistance; the retained historical weight scripts were developed with Claude assistance.
 
 The Qwen2.5-14B/32B addition includes corrected cached-capture measurements developed with Claude assistance and same-cache byte-level recomputation and packaging developed with Codex assistance; no model weights are bundled.
+
+Version 0.3.0 adds a separate Base-reference study of Qwen/Qwen3-14B-Base and Qwen/Qwen3-30B-A3B-Base alongside the pinned non-Base 14B and 32B references. Small upstream configs, indexes, model cards and decoded header metadata retain their upstream licenses. No model-weight payloads are redistributed. Capture/reduction and packaging used Codex assistance; an independent same-input numerical check used Claude assistance.

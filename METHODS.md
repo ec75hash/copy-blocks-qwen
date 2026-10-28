@@ -1,5 +1,7 @@
 # Methods
 
+The separate v0.3.0 [Base-reference study](studies/qwen3_base_followup/README.md) documents its own sample, inputs and checks; it does not change this survey.
+
 This page describes the original within-checkpoint survey. The v0.2.0 additions have
 separate [Qwen2.5 weight methods](studies/qwen25_weights/README.md),
 [Qwen3 weight methods](studies/qwen3_weights/README.md) and [response methods](studies/qwen3_response/README.md).

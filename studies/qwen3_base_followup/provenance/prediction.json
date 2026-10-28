@@ -1,0 +1,10 @@
+{
+  "recorded_date": "2026-10-27",
+  "recorded_before_tensor_fetch": true,
+  "text": "PT vs IT numbers will show PT retains higher cosine similarities between weights, but not neurons",
+  "quantities": {
+    "weights": "Flattened key/value projection cosine at the same mapped layer pairs",
+    "neurons": "Aligned gate-weight-row cosines on a fixed sample of the first17408 indices"
+  },
+  "threshold_or_pass_fail_score": null
+}

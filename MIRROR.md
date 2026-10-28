@@ -1,7 +1,7 @@
 # Lightweight source mirror
 
-The canonical release is [HF v0.2.1](https://huggingface.co/datasets/ec75hash/copy-blocks-qwen/tree/a4aeff1c9ed627ec45474e917fa5ce47af43e864), commit `a4aeff1c9ed627ec45474e917fa5ce47af43e864`.
-This repository includes the code, documentation, original survey tables, both
+The canonical release is [HF v0.3.0](https://huggingface.co/datasets/ec75hash/copy-blocks-qwen/tree/7c0de5a888abb984eed09e9f43bca0a0d3860144), commit `7c0de5a888abb984eed09e9f43bca0a0d3860144`.
+This repository includes the code, documentation, original survey tables, the
 small weight studies, response CSV summaries and small capture metadata/text.
 The response `.npy`/`.npz` arrays and all retained raw-window files are omitted,
 along with the Hub-specific Git LFS configuration. No model weights are included.
@@ -14,4 +14,4 @@ Markdown adaptations recorded separately. Weight-study reductions run directly
 from this mirror without the response arrays.
 
 Publication history and numerical results belong to the linked canonical release.
-The separate post-publication Base follow-up is not silently folded into v0.2.1.
+The Base follow-up, when included in the canonical version, remains a separate study under studies/qwen3_base_followup/.
