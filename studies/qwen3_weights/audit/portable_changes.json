@@ -1,0 +1,26 @@
+[
+  {
+    "script": "scan_mlp_32b.py",
+    "as_run_sha256": "27ed345ce9393fcc2efc1c91651f0cee7d761e8a6ba119c5c32b9a4b0cb7c7ef",
+    "portable_sha256": "bb2f1ada6855ec031ec41d7e86af4fed336617b258e8ea1043b502e6c606d979",
+    "changes": "Release-relative scanner import; portable output/cache paths; create cache directory. Numerical formulas and seeds unchanged."
+  },
+  {
+    "script": "cross_14b_32b_attn.py",
+    "as_run_sha256": "cede8c2a68e7ffc4d66bb4db3fde8a27e8db27038106fc76c003a4581c63bbe6",
+    "portable_sha256": "fc0570aa84660250097b6494cc9ee6eaecb2676dd0bbbc05e93b430484351430",
+    "changes": "Release-relative scanner import; portable output/cache paths; create cache directory. Numerical formulas and seeds unchanged."
+  },
+  {
+    "script": "cross_14b_32b_mlp.py",
+    "as_run_sha256": "7387dc8a470476ce2bc0e900cd1f97ef16352d6610d3456d6ee452e8549260d2",
+    "portable_sha256": "41d5556f4322492c7e31391ebcc81b299df32ae0db2364979b4e48f6b4cf40a1",
+    "changes": "Release-relative scanner import; portable output/cache paths; create cache directory. Numerical formulas and seeds unchanged."
+  },
+  {
+    "script": "cross_14b_32b_heads.py",
+    "as_run_sha256": "00c29d431d9455f69b05478c070fb70c5ba8035001a09a7142b91c098357351d",
+    "portable_sha256": "c470a1a6fc94d9ababf1dfc63d4178dc08f8141b882c7dd425306d80f3b7e28a",
+    "changes": "Release-relative scanner import; portable output/cache paths; create cache directory. Numerical formulas and seeds unchanged."
+  }
+]

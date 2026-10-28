@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "settings": {
+    "passages": 10000,
+    "tokens": 256,
+    "controls": 100,
+    "raw_passages": 512,
+    "text_seed": 20261027,
+    "control_seed": 20261028,
+    "raw_seed": 20261029
+  },
+  "model_repo": "Qwen/Qwen3-32B-GGUF",
+  "model_revision": "938a7432affaec9157f883a87164e2646ae17555",
+  "model_sha256": "2c50eb8aad05047dbf24fa014eb621adf552e14176cabe0c5db4ef38c91e2169",
+  "q8_scope": "Q8 activations; no byte identity to earlier BF16 weights is asserted",
+  "dataset_repo": "Salesforce/wikitext",
+  "dataset_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "dataset_file": "wikitext-103-raw-v1/train-00000-of-00002.parquet",
+  "dataset_sha256": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212",
+  "dataset_license": "CC-BY-SA-3.0",
+  "text_selection": "Random distinct articles; fixed first token window; no activation-based selection",
+  "excluded_smoke_articles": 201,
+  "excluded_smoke_input_sha256": "167f4261457e39bbe0c78f7c2aad2642247d22380e2c8d0f772ceb38809acca3",
+  "selection_input_sha256": "f4fd99d7316346feaf09f0d4702d7c32a2dca34e5847f812695f68e79c4a6ba1",
+  "raw_retention": "Raw float32 gate/value/product at the 576 paired channels for a preselected random passage subset",
+  "estimated_maximum_output_bytes": 3774849664,
+  "input_sha256": {
+    "layout.json": "1876ab79f1bc6988f6175f420d7b66caa85b1b63fd5c0196ff7f7f6c937a6473",
+    "tokens.npy": "d29f95f68283db308881f5b1fdbe180dd2904779394f9b28dc3d3be21140efbe",
+    "passages.jsonl": "d3dd3298d2f4575d693249311ecd087149c9f001524553b26ca116ec46a25f8d",
+    "raw_indices.json": "c06948c79ddca1df31a5844b40a32bd995777d200da50427b27892a094f2c0f4"
+  },
+  "no_predictions": true,
+  "no_significance_tests": true,
+  "no_interpretation": true
+}

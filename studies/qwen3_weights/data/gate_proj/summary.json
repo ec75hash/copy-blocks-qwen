@@ -1,0 +1,74 @@
+{
+ "repo_id": "Qwen/Qwen3-32B",
+ "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+ "family": "mlp.gate_proj.weight",
+ "shape": [
+  25600,
+  5120
+ ],
+ "dtype": "BF16",
+ "neuron_axis": 0,
+ "region": [
+  8,
+  55
+ ],
+ "period": 24,
+ "top_offsets": [
+  {
+   "offset": 24,
+   "n_pairs": 40,
+   "mean_cosine": 0.13311546706600796,
+   "mean_row_mean_cosine": 0.12751905932114482
+  },
+  {
+   "offset": 1,
+   "n_pairs": 63,
+   "mean_cosine": 0.009422277311170232,
+   "mean_row_mean_cosine": 0.021832439280949856
+  },
+  {
+   "offset": 2,
+   "n_pairs": 62,
+   "mean_cosine": 0.008259393946852878,
+   "mean_row_mean_cosine": 0.0164729498631062
+  },
+  {
+   "offset": 3,
+   "n_pairs": 61,
+   "mean_cosine": 0.007204714373089056,
+   "mean_row_mean_cosine": 0.012269950327743402
+  },
+  {
+   "offset": 4,
+   "n_pairs": 60,
+   "mean_cosine": 0.006453695446910668,
+   "mean_row_mean_cosine": 0.00914657799607796
+  }
+ ],
+ "by_period": {
+  "24": {
+   "n_corresponding": 24,
+   "n_remaining": 16,
+   "within_cosine": 0.2202012320962499,
+   "off_cosine": 0.002486819520645107,
+   "within_row_mean": 0.20953175378708846,
+   "off_row_mean": 0.004500017622229293,
+   "within_frac_gt_0.5": 0.0051888020833333335,
+   "off_frac_gt_0.5": 0.0,
+   "within_shuffled_row_mean": 0.004398307709131167
+  },
+  "48": {
+   "n_corresponding": 0,
+   "n_remaining": 16,
+   "within_cosine": null,
+   "off_cosine": 0.0007712298323144483,
+   "within_row_mean": null,
+   "off_row_mean": 0.0017158447759485715,
+   "within_frac_gt_0.5": null,
+   "off_frac_gt_0.5": 0.0,
+   "within_shuffled_row_mean": null
+  }
+ },
+ "global_pair_mean": 0.006087116346228078,
+ "elapsed_s": 2591.9
+}

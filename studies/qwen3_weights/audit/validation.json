@@ -1,0 +1,299 @@
+{
+  "scope": "Offline saved-table reaggregation and selected cached BF16 payload checks in a Codex-assisted session; no fresh model scan or functional experiment.",
+  "within": {
+    "gate_proj": {
+      "n_corresponding": 24,
+      "n_remaining": 16,
+      "within_cosine": 0.2202012320962499,
+      "off_cosine": 0.002486819520645107,
+      "within_row_mean": 0.20953175378708846,
+      "off_row_mean": 0.004500017622229293,
+      "within_frac_gt_0.5": 0.0051888020833333335,
+      "off_frac_gt_0.5": 0.0,
+      "within_shuffled_row_mean": 0.004398307709131167,
+      "median": 0.20705123990774155,
+      "p95": 0.37980273663997627,
+      "count_gt_0_7": 109,
+      "count_gt_0_5": 3188,
+      "n": 614400,
+      "segment_means": [
+        0.2304831710838385,
+        0.2723949838764936,
+        0.11785920266564542
+      ],
+      "saved_pairs_checked": 2016,
+      "saved_neuron_vectors_checked": 40
+    },
+    "up_proj": {
+      "n_corresponding": 24,
+      "n_remaining": 16,
+      "within_cosine": 0.2063479740939218,
+      "off_cosine": -2.6017557570867066e-05,
+      "within_row_mean": 0.20053401426006565,
+      "off_row_mean": -2.4992727159852575e-05,
+      "within_frac_gt_0.5": 0.001940104166666667,
+      "off_frac_gt_0.5": 0.0,
+      "within_shuffled_row_mean": -1.569072471056387e-05,
+      "median": 0.19560648500919342,
+      "p95": 0.36839815527200687,
+      "count_gt_0_7": 27,
+      "count_gt_0_5": 1192,
+      "n": 614400,
+      "segment_means": [
+        0.21873845930425775,
+        0.26605559845457627,
+        0.10861778695380048
+      ],
+      "saved_pairs_checked": 2016,
+      "saved_neuron_vectors_checked": 40
+    },
+    "down_proj": {
+      "n_corresponding": 24,
+      "n_remaining": 16,
+      "within_cosine": 0.22953408804690242,
+      "off_cosine": 7.573494604981333e-06,
+      "within_row_mean": 0.22343633767020266,
+      "off_row_mean": 1.1295270741676072e-05,
+      "within_frac_gt_0.5": 0.0050716145833333325,
+      "off_frac_gt_0.5": 0.0,
+      "within_shuffled_row_mean": 3.734447412630145e-05,
+      "median": 0.2154868021607399,
+      "p95": 0.4058993965387344,
+      "count_gt_0_7": 48,
+      "count_gt_0_5": 3116,
+      "n": 614400,
+      "segment_means": [
+        0.2435073932811972,
+        0.2910076734608586,
+        0.12734752931119012
+      ],
+      "saved_pairs_checked": 2016,
+      "saved_neuron_vectors_checked": 40
+    }
+  },
+  "cross": {
+    "k_proj": {
+      "later_mean": 0.7016064411942201,
+      "earlier_mean": 0.2880472949769896
+    },
+    "v_proj": {
+      "later_mean": 0.8064656499303972,
+      "earlier_mean": 0.48859418824808915
+    },
+    "mlp_saved_vectors_checked": 64,
+    "head_recipe": {
+      "exact": 890,
+      "total": 896,
+      "exceptions": [
+        {
+          "family": "self_attn.q_proj",
+          "L14": 14,
+          "L32": 38,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.q_proj",
+          "L14": 20,
+          "L32": 44,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.q_proj",
+          "L14": 39,
+          "L32": 63,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.o_proj",
+          "L14": 8,
+          "L32": 8,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.o_proj",
+          "L14": 14,
+          "L32": 38,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.o_proj",
+          "L14": 39,
+          "L32": 63,
+          "exceptions": 1
+        }
+      ],
+      "sampled_layer_pairs_per_family": 7
+    }
+  },
+  "payloads": [
+    {
+      "name": "model.layers.14.mlp.gate_proj.weight",
+      "slug": "qwen3-32b",
+      "sha256": "665a340b7f04d999fabcf5effda679ecb5c41ae96e97e5a4cadaf92a58ffcc00",
+      "bytes": 262144000
+    },
+    {
+      "name": "model.layers.38.mlp.gate_proj.weight",
+      "slug": "qwen3-32b",
+      "sha256": "c88038d9f888f3a57cc9580f17c13d5b66f8fb4bd5e56e50bec63b7af876f0a5",
+      "bytes": 262144000
+    },
+    {
+      "name": "model.layers.14.mlp.gate_proj.weight",
+      "slug": "qwen3-14b",
+      "sha256": "109da366f3fb9db0ca5e523da1ebc9d6f09cc0951f67d767de0ca4ad02399723",
+      "bytes": 178257920
+    },
+    {
+      "name": "model.layers.38.mlp.gate_proj.weight",
+      "slug": "qwen3-32b",
+      "sha256": "c88038d9f888f3a57cc9580f17c13d5b66f8fb4bd5e56e50bec63b7af876f0a5",
+      "bytes": 262144000
+    },
+    {
+      "name": "model.layers.14.self_attn.q_proj.weight",
+      "slug": "qwen3-14b",
+      "sha256": "91b5f89a1eaf4e94e84544b8543a62bf33e18c4c5e7e0f11b49d1363f3a70526",
+      "bytes": 52428800
+    },
+    {
+      "name": "model.layers.38.self_attn.q_proj.weight",
+      "slug": "qwen3-32b",
+      "sha256": "59c6dd4c2db3de982617e97d083f7ef10358181b3111ac633487b9953846b0e8",
+      "bytes": 83886080
+    },
+    {
+      "name": "model.layers.14.self_attn.o_proj.weight",
+      "slug": "qwen3-14b",
+      "sha256": "712bd717360e5133909d3fded94637549f24357c3031256e3d07376a8e7746c2",
+      "bytes": 52428800
+    },
+    {
+      "name": "model.layers.38.self_attn.o_proj.weight",
+      "slug": "qwen3-32b",
+      "sha256": "5a58f5595a3999b0be114a4c0219bcea3f8ae96feacbedc343f66e156ccf04d6",
+      "bytes": 83886080
+    }
+  ],
+  "raw_checks": [
+    {
+      "type": "within",
+      "family": "gate_proj",
+      "layers": [
+        14,
+        38
+      ],
+      "cosine": 0.24745292244931338,
+      "max_saved_vector_error": 2.9802091683350795e-08
+    },
+    {
+      "type": "cross_mlp",
+      "layers": [
+        14,
+        38
+      ],
+      "cosine": 0.5525173748115628,
+      "row_mean": 0.5453065963971389
+    },
+    {
+      "type": "within_layer_C_vs_A",
+      "layer": 38,
+      "row_mean": 0.24590390087702102,
+      "rows_checked": 8192
+    },
+    {
+      "type": "heads",
+      "family": "q_proj",
+      "layers": [
+        14,
+        38
+      ],
+      "slot_map_counts": {
+        "0->0": 8,
+        "1->1": 7,
+        "2->2": 8,
+        "3->0": 8,
+        "4->1": 8,
+        "5->2": 8,
+        "6->3": 8,
+        "7->4": 8,
+        "1->3": 1
+      }
+    },
+    {
+      "type": "heads",
+      "family": "o_proj",
+      "layers": [
+        14,
+        38
+      ],
+      "slot_map_counts": {
+        "0->0": 8,
+        "1->1": 7,
+        "2->2": 8,
+        "3->0": 8,
+        "4->1": 8,
+        "5->2": 8,
+        "6->3": 8,
+        "7->4": 8,
+        "1->3": 1
+      }
+    }
+  ],
+  "unavailable_payloads": [
+    "model.layers.14.mlp.up_proj.weight",
+    "model.layers.38.mlp.up_proj.weight",
+    "model.layers.14.mlp.down_proj.weight",
+    "model.layers.38.mlp.down_proj.weight"
+  ],
+  "source_hashes": {
+    "analysis/qwen3_32b_mlp/cross_14b_32b_attn.py": "cede8c2a68e7ffc4d66bb4db3fde8a27e8db27038106fc76c003a4581c63bbe6",
+    "analysis/qwen3_32b_mlp/scan_mlp_32b.py": "27ed345ce9393fcc2efc1c91651f0cee7d761e8a6ba119c5c32b9a4b0cb7c7ef",
+    "analysis/qwen3_32b_mlp/run_all.sh": "7032c062e79a09726029b987176549adfb5c1b29aeb7b0693a6a82153cfc5f5f",
+    "analysis/qwen3_32b_mlp/cross_14b_32b_heads.py": "00c29d431d9455f69b05478c070fb70c5ba8035001a09a7142b91c098357351d",
+    "analysis/qwen3_32b_mlp/cross_14b_32b_mlp.py": "7387dc8a470476ce2bc0e900cd1f97ef16352d6610d3456d6ee452e8549260d2",
+    "analysis/qwen3_32b_mlp/PREREG.md": "91399a2f3f983731efaedf3651f7e92992c2fbc3f90e22de78a742e57ea22277",
+    "analysis/qwen3_32b_mlp/out/run_all.log": "c01a378c609d10fb2bdc81057c9660edd0b31988d8499435ffa89744a1a7fc76",
+    "analysis/qwen3_32b_mlp/out/RESULTS_cross_14b.md": "95a80147ad07abd494eabcf02b4173a645cac34a87ff734324f8606ab2ad2e7d",
+    "analysis/qwen3_32b_mlp/out/RESULTS_measurements_only.md": "54aa518f826cdd0303ca5324398dec5020d6bb7ba712943a22c612fc0d80f75d",
+    "analysis/qwen3_32b_mlp/out/fig_mlp_families.png": "1f1394cdf5c79cd46f53555a5684f7d62939b270f8a62ef2f2b2caa07db55466",
+    "analysis/qwen3_32b_mlp/out/RESULTS_within_mlp.md": "cfe6d75d87cdd7c413fceab82cfcd3e4e78226b26a7671aa7f5185da932e0342",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/summary.json": "cf29ad5265198e4b9e800cfa01654210a7baaba3c990f62ebc32f045ddde9251",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/cosine_k_proj.npy": "82eba9f4ef4726fc43714df4c9f78d0fa671c9c36dfaa1aeb7e2cf42a58de8e9",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/fig_cross.png": "81ef872145252df0259d5b23794cfd2d13b04fe718aa2e647918105c29519ba1",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/mlp_gate_run.log": "3671c3386c20072db3d0d08dece64f9a9ce824b5df10b8243daddeadf9c3e0d5",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/cosine_v_proj.npy": "18d65dc5d19125a5af09c2a8c86d7ae602511191f0fa381c588eae5890f11500",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/heads_run.log": "5f1f3c05a4df209da3e53583308f86d460dc5fd259fd0135863552d7a4b315fd",
+    "analysis/qwen3_32b_mlp/out/up_proj/pairs.csv": "fb55f852c1a89bd29b463ce46d75c72b2ed9f41e106f5811ce9473d505d84415",
+    "analysis/qwen3_32b_mlp/out/up_proj/summary.json": "454768ba1daf9e08e213bd618b46303094c6305ce457e43f7097a5f09dec8c4a",
+    "analysis/qwen3_32b_mlp/out/up_proj/provenance.json": "fc047c5c2f3d17fca5ef3fdbafc4e76593edb9fcf51af07b7ed21e7e640fde60",
+    "analysis/qwen3_32b_mlp/out/up_proj/scan.log": "debc470c6d829cbabe55e20187894ab1329cb14bedd362564caba3647650ac96",
+    "analysis/qwen3_32b_mlp/out/up_proj/neuron_cosines_offset24.npz": "66fbfe203a43bb2c9dd523440090906387901f249e1cc419c90c2fdf83c4076a",
+    "analysis/qwen3_32b_mlp/out/up_proj/offsets.csv": "2e9ce32f335c67bcbdfd7a8a3f840410717c0883389eebf12c7e569b27e353fb",
+    "analysis/qwen3_32b_mlp/out/gate_proj/pairs.csv": "dda126cd0b3a4f8a2adbd3604d90db75fc10d5ef9abc584193169ae395787993",
+    "analysis/qwen3_32b_mlp/out/gate_proj/summary.json": "0dbe95b5d34c3bf0565895fefea65077a906218996785af352e57408cb4f9a7a",
+    "analysis/qwen3_32b_mlp/out/gate_proj/provenance.json": "d0cf8bbce56976d6ef49020efc5542297c3428dd798b4c57f3410f41a530847c",
+    "analysis/qwen3_32b_mlp/out/gate_proj/scan.log": "5d03fed05ccad0a904ca9dee414302afdfab7e6cfc15d6e326486a87d5b70ed7",
+    "analysis/qwen3_32b_mlp/out/gate_proj/fig_gate_proj.png": "de0cceee5a044ea892919fc938089c61b8b44566247a824308a592546a51cdff",
+    "analysis/qwen3_32b_mlp/out/gate_proj/neuron_cosines_offset24.npz": "ba07e3e6a10aaa6b4fcb48fe4fcef0978e5a39e6ccf2c30238e06a0ea8190ae8",
+    "analysis/qwen3_32b_mlp/out/gate_proj/offsets.csv": "d7af8d84014c7011c60f1f3f007755ba58ffa6e5521873e264d3c71854eb7fd2",
+    "analysis/qwen3_32b_mlp/out/down_proj/pairs.csv": "e094e9f3a17520a028e40fa268d2585302f2985fc1030dd11f9a936d0156e6ad",
+    "analysis/qwen3_32b_mlp/out/down_proj/summary.json": "ffa117edfe662b1682dd9f2b040709f075651f70fc20bb788f37456be832bb80",
+    "analysis/qwen3_32b_mlp/out/down_proj/provenance.json": "3f10847e97b5db71f3bfafa779ba5a757275b29b7967c259e6c6a67beeaddd6a",
+    "analysis/qwen3_32b_mlp/out/down_proj/scan.log": "04de52c919e9443e0ce4335ff5225f6878a461d2bd0d71a6fdd40ca1370162b3",
+    "analysis/qwen3_32b_mlp/out/down_proj/neuron_cosines_offset24.npz": "a0541c969d19f43cb32c3c06d463cb5b02ef159c7e0395a64c3c3329f1421018",
+    "analysis/qwen3_32b_mlp/out/down_proj/offsets.csv": "181bfbae9a72470b60a034b956d8138c5111e7f74bec47e57a50a9e2ca82068d",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/mlp_gate/per_neuron_cosines.npz": "92eab2fdcb9e86167ca97ba1dc694b0d6d5391fcf1ad9a48f64d43f210a39b7f",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/mlp_gate/neuron_duplication_test.json": "46ce6e71f8c3381abb2be1b0ec5043980c1804134d071217a49d3693b1e4f44d",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/mlp_gate/results.json": "fc3c7a50c8d6f11824e72f922bbc7dcf4a651fb09cec84059dc17d7b3257848d",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/mlp_gate/fig_cross_mlp.png": "1b12f56a4bb50c37aa3617d408b2a10e7c8f634200d1665364cc00aacd048469",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/mlp_gate/log.txt": "3671c3386c20072db3d0d08dece64f9a9ce824b5df10b8243daddeadf9c3e0d5",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/heads/provenance.json": "f9b3ad1b6a61ae7ea9e14de0aa503af89ad0db061be9f6a6cb1bf8cf8694dbab",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/heads/log.txt": "5f1f3c05a4df209da3e53583308f86d460dc5fd259fd0135863552d7a4b315fd",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/heads/o_proj.json": "7154df7447aba894d54a4a131011049dbd3444d1f34ec402e2865f5c05db9e3e",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/heads/q_proj.json": "86e04d8bf838c8d9aec5632798f8bf121dcafd67a0b4051efebe2237145fdc91",
+    "analysis/qwen3_32b_mlp/out/cross_qwen3_14b/heads/group_aware_mapping.json": "d008bd48fcfcc8fa1b688f603840617f0630e66d4316ea8e861a640037a4912f"
+  },
+  "status": "All implemented checks passed; reporting corrections are described in ../CORRECTIONS.md.",
+  "source_hashes_scope": "Historical source-record hashes, not a list of required packaged files; current released files are covered by root checksums.json."
+}

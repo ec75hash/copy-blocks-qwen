@@ -19,7 +19,7 @@
       ],
       "min_pairs": 6,
       "role": "primary",
-      "note": "Goodfire neuron audits; chart: L32-55 ~ L8-31; v_proj added 2026-10-21 as a second attention family (reviewer request)",
+      "note": "chart: L32-55 ~ L8-31; v_proj added 2026-10-21 as a second attention family",
       "metadata_sha256": {
         "config.json": "97e295b63283935788fac5e4f8860862a56d4089538cafc93f0431f2ebe483bb",
         "model.safetensors.index.json": "bed42c6c55274bc08a1f616bceb3bcb84b3f02cb6584c573bd18c6519291ecd0"
@@ -44,7 +44,7 @@
       ],
       "min_pairs": 6,
       "role": "primary",
-      "note": "Goodfire expert map; chart: L20-31 ~ L8-19",
+      "note": "chart: L20-31 ~ L8-19",
       "metadata_sha256": {
         "config.json": "93a4693fa9d8392fbfccd4b3c9873f4bfdcb14fdede978b123d07d19675efe99",
         "model.safetensors.index.json": "41b9356101ebf8e7519e150dc811f80c4226e727301fbb032b890f006ed0be83"
@@ -69,7 +69,7 @@
       ],
       "min_pairs": 6,
       "role": "primary",
-      "note": "E114 paper checkpoint; 3.6 continues these weights",
+      "note": "3.6 continues these weights",
       "metadata_sha256": {
         "config.json": "5e4d7f74fec2f360eb9cfbfcd6ec0c4c76e684d3a11caaed259d9fd9bfbc7944",
         "model.safetensors.index.json": "d8d0b7ca4e61ae107e3e87a3ff21136b3ac7c789e64bb24267227ca804e04205"
@@ -93,7 +93,7 @@
       ],
       "min_pairs": 6,
       "role": "primary",
-      "note": "Dadfar's model; chart: L32-47 ~ L16-31; v_proj added 2026-10-21 as a second attention family (reviewer request)",
+      "note": "chart: L32-47 ~ L16-31; v_proj added 2026-10-21 as a second attention family",
       "metadata_sha256": {
         "config.json": "2c003fe40b13d2d1f372254d77177ed753176150f3d424d1b5ad22ff1d78a987",
         "model.safetensors.index.json": "487c27978b0bad77946ba1a5093acfc7747a62bd5e256d3a083345d133fc3042"
@@ -359,7 +359,7 @@
       ],
       "min_pairs": 6,
       "role": "primary",
-      "note": "J++ Lens main model; same pin as release v0.2.0",
+      "note": "same pin as the earlier Qwen3.6-27B release",
       "metadata_sha256": {
         "config.json": "69db4eb7196bc8190813231b3018ca05d8c2e3abc7b1af19d55c157af44a9d9c",
         "model.safetensors.index.json": "a8ad2c26fb707ff8c245806315b03e3b4b74595528492423af5dae0ce39b4d9b"

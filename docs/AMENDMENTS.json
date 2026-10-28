@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-27",
+  "instruction_board_post": 793,
+  "scope": "Metadata locations, descriptive status and reporting presentation only; no model execution, input-token change or activation-array change.",
+  "entries": [
+    {
+      "path": "studies/qwen3_response/data/capture/inputs.json",
+      "sha256_before": "ad19e32317ec77dc43e19c8b883649ac9625cc97f73d5c8ad8b12a863cc5d1e8",
+      "sha256_after": "8c8cad93ba21e83954102d0d1517d48fbbb4c41f33ea9dd1c1c838b0afd4a135",
+      "fields_changed": [
+        "dataset_local_path (removed)"
+      ],
+      "reason": "Remove machine-local source-shard location; pinned upstream repository, revision, filename and hash remain unchanged.",
+      "measurement_values_unchanged": true
+    },
+    {
+      "path": "studies/qwen3_response/data/capture/code_identity.json",
+      "sha256_before": "9792aafda374442c133a771504e47d0cbcbe425a87fcfc32fe7bec0367bebaf1",
+      "sha256_after": "d4f50f9bafdca3d1aafa3a8047025c3066817d6295af58ac0f455d409e408c54",
+      "fields_changed": [
+        "executable"
+      ],
+      "reason": "Replace machine-local interpreter path with command name; recorded Python version and every as-run code hash remain unchanged.",
+      "measurement_values_unchanged": true
+    },
+    {
+      "path": "studies/qwen3_response/CORPUS_LABEL_CORRECTION.json",
+      "sha256_before": "1e86b40aee53f6b432baa5a13115053fbb37cff46bdeba7539f582f283f36ab7",
+      "sha256_after": "115e55f5a97c3d6b9156461307c8853ead1c46ada26efb42e2be74aa717bf90c",
+      "fields_changed": [
+        "parser_file",
+        "scope"
+      ],
+      "reason": "Use the bundled parser path and explain the correction scope.",
+      "measurement_values_unchanged": true
+    },
+    {
+      "path": "studies/qwen3_weights/audit/historical_generator_provenance.json",
+      "sha256_before": "0e93a08609313218576a600d70fe0e7eecd945f4212d960925385a86333cce23",
+      "sha256_after": "681cf8139e555a38c1980e982ac15adf81ed184264116d55b07641669dfc9039",
+      "fields_changed": [
+        "source",
+        "released_command",
+        "released_command_sha256",
+        "path_redactions"
+      ],
+      "reason": "Remove the private log location; retain original command identity and hash the released path-redacted copy.",
+      "measurement_values_unchanged": true
+    },
+    {
+      "path": "studies/qwen3_response/audit/local_readout_validation.json",
+      "sha256_before": "aa1076526c109fc1b9acd8c6e7ac6d430f6abe6b8662feb8ec41fd0616c05b39",
+      "sha256_after": "280df023cd7da8a6de06210e0cef974cec5131b081b0da94e5f92c3034fbe492",
+      "fields_changed": [
+        "input_sha256 paths and two metadata hashes",
+        "metadata_amendment"
+      ],
+      "reason": "Use release-root-relative file references and current path-redacted metadata hashes; all dense-array, token, report hashes and numerical validation results are unchanged.",
+      "measurement_values_unchanged": true
+    },
+    {
+      "path": "studies/qwen3_response/audit/package_reduction_validation.json",
+      "sha256_before": "b5949e18d6a16bf03198a7a46b4bf92dead77e3486ca4965081d072983afa551",
+      "sha256_after": "280df023cd7da8a6de06210e0cef974cec5131b081b0da94e5f92c3034fbe492",
+      "fields_changed": [
+        "input_sha256 paths and two metadata hashes",
+        "metadata_amendment"
+      ],
+      "reason": "Use release-root-relative file references and current path-redacted metadata hashes; all dense-array, token, report hashes and numerical validation results are unchanged.",
+      "measurement_values_unchanged": true
+    },
+    {
+      "path": "studies/qwen3_weights/audit/validation.json",
+      "sha256_before": "1102538c13db257d5600e4fd57f5bd8f6b59da357c831d07679b8bb8513132ff",
+      "sha256_after": "e489c06d8fa41b95e2251430486b7c90915b9baa4ab807a7bc236d01e34dfe04",
+      "fields_changed": [
+        "scope",
+        "status",
+        "source_hashes_scope"
+      ],
+      "reason": "Explain the same-output/cached-payload check and provide a reachable correction record.",
+      "measurement_values_unchanged": true
+    },
+    {
+      "path": "studies/qwen3_response/selection/setup_manifest.json",
+      "sha256_before": "37f2bad768afa1894af8312cf1a08319c39ca9b3718682f869cb9f679f300aaa",
+      "sha256_after": "9b0233cc4960e3178e89a3541234201a940bcef08bde0718b06f1e45b6aa6319",
+      "fields_changed": [
+        "sha256.PROTOCOL.txt (removed)",
+        "manifest_note"
+      ],
+      "reason": "Remove a hash for an omitted draft; do not imply that an unavailable file is required.",
+      "measurement_values_unchanged": true,
+      "omitted_draft_sha256": "75a01e2fff0a34a88a1cc5acf3411da0a54345f9b773ed2e01ea7c451c789ab2"
+    },
+    {
+      "path": "studies/qwen3_weights/audit/historical_generator.txt",
+      "sha256_before": "9cd68412e4be48226ad923fbea54fe30843b860cc5a31f8b6b85a55fc0b2552e",
+      "sha256_after": "e4cf9fa003dab14a0f95968d0cbdbc5c1f371b7f46250400c21ecbe3b49829bf",
+      "fields_changed": [
+        "interpreter/import wrapper paths"
+      ],
+      "reason": "Replace machine-specific paths; mathematical body and seeds retained.",
+      "measurement_values_unchanged": true
+    }
+  ],
+  "capture_metadata_notes": [
+    "inputs.json no longer records a machine-local dataset path; its repository/revision/file/hash identify the unbundled upstream source.",
+    "code_identity.json uses python3 for the interpreter command; Python version and as-run source hashes are retained.",
+    "Before/after file hashes distinguish amended public metadata from historical capture records; the unchanged numerical artifacts retain their original hashes."
+  ],
+  "presentation_changes": [
+    {
+      "path": "scripts/make_report.py",
+      "sha256_before": "720eccacc33deb1264004c3fe6d9d02bc2bf358015375af76da430e01af1935a",
+      "sha256_after": "a11350c0509a6ec94337676cf53ac7fd7a6daab76805e990a19279bebdb49459",
+      "reason": "Print no eligible offsets instead of an empty bullet; numerical calculations unchanged."
+    },
+    {
+      "path": "RESULTS.md",
+      "sha256_before": "024bb30dfccb0e7fda77348adebafa26abc2189b8da8e1ce0b95f158342578fc",
+      "sha256_after": "32666175aa3a9039db76dc0b3c17049344fab49db66d56d2914cfe6ad74e6fe9",
+      "reason": "Regenerated with explicit no eligible offsets text; every numeric table and offset value unchanged."
+    },
+    {
+      "path": "studies/qwen3_weights/code/verify_and_plot.py",
+      "sha256_before": "f9e6c083513dff0f09b3428ebe1d28d4af612e9bd095728664f7d2484f973c53",
+      "sha256_after": "a2472eba7017b5a4777b69c22f99062b8692973d90b0df9c7613355f7471af57",
+      "reason": "Neutral figure labels only; reduction calculations unchanged."
+    },
+    {
+      "path": "studies/qwen3_response/code/reduce_and_plot.py",
+      "sha256_before": "34a749c65ed04400350060c5dfe2f84910bad43dcce21571cf3a8f2c21a8e9e3",
+      "sha256_after": "8bab9c53e738d2604e19ec57daef5c2c9e7434256b433681a136f5a9fe4c51f9",
+      "reason": "Name READOUT.txt in figure footer and emit release-relative hash keys; reduction calculations unchanged."
+    }
+  ]
+}

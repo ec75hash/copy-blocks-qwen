@@ -15,7 +15,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    h = hashlib.sha256()
+    with path.open('rb') as f:
+        for block in iter(lambda: f.read(16 * 1024 * 1024), b''):
+            h.update(block)
+    return h.hexdigest()
 
 
 def main():

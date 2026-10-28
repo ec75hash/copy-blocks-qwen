@@ -1,7 +1,7 @@
 # Corrections to the September 2026 family chart
 
-The figure `figures/family_blocks.png` in this release supersedes the hand-assembled chart
-`fig_qwen_family_blocks.py` from the September 29, 2026 night run. That chart's rows were
+The author’s September 2026 chart was an unpublished working chart, not a required
+release artifact. The comparison below transcribes its annotations. That chart's rows were
 typed in from several exploratory scans; this one is generated from `data/` produced by the
 pinned scanner, with each checkpoint's depth taken from its pinned `config.json`. Differences:
 
@@ -14,8 +14,7 @@ pinned scanner, with each checkpoint's depth taken from its pinned `config.json`
    the chart's own rows contradict it: Qwen3-Coder-480B-A35B is a Qwen3-generation MoE with
    no block, and Qwen3.8-2.4T-A95B, the largest checkpoint, has one. This release states no
    family-level rule; each row carries its own measurement and verdict.
-3. **Every number is a pinned measurement.** The September cosines came from
-   `period_scan.py` / `p1_calibration.json` captures that were not hash-pinned. The values
+3. **Every number is a pinned measurement.** The September cosines came from earlier captures that were not hash-pinned. The values
    here come from `scripts/scan_weights.py` at the revisions in `models.lock.json`, with byte
    ranges and payload hashes in `data/provenance.json`. Where the two disagree, `RESULTS.md`
    is authoritative; see the comparison table below.

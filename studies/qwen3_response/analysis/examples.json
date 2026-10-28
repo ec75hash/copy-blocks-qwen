@@ -1,0 +1,1368 @@
+[
+  {
+    "selection_rule": "highest_positive_top100_overlap",
+    "source_layer": 30,
+    "target_layer": 54,
+    "neuron": 11460,
+    "correlation": {
+      "source_layer": "30",
+      "target_layer": "54",
+      "neuron": "11460",
+      "segment": "B",
+      "component": "activation",
+      "paired_correlation": "0.08573613105416496",
+      "control_mean": "0.000716648863791451",
+      "paired_rank": "1.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "30",
+        "target_layer": "54",
+        "neuron": "11460",
+        "segment": "B",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "76",
+        "paired_jaccard": "0.6129032258064516",
+        "control_shared_mean": "8.12",
+        "control_jaccard_mean": "0.04547557191555604",
+        "paired_rank": "1.0",
+        "usable_controls": "100",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "30",
+        "target_layer": "54",
+        "neuron": "11460",
+        "segment": "B",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "53",
+        "paired_jaccard": "0.36054421768707484",
+        "control_shared_mean": "7.122448979591836",
+        "control_jaccard_mean": "0.03926491719267122",
+        "paired_rank": "2.0",
+        "usable_controls": "98",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "positive",
+    "members": [
+      {
+        "layer": 30,
+        "events": [
+          {
+            "layer": 30,
+            "neuron": 11460,
+            "passage_index": 2108,
+            "passage_id": "p02108",
+            "parsed_source_label": "Curve @-@ shortening flow",
+            "source_rows": [
+              804139,
+              804295
+            ],
+            "token_position": 3,
+            "token_id": 279,
+            "token_text": " the",
+            "context": "In mathematics ,[[ the]] curve @-@ shortening flow is a process that modifies a smooth curve in the Euclidean plane by moving its points perpendicularly to the curve at a speed proportional to the curvature . The curve @-@ shortening ",
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "sign_regime": 0,
+            "full_window": "In mathematics , the curve @-@ shortening flow is a process that modifies a smooth curve in the Euclidean plane by moving its points perpendicularly to the curve at a speed proportional to the curvature . The curve @-@ shortening flow is an example of a geometric flow , and is the one @-@ dimensional case of the mean curvature flow . Other names for the same process include the Euclidean shortening flow , geometric heat flow , and arc length evolution .\n\nAs the points of any smooth simple closed curve move in this way , the curve remains simple and smooth . It loses area at a constant rate , and its perimeter decreases as quickly as possible for any continuous curve evolution . If the curve is non @-@ convex , its total absolute curvature decreases monotonically , until it becomes convex . Once convex , the isoperimetric ratio of the curve decreases as the curve converges to a circular shape , before collapsing to a single point of singularity . If two disjoint simple smooth closed curves evolve , they remain disjoint until one of them collapses to a point . The circle is the only simple closed curve that maintains its shape under the curve @-@ shortening flow , but some curves that cross themselves or have infinite length keep their shape , including the grim",
+            "strength_tied_windows": 4
+          },
+          {
+            "layer": 30,
+            "neuron": 11460,
+            "passage_index": 3513,
+            "passage_id": "p03513",
+            "parsed_source_label": "0 @.@ 999 ...",
+            "source_rows": [
+              288414,
+              288427
+            ],
+            "token_position": 3,
+            "token_id": 279,
+            "token_text": " the",
+            "context": "In mathematics ,[[ the]] repeating decimal 0 @.@ 999 … ( sometimes written with more or fewer 9s before the final ellipsis , for example as 0 @.@ 9 … , or in a variety of other variants such as 0 @.@ 9 , 0 . ( 9 ) , or <formula> ) den",
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "sign_regime": 0,
+            "full_window": "In mathematics , the repeating decimal 0 @.@ 999 … ( sometimes written with more or fewer 9s before the final ellipsis , for example as 0 @.@ 9 … , or in a variety of other variants such as 0 @.@ 9 , 0 . ( 9 ) , or <formula> ) denotes a real number that can be shown to be the number one . In other words , the symbols \" 0 @.@ 999 … \" and \" 1 \" represent the same number . Proofs of this equality have been formulated with varying degrees of mathematical rigor , taking into account preferred development of the real numbers , background assumptions , historical context , and target audience .\n\nEvery nonzero , terminating decimal ( with infinitely many trailing 0s ) has an equal twin representation with infinitely many trailing 9s ( for example , 8 @.@ 32 and 8 @.@ 31999 … ) . The terminating decimal representation is usually preferred , contributing to the misconception that it is the only representation . The same phenomenon occurs in all other bases ( with a given base 's largest digit ) or in any similar representation of the real numbers .\n\nThe equality of 0 @.@ 999",
+            "strength_tied_windows": 4
+          },
+          {
+            "layer": 30,
+            "neuron": 11460,
+            "passage_index": 5815,
+            "passage_id": "p05815",
+            "parsed_source_label": "Dirac delta function",
+            "source_rows": [
+              196773,
+              196781
+            ],
+            "token_position": 3,
+            "token_id": 279,
+            "token_text": " the",
+            "context": "In mathematics ,[[ the]] Dirac delta function , or δ function , is a generalized function , or distribution , on the real number line that is zero everywhere except at zero , with an integral of one over the entire real line . The del",
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "sign_regime": 0,
+            "full_window": "In mathematics , the Dirac delta function , or δ function , is a generalized function , or distribution , on the real number line that is zero everywhere except at zero , with an integral of one over the entire real line . The delta function is sometimes thought of as a hypothetical function whose graph is an infinitely high , infinitely thin spike at the origin , with total area one under the spike , and physically represents the density of an idealized point mass or point charge . It was introduced by theoretical physicist Paul Dirac .\n\nFrom a purely mathematical viewpoint , the Dirac delta is not strictly a function , because any extended @-@ real function that is equal to zero everywhere but a single point must have total integral zero . The delta function only makes sense as a mathematical object when it appears inside an integral . From this perspective the Dirac delta can usually be manipulated as though it were a function . The formal rules obeyed by this \" function \" are part of the operational calculus , a standard tool kit of physics and engineering . The operational calculus , and in particular the delta function , was viewed with suspicion by mathematicians of the early 20th century , until a satisfactory rigorous theory was introduced by Laurent Schwartz in the 1950s . Formally , the delta function",
+            "strength_tied_windows": 4
+          },
+          {
+            "layer": 30,
+            "neuron": 11460,
+            "passage_index": 9084,
+            "passage_id": "p09084",
+            "parsed_source_label": "Pythagorean theorem",
+            "source_rows": [
+              96438,
+              96510
+            ],
+            "token_position": 3,
+            "token_id": 279,
+            "token_text": " the",
+            "context": "In mathematics ,[[ the]] Pythagorean theorem , also known as Pythagoras ' theorem , is a fundamental relation in Euclidean geometry among the three sides of a right triangle . It states that the square of the hypotenuse ( the side opp",
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "sign_regime": 0,
+            "full_window": "In mathematics , the Pythagorean theorem , also known as Pythagoras ' theorem , is a fundamental relation in Euclidean geometry among the three sides of a right triangle . It states that the square of the hypotenuse ( the side opposite the right angle ) is equal to the sum of the squares of the other two sides . The theorem can be written as an equation relating the lengths of the sides a , b and c , often called the \" Pythagorean equation \" :\n\n<formula>\n\nwhere c represents the length of the hypotenuse and a and b the lengths of the triangle 's other two sides .\n\nAlthough it is often argued that knowledge of the theorem predates him , the theorem is named after the ancient Greek mathematician Pythagoras ( c . 570 – c . 495 BC ) as it is he who , by tradition , is credited with its first recorded proof . There is some evidence that Babylonian mathematicians understood the formula , although little of it indicates an application within a mathematical framework . Mesopotamian , Indian and Chinese mathematicians all discovered the theorem independently and , in some cases , provided proofs for special cases .\n\nThe theorem has been given numerous proofs – possibly the most for any mathematical theorem . They are very",
+            "strength_tied_windows": 4
+          },
+          {
+            "layer": 30,
+            "neuron": 11460,
+            "passage_index": 1058,
+            "passage_id": "p01058",
+            "parsed_source_label": "Taylor series",
+            "source_rows": [
+              52134,
+              52203
+            ],
+            "token_position": 3,
+            "token_id": 264,
+            "token_text": " a",
+            "context": "In mathematics ,[[ a]] Taylor series is a representation of a function as an infinite sum of terms that are calculated from the values of the function 's derivatives at a single point .\n\nThe concept of a Taylor series was formulated",
+            "gate_pre_silu": 4.169161796569824,
+            "value": 2.5444180965423584,
+            "activation": 10.446532249450684,
+            "sign_regime": 0,
+            "full_window": "In mathematics , a Taylor series is a representation of a function as an infinite sum of terms that are calculated from the values of the function 's derivatives at a single point .\n\nThe concept of a Taylor series was formulated by the Scottish mathematician James Gregory and formally introduced by the English mathematician Brook Taylor in 1715 . If the Taylor series is centered at zero , then that series is also called a Maclaurin series , named after the Scottish mathematician Colin Maclaurin , who made extensive use of this special case of Taylor series in the 18th century .\n\nA function can be approximated by using a finite number of terms of its Taylor series . Taylor 's theorem gives quantitative estimates on the error introduced by the use of such an approximation . The polynomial formed by taking some initial terms of the Taylor series is called a Taylor polynomial . The Taylor series of a function is the limit of that function 's Taylor polynomials as the degree increases , provided that the limit exists . A function may not be equal to its Taylor series , even if its Taylor series converges at every point . A function that is equal to its Taylor series in an open interval ( or a disc in the complex plane ) is known as an analytic function in that interval",
+            "strength_tied_windows": 3
+          }
+        ]
+      },
+      {
+        "layer": 54,
+        "events": [
+          {
+            "layer": 54,
+            "neuron": 11460,
+            "passage_index": 1773,
+            "passage_id": "p01773",
+            "parsed_source_label": "1 ⁄ 3 using a supremum definition , but then insisted that 0 @.@ 999 … < 1 based on her earlier understanding of long division . Others still are able to prove that 1 ⁄ 3",
+            "source_rows": [
+              288570,
+              288628
+            ],
+            "token_position": 148,
+            "token_id": 429,
+            "token_text": " that",
+            "context": "ldly imagined infinite growing process . \"\n\nAs part of Ed Dubinsky 's APOS theory of mathematical learning , he and his collaborators ( 2005 ) propose[[ that]] students who conceive of 0 @.@ 999 … as a finite , indeterminate string with an infinitely small distance from 1 have \" not yet constructed a complete process conception of the infinite decimal \" . Other stude",
+            "gate_pre_silu": 5.300201892852783,
+            "value": 3.426039934158325,
+            "activation": 18.068531036376953,
+            "sign_regime": 0,
+            "full_window": "0 @.@ 333 … , but , upon being confronted by the fractional proof , insist that \" logic \" supersedes the mathematical calculations .\n\nJoseph Mazur tells the tale of an otherwise brilliant calculus student of his who \" challenged almost everything I said in class but never questioned his calculator , \" and who had come to believe that nine digits are all one needs to do mathematics , including calculating the square root of 23 . The student remained uncomfortable with a limiting argument that 9 @.@ 99 … = 10 , calling it a \" wildly imagined infinite growing process . \"\n\nAs part of Ed Dubinsky 's APOS theory of mathematical learning , he and his collaborators ( 2005 ) propose that students who conceive of 0 @.@ 999 … as a finite , indeterminate string with an infinitely small distance from 1 have \" not yet constructed a complete process conception of the infinite decimal \" . Other students who have a complete process conception of 0 @.@ 999 … may not yet be able to \" encapsulate \" that process into an \" object conception \" , like the object conception they have of 1 , and so they view the process 0 @.@ 999 … and the",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 54,
+            "neuron": 11460,
+            "passage_index": 2874,
+            "passage_id": "p02874",
+            "parsed_source_label": "Srinivasa Ramanujan",
+            "source_rows": [
+              139361,
+              139392
+            ],
+            "token_position": 197,
+            "token_id": 220,
+            "token_text": " ",
+            "context": " had rediscovered previously known theorems in addition to producing new ones .\n\nDuring his short life , Ramanujan independently compiled nearly 3 @,@[[ ]]900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct , although some were already known . His original and highly unconventional results , such as the Ramanujan p",
+            "gate_pre_silu": 5.246388912200928,
+            "value": 2.980684757232666,
+            "activation": 15.555906295776367,
+            "sign_regime": 0,
+            "full_window": "Srinivasa Ramanujan FRS ( pronunciation : / ʃriːnivɑːsə rɑːmɑːnʊdʒən / ) ( 22 December 1887 – 26 April 1920 ) was an Indian mathematician and autodidact . Though he had almost no formal training in pure mathematics , he made extraordinary contributions to mathematical analysis , number theory , infinite series , and continued fractions . Ramanujan initially developed his own mathematical research in isolation ; it was quickly recognized by Indian mathematicians . When his skills became obvious and known to the wider mathematical community , centered in Europe at the time , he began a famous partnership with the English mathematician G. H. Hardy . The Cambridge professor realized that Ramanujan had rediscovered previously known theorems in addition to producing new ones .\n\nDuring his short life , Ramanujan independently compiled nearly 3 @,@ 900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct , although some were already known . His original and highly unconventional results , such as the Ramanujan prime and the Ramanujan theta function , have inspired a vast amount of further",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 54,
+            "neuron": 11460,
+            "passage_index": 8757,
+            "passage_id": "p08757",
+            "parsed_source_label": "10 , b",
+            "source_rows": [
+              781376,
+              781392
+            ],
+            "token_position": 27,
+            "token_id": 35972,
+            "token_text": " mathematical",
+            "context": "e ( the irrational mathematical constant ≈ 2 @.@ 71828 ) , and b = 2 . In[[ mathematical]] analysis , the logarithm to base e is widespread because of its particular analytical properties explained below . On the other hand , base @-@ 10 logarithms are easy to use for manual calculations in the deci",
+            "gate_pre_silu": 3.6168222427368164,
+            "value": 3.7426512241363525,
+            "activation": 13.18232250213623,
+            "sign_regime": 0,
+            "full_window": "e ( the irrational mathematical constant ≈ 2 @.@ 71828 ) , and b = 2 . In mathematical analysis , the logarithm to base e is widespread because of its particular analytical properties explained below . On the other hand , base @-@ 10 logarithms are easy to use for manual calculations in the decimal number system :\n\n<formula>\n\nThus , log10 ( x ) is related to the number of decimal digits of a positive integer x : the number of digits is the smallest integer strictly bigger than log10 ( x ) . For example , log10 ( 1430 ) is approximately 3 @.@ 15 . The next integer is 4 , which is the number of digits of 1430 . Both the natural logarithm and the logarithm to base two are used in information theory , corresponding to the use of nats or bits as the fundamental units of information , respectively . Binary logarithms are also used in computer science , where the binary system is ubiquitous , in music theory , where a pitch ratio of two ( the octave ) is ubiquitous and the cent is the binary logarithm ( scaled by 1200 ) of the ratio between two adjacent equally @-@",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 54,
+            "neuron": 11460,
+            "passage_index": 768,
+            "passage_id": "p00768",
+            "parsed_source_label": "2 , f ( 2 )",
+            "source_rows": [
+              143336,
+              143357
+            ],
+            "token_position": 31,
+            "token_id": 110,
+            "token_text": "�",
+            "context": "4 , and so on .\n\nLet f be a differentiable function , and let f ′ ( x ) be its derivative . The derivative of f �[[�]] ( x ) ( if it has one ) is written f ′ ′ ( x ) and is called the second derivative of f . Similarly , the derivative of a second derivative , if it exists , is written f ′ ′ ′ ( x ) and is called the third der",
+            "gate_pre_silu": 4.716248512268066,
+            "value": 2.429320812225342,
+            "activation": 11.355663299560547,
+            "sign_regime": 0,
+            "full_window": "4 , and so on .\n\nLet f be a differentiable function , and let f ′ ( x ) be its derivative . The derivative of f ′ ( x ) ( if it has one ) is written f ′ ′ ( x ) and is called the second derivative of f . Similarly , the derivative of a second derivative , if it exists , is written f ′ ′ ′ ( x ) and is called the third derivative of f . Continuing this process , one can define , if it exists , the nth derivative as the derivative of the ( n @-@ 1 ) th derivative . These repeated derivatives are called higher @-@ order derivatives . The nth derivative is also called the derivative of order n .\n\nIf x ( t ) represents the position of an object at time t , then the higher @-@ order derivatives of x have physical interpretations . The second derivative of x is the derivative of x ′ ( t ) , the velocity , and by definition this is the object 's acceleration . The third derivative of x is defined to be the jerk , and the fourth derivative is defined to be the jounce .\n\nA function f need not have a derivative , for example , if it is not continuous . Similarly , even if f does",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 54,
+            "neuron": 11460,
+            "passage_index": 5251,
+            "passage_id": "p05251",
+            "parsed_source_label": "3 ⋅ 3 ⋅ 3 ⋅ 3 ⋅ 3",
+            "source_rows": [
+              47128,
+              47172
+            ],
+            "token_position": 241,
+            "token_id": 72232,
+            "token_text": " nonzero",
+            "context": "and the recurrence relation\n\n<formula>\n\nFrom the associativity of multiplication , it follows that for any positive integers m and n ,\n\n<formula>\n\nAny[[ nonzero]] number raised by the exponent 0 is 1 ; one interpretation of",
+            "gate_pre_silu": 4.7823991775512695,
+            "value": 2.3515758514404297,
+            "activation": 11.15276050567627,
+            "sign_regime": 0,
+            "full_window": "243 . The base 3 appears 5 times in the repeated multiplication , because the exponent is 5 . Here , 3 is the base , 5 is the exponent , and 243 is the power or , more specifically , the fifth power of 3 , 3 raised to the fifth power , or 3 to the power of 5 .\n\nThe word \" raised \" is usually omitted , and very often \" power \" as well , so 35 is typically pronounced \" three to the fifth \" or \" three to the five \" . The exponentiation bn can be read as b raised to the n @-@ th power , or b raised to the power of n , or b raised by the exponent of n , or most briefly as b to the n .\n\nExponentiation may be generalized from integer exponents to more general types of numbers .\n\nThe exponentiation operation with integer exponents requires only elementary algebra .\n\nFormally , powers with positive integer exponents may be defined by the initial condition\n\n<formula>\n\nand the recurrence relation\n\n<formula>\n\nFrom the associativity of multiplication , it follows that for any positive integers m and n ,\n\n<formula>\n\nAny nonzero number raised by the exponent 0 is 1 ; one interpretation of",
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ],
+    "shared_window_examples": [
+      {
+        "selection": "lowest sum of source/partner ranks within their shared top-100 windows",
+        "source": {
+          "layer": 30,
+          "neuron": 11460,
+          "passage_index": 2874,
+          "passage_id": "p02874",
+          "parsed_source_label": "Srinivasa Ramanujan",
+          "source_rows": [
+            139361,
+            139392
+          ],
+          "token_position": 172,
+          "token_id": 460,
+          "token_text": "ore",
+          "context": " famous partnership with the English mathematician G. H. Hardy . The Cambridge professor realized that Ramanujan had rediscovered previously known the[[ore]]ms in addition to producing new ones .\n\nDuring his short life , Ramanujan independently compiled nearly 3 @,@ 900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct",
+          "gate_pre_silu": 3.003368377685547,
+          "value": 2.4165866374969482,
+          "activation": 6.914790153503418,
+          "sign_regime": 0,
+          "full_window": "Srinivasa Ramanujan FRS ( pronunciation : / ʃriːnivɑːsə rɑːmɑːnʊdʒən / ) ( 22 December 1887 – 26 April 1920 ) was an Indian mathematician and autodidact . Though he had almost no formal training in pure mathematics , he made extraordinary contributions to mathematical analysis , number theory , infinite series , and continued fractions . Ramanujan initially developed his own mathematical research in isolation ; it was quickly recognized by Indian mathematicians . When his skills became obvious and known to the wider mathematical community , centered in Europe at the time , he began a famous partnership with the English mathematician G. H. Hardy . The Cambridge professor realized that Ramanujan had rediscovered previously known theorems in addition to producing new ones .\n\nDuring his short life , Ramanujan independently compiled nearly 3 @,@ 900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct , although some were already known . His original and highly unconventional results , such as the Ramanujan prime and the Ramanujan theta function , have inspired a vast amount of further"
+        },
+        "partner": {
+          "layer": 54,
+          "neuron": 11460,
+          "passage_index": 2874,
+          "passage_id": "p02874",
+          "parsed_source_label": "Srinivasa Ramanujan",
+          "source_rows": [
+            139361,
+            139392
+          ],
+          "token_position": 197,
+          "token_id": 220,
+          "token_text": " ",
+          "context": " had rediscovered previously known theorems in addition to producing new ones .\n\nDuring his short life , Ramanujan independently compiled nearly 3 @,@[[ ]]900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct , although some were already known . His original and highly unconventional results , such as the Ramanujan p",
+          "gate_pre_silu": 5.246388912200928,
+          "value": 2.980684757232666,
+          "activation": 15.555906295776367,
+          "sign_regime": 0,
+          "full_window": "Srinivasa Ramanujan FRS ( pronunciation : / ʃriːnivɑːsə rɑːmɑːnʊdʒən / ) ( 22 December 1887 – 26 April 1920 ) was an Indian mathematician and autodidact . Though he had almost no formal training in pure mathematics , he made extraordinary contributions to mathematical analysis , number theory , infinite series , and continued fractions . Ramanujan initially developed his own mathematical research in isolation ; it was quickly recognized by Indian mathematicians . When his skills became obvious and known to the wider mathematical community , centered in Europe at the time , he began a famous partnership with the English mathematician G. H. Hardy . The Cambridge professor realized that Ramanujan had rediscovered previously known theorems in addition to producing new ones .\n\nDuring his short life , Ramanujan independently compiled nearly 3 @,@ 900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct , although some were already known . His original and highly unconventional results , such as the Ramanujan prime and the Ramanujan theta function , have inspired a vast amount of further"
+        }
+      },
+      {
+        "selection": "lowest sum of source/partner ranks within their shared top-100 windows",
+        "source": {
+          "layer": 30,
+          "neuron": 11460,
+          "passage_index": 9084,
+          "passage_id": "p09084",
+          "parsed_source_label": "Pythagorean theorem",
+          "source_rows": [
+            96438,
+            96510
+          ],
+          "token_position": 3,
+          "token_id": 279,
+          "token_text": " the",
+          "context": "In mathematics ,[[ the]] Pythagorean theorem , also known as Pythagoras ' theorem , is a fundamental relation in Euclidean geometry among the three sides of a right triangle . It states that the square of the hypotenuse ( the side opp",
+          "gate_pre_silu": 4.990073204040527,
+          "value": 2.6429455280303955,
+          "activation": 13.099349021911621,
+          "sign_regime": 0,
+          "full_window": "In mathematics , the Pythagorean theorem , also known as Pythagoras ' theorem , is a fundamental relation in Euclidean geometry among the three sides of a right triangle . It states that the square of the hypotenuse ( the side opposite the right angle ) is equal to the sum of the squares of the other two sides . The theorem can be written as an equation relating the lengths of the sides a , b and c , often called the \" Pythagorean equation \" :\n\n<formula>\n\nwhere c represents the length of the hypotenuse and a and b the lengths of the triangle 's other two sides .\n\nAlthough it is often argued that knowledge of the theorem predates him , the theorem is named after the ancient Greek mathematician Pythagoras ( c . 570 – c . 495 BC ) as it is he who , by tradition , is credited with its first recorded proof . There is some evidence that Babylonian mathematicians understood the formula , although little of it indicates an application within a mathematical framework . Mesopotamian , Indian and Chinese mathematicians all discovered the theorem independently and , in some cases , provided proofs for special cases .\n\nThe theorem has been given numerous proofs – possibly the most for any mathematical theorem . They are very"
+        },
+        "partner": {
+          "layer": 54,
+          "neuron": 11460,
+          "passage_index": 9084,
+          "passage_id": "p09084",
+          "parsed_source_label": "Pythagorean theorem",
+          "source_rows": [
+            96438,
+            96510
+          ],
+          "token_position": 171,
+          "token_id": 566,
+          "token_text": " he",
+          "context": "d that knowledge of the theorem predates him , the theorem is named after the ancient Greek mathematician Pythagoras ( c . 570 – c . 495 BC ) as it is[[ he]] who , by tradition , is credited with its first recorded proof . There is some evidence that Babylonian mathematicians understood the formula , although little of it indicates an application within a mathemati",
+          "gate_pre_silu": 2.9930191040039062,
+          "value": 3.4841420650482178,
+          "activation": 9.930242538452148,
+          "sign_regime": 0,
+          "full_window": "In mathematics , the Pythagorean theorem , also known as Pythagoras ' theorem , is a fundamental relation in Euclidean geometry among the three sides of a right triangle . It states that the square of the hypotenuse ( the side opposite the right angle ) is equal to the sum of the squares of the other two sides . The theorem can be written as an equation relating the lengths of the sides a , b and c , often called the \" Pythagorean equation \" :\n\n<formula>\n\nwhere c represents the length of the hypotenuse and a and b the lengths of the triangle 's other two sides .\n\nAlthough it is often argued that knowledge of the theorem predates him , the theorem is named after the ancient Greek mathematician Pythagoras ( c . 570 – c . 495 BC ) as it is he who , by tradition , is credited with its first recorded proof . There is some evidence that Babylonian mathematicians understood the formula , although little of it indicates an application within a mathematical framework . Mesopotamian , Indian and Chinese mathematicians all discovered the theorem independently and , in some cases , provided proofs for special cases .\n\nThe theorem has been given numerous proofs – possibly the most for any mathematical theorem . They are very"
+        }
+      }
+    ]
+  },
+  {
+    "selection_rule": "highest_negative_top100_overlap",
+    "source_layer": 14,
+    "target_layer": 38,
+    "neuron": 7563,
+    "correlation": {
+      "source_layer": "14",
+      "target_layer": "38",
+      "neuron": "7563",
+      "segment": "A",
+      "component": "activation",
+      "paired_correlation": "0.3918360473005649",
+      "control_mean": "-0.0004768309494450855",
+      "paired_rank": "1.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "14",
+        "target_layer": "38",
+        "neuron": "7563",
+        "segment": "A",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "18",
+        "paired_jaccard": "0.0989010989010989",
+        "control_shared_mean": "1.1414141414141414",
+        "control_jaccard_mean": "0.005783848702045725",
+        "paired_rank": "1.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "14",
+        "target_layer": "38",
+        "neuron": "7563",
+        "segment": "A",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "54",
+        "paired_jaccard": "0.3698630136986301",
+        "control_shared_mean": "1.25",
+        "control_jaccard_mean": "0.006379174799256895",
+        "paired_rank": "1.0",
+        "usable_controls": "100",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "negative",
+    "members": [
+      {
+        "layer": 14,
+        "events": [
+          {
+            "layer": 14,
+            "neuron": 7563,
+            "passage_index": 9738,
+            "passage_id": "p09738",
+            "parsed_source_label": "Ich bin vergnügt mit meinem Glücke , BWV 84",
+            "source_rows": [
+              360840,
+              360886
+            ],
+            "token_position": 198,
+            "token_id": 10269,
+            "token_text": "burg",
+            "context": " expressed in simple language . The closing chorale is the 12th stanza of the hymn \" Wer weiß , wie nahe mir mein Ende \" by Ämilie Juliane von Schwarz[[burg]] @-@ Rudolstadt . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called \" Cantata \" himself .\n\nBach structured the work in five movements , alternating arias and recitatives , and a closi",
+            "gate_pre_silu": 5.281793117523193,
+            "value": -9.086572647094727,
+            "activation": -47.750667572021484,
+            "sign_regime": 1,
+            "full_window": "Ich bin vergnügt mit meinem Glücke ( I am content in my good fortune ) , BWV 84 , is a church cantata by Johann Sebastian Bach . He composed the solo cantata for soprano in Leipzig in 1727 for the Sunday Septuagesima , and led the first performance , probably on 9 February 1727 .\n\nBach composed the work in his fourth year as Thomaskantor in Leipzig . The text is similar to a cantata text Ich bin vergnügt mit meinem Stande ( I am content with my position ) , which Picander published in 1728 , but it is not certain that he wrote also the cantata text . Its thoughts about being content are in the spirit of the beginning Enlightenment , expressed in simple language . The closing chorale is the 12th stanza of the hymn \" Wer weiß , wie nahe mir mein Ende \" by Ämilie Juliane von Schwarzburg @-@ Rudolstadt . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called \" Cantata \" himself .\n\nBach structured the work in five movements , alternating arias and recitatives , and a closing chorale . The scoring requires",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 14,
+            "neuron": 7563,
+            "passage_index": 9394,
+            "passage_id": "p09394",
+            "parsed_source_label": "Princess Elisabeth of Hesse and by Rhine ( 1895 – 1903 )",
+            "source_rows": [
+              820427,
+              820463
+            ],
+            "token_position": 85,
+            "token_id": 5556,
+            "token_text": "urg",
+            "context": "November 1903 ) was the only daughter of Ernst Ludwig , Grand Duke of Hesse and by Rhine and his first wife , Princess Victoria Melita of Saxe @-@ Cob[[urg]] and Gotha . She was named after her paternal great @-@ grandmother , who was born Princess Elisabeth of Prussia . Her paternal aunt had the same name and was also nicknamed Ella . Elisabeth 's early death was ",
+            "gate_pre_silu": 4.83952522277832,
+            "value": -6.8504509925842285,
+            "activation": -32.892723083496094,
+            "sign_regime": 1,
+            "full_window": "Princess Elisabeth of Hesse and by Rhine ( Prinzessin Elisabeth Marie Alice Viktoria von Hessen und bei Rhein ) ( 11 March 1895 – 16 November 1903 ) was the only daughter of Ernst Ludwig , Grand Duke of Hesse and by Rhine and his first wife , Princess Victoria Melita of Saxe @-@ Coburg and Gotha . She was named after her paternal great @-@ grandmother , who was born Princess Elisabeth of Prussia . Her paternal aunt had the same name and was also nicknamed Ella . Elisabeth 's early death was rumored to be a result of poison meant for her uncle , Tsar Nicholas II , but the court physician said she died of virulent typhoid , probably caused by her taking a drink of water from a contaminated stream .\n\nHer parents , nicknamed ' Ernie ' and ' Ducky , ' were first cousins who married at the instigation of their common grandmother , Queen Victoria . The marriage was an unhappy one from the start . Princess Victoria Melita was eighteen at the time of Elisabeth 's birth . She was fond of Elisabeth , but found it hard to compete with Ernst 's devotion to their daughter .",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 14,
+            "neuron": 7563,
+            "passage_index": 6211,
+            "passage_id": "p06211",
+            "parsed_source_label": "Sri Aurobindo",
+            "source_rows": [
+              875424,
+              875517
+            ],
+            "token_position": 143,
+            "token_id": 13993,
+            "token_text": "oda",
+            "context": "ing 's College , Cambridge , England . After returning to India he took up various civil service works under the maharaja of the princely state of Bar[[oda]] and began to involve himself in politics . He was imprisoned by the British for writing articles against British rule in India . He was released when no evidence was provided . During his stay in the jail he h",
+            "gate_pre_silu": 4.428741931915283,
+            "value": -6.843127727508545,
+            "activation": -29.949167251586914,
+            "sign_regime": 1,
+            "full_window": "Sri Aurobindo ( Bengali : [ Sri Ôrobindo ] ) ( born Aurobindo Ghose ; 15 August 1872 – 5 December 1950 ) was an Indian nationalist , hindu philosopher , yogi , guru and poet . He joined the Indian movement for independence from British rule , for a while was one of its influential leaders and then became a spiritual reformer , introducing his visions on human progress and spiritual evolution .\n\nAurobindo studied for the Indian Civil Service at King 's College , Cambridge , England . After returning to India he took up various civil service works under the maharaja of the princely state of Baroda and began to involve himself in politics . He was imprisoned by the British for writing articles against British rule in India . He was released when no evidence was provided . During his stay in the jail he had mystical and spiritual experiences , after which he moved to Pondicherry , leaving politics for spiritual work .\n\nDuring his stay in Pondicherry , Aurobindo developed a method of spiritual practice he called Integral Yoga . The central theme of his vision was the evolution of human life into a life divine . He believed in a spiritual realisation that not only liberated man",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 14,
+            "neuron": 7563,
+            "passage_index": 9902,
+            "passage_id": "p09902",
+            "parsed_source_label": "Prince Octavius of Great Britain",
+            "source_rows": [
+              409529,
+              409563
+            ],
+            "token_position": 49,
+            "token_id": 2892,
+            "token_text": "len",
+            "context": "The Prince Octavius ( 23 February 1779 – 3 May 1783 ) was the 13th child and 8th son of King George III and his queen consort Charlotte of Meck[[len]]burg @-@ Strelitz . Six months after the death of his brother Prince Alfred , Octavius was inoculated with the smallpox virus . Several days later , he became ill . His subsequent death at the age of four devas",
+            "gate_pre_silu": 4.048309803009033,
+            "value": -7.492208003997803,
+            "activation": -29.810529708862305,
+            "sign_regime": 1,
+            "full_window": "The Prince Octavius ( 23 February 1779 – 3 May 1783 ) was the 13th child and 8th son of King George III and his queen consort Charlotte of Mecklenburg @-@ Strelitz . Six months after the death of his brother Prince Alfred , Octavius was inoculated with the smallpox virus . Several days later , he became ill . His subsequent death at the age of four devastated his parents , and in particular his father . George bemoaned the death of his son , of whom he was exceedingly fond ; the king 's later bouts of madness would involve hallucinations of his young son .\n\nPrince Octavius was born on 23 February 1779 , at Buckingham House , London , England . He was the thirteenth child and eighth son of King George III and his queen consort Charlotte of Mecklenburg @-@ Strelitz . The prince 's name derives from Latin octavus , the eighth , indicating that he was the eighth son of his parents .\n\nOctavius was christened on 23 March 1779 , in the Great Council Chamber at St James 's Palace , by Frederick Cornwall",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 14,
+            "neuron": 7563,
+            "passage_index": 8049,
+            "passage_id": "p08049",
+            "parsed_source_label": "Prince Alfred of Great Britain",
+            "source_rows": [
+              56096,
+              56120
+            ],
+            "token_position": 56,
+            "token_id": 2892,
+            "token_text": "len",
+            "context": "0 – 20 August 1782 ) was a member of the British Royal Family as the 14th child and 9th son of King George III and his queen consort Charlotte of Meck[[len]]burg @-@ Strelitz . Alfred became ill after his inoculation against the smallpox virus ; his early death at the age of nearly two , along with the demise of his brother Prince Octavius six months later , was a ",
+            "gate_pre_silu": 3.9748990535736084,
+            "value": -7.416120529174805,
+            "activation": -28.934898376464844,
+            "sign_regime": 1,
+            "full_window": "The Prince Alfred ( 22 September 1780 – 20 August 1782 ) was a member of the British Royal Family as the 14th child and 9th son of King George III and his queen consort Charlotte of Mecklenburg @-@ Strelitz . Alfred became ill after his inoculation against the smallpox virus ; his early death at the age of nearly two , along with the demise of his brother Prince Octavius six months later , was a shock to their parents . In his later bouts of madness King George would have imagined conversations with both of his youngest sons .\n\nPrince Alfred was born , on 22 September 1780 , at Windsor Castle , Windsor , England . His father was King George III , his mother Charlotte of Mecklenburg @-@ Strelitz . The prince was baptised by Frederick Cornwallis , The Archbishop of Canterbury , in the Great Council Chamber at St James 's Palace on 21 October 1780 . His godparents were The Prince of Wales ( his eldest brother ) , The Prince Frederick ( his second brother ) and The Princess Royal ( his eldest sister ) . As his parents ' fourteenth child and ninth son ,",
+            "strength_tied_windows": 1
+          }
+        ]
+      },
+      {
+        "layer": 38,
+        "events": [
+          {
+            "layer": 38,
+            "neuron": 7563,
+            "passage_index": 8050,
+            "passage_id": "p08050",
+            "parsed_source_label": "Order of Saint Hubert",
+            "source_rows": [
+              437100,
+              437228
+            ],
+            "token_position": 195,
+            "token_id": 2342,
+            "token_text": "ves",
+            "context": " duchy of Jülich and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cle[[ves]] @-@ Berg of the counties of Ravensberg and Mark with the duchies of Cleves , Jülich and Berg . In 1778 , Charles Theodore , Duke of Jülich and Berg and the Count @-@ Elector Palatine , succeeded his childless",
+            "gate_pre_silu": 3.899627685546875,
+            "value": -9.503674507141113,
+            "activation": -36.325225830078125,
+            "sign_regime": 1,
+            "full_window": "The Bavarian Order of Saint Hubert is a Roman Catholic dynastic order of knighthood founded in 1444 or 1445 by Gerhard VII , Duke of Jülich @-@ Berg . He sought to commemorate his victory over the House of Egmond at the Battle of Linnich on 3 November , which is Saint Hubert 's day .\n\nThe establishment of the Order occurred during a long @-@ term , intermittent territorial dispute , initially between the Dukes of Jülich and the Dukes of Guelders , who were descended from a female line of the House of Jülich . The dispute began in the 1430s , when Arnold , Duke of Gelderland claimed the duchy of Jülich and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cleves @-@ Berg of the counties of Ravensberg and Mark with the duchies of Cleves , Jülich and Berg . In 1778 , Charles Theodore , Duke of Jülich and Berg and the Count @-@ Elector Palatine , succeeded his childless",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 38,
+            "neuron": 7563,
+            "passage_index": 3909,
+            "passage_id": "p03909",
+            "parsed_source_label": "Prussian uprisings",
+            "source_rows": [
+              725671,
+              725720
+            ],
+            "token_position": 127,
+            "token_id": 26356,
+            "token_text": " Duke",
+            "context": "of the less numerous Teutonic Knights . However , the Prussians rose against their conquerors on five occasions .\n\nThe first uprising was supported by[[ Duke]] Swietopelk II , Duke of Pomerania . The Prussians were successful at first , reducing the Knights to only five of their strongest castles . Conversely , the duke suffered a series of military defeats and was e",
+            "gate_pre_silu": 4.1590776443481445,
+            "value": -8.742136001586914,
+            "activation": -35.79995346069336,
+            "sign_regime": 1,
+            "full_window": "The Prussian uprisings were two major and three smaller uprisings by the Prussians , one of the Baltic tribes , against the Teutonic Knights that took place in the 13th century during the Prussian Crusade . The crusading military order , supported by the Popes and Christian Europe , sought to conquer and convert the pagan Prussians . In the first ten years of the crusade five of the seven major Prussian clans fell under the control of the less numerous Teutonic Knights . However , the Prussians rose against their conquerors on five occasions .\n\nThe first uprising was supported by Duke Swietopelk II , Duke of Pomerania . The Prussians were successful at first , reducing the Knights to only five of their strongest castles . Conversely , the duke suffered a series of military defeats and was eventually forced to make peace with the Teutonic Knights . With Duke Swietopelk 's support for the Prussians broken , a prelate of Pope Innocent IV then negotiated a peace treaty between the Prussians and the Knights . However , this treaty was never honored or enforced , especially after the Battle of Krücken at the end of 1249 .\n\nThe second uprising ,",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 38,
+            "neuron": 7563,
+            "passage_index": 3569,
+            "passage_id": "p03569",
+            "parsed_source_label": "Jauchzet Gott in allen Landen , BWV 51",
+            "source_rows": [
+              232190,
+              232239
+            ],
+            "token_position": 150,
+            "token_id": 2010,
+            "token_text": "els",
+            "context": "7 September 1730 in Leipzig . The work may have been composed earlier , possibly for an occasion at the court of Christian , Duke of Saxe @-@ Weissenf[[els]] , for whom Bach had composed the Hunting Cantata and the Shepherd Cantata .\n\nThe text was written by an unknown poet who took inspiration from various biblical books , especially from psalms , and included as ",
+            "gate_pre_silu": 3.733017683029175,
+            "value": -9.482200622558594,
+            "activation": -34.57028579711914,
+            "sign_regime": 1,
+            "full_window": "Jauchzet Gott in allen Landen ( \" Exult in God in every land \" or \" Shout for joy to God in all lands \" ) BWV 51 , is a church cantata by Johann Sebastian Bach . The work is Bach 's only church cantata scored for a solo soprano and trumpet . He composed it for general use ( ogni tempo ) , in other words not for a particular date in the church calendar , although he used it for the 15th Sunday after Trinity : the first known performance was on 17 September 1730 in Leipzig . The work may have been composed earlier , possibly for an occasion at the court of Christian , Duke of Saxe @-@ Weissenfels , for whom Bach had composed the Hunting Cantata and the Shepherd Cantata .\n\nThe text was written by an unknown poet who took inspiration from various biblical books , especially from psalms , and included as a closing chorale a stanza from the hymn \" Nun lob , mein Seel , den Herren \" . Bach structured the work in five movements , with the solo voice accompanied by a Baroque orchestra of a virtuoso trumpet , strings and continuo . While the outer movements with the trumpet express extrovert",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 38,
+            "neuron": 7563,
+            "passage_index": 3069,
+            "passage_id": "p03069",
+            "parsed_source_label": "Black Brunswickers",
+            "source_rows": [
+              630777,
+              630832
+            ],
+            "token_position": 5,
+            "token_id": 278,
+            "token_text": "al",
+            "context": "The Brunswicker Duc[[al]] Corps , in German : Herzoglich Braunschweigisches Korps , commonly known as the Black Brunswickers in English and the Schwarze Schar ( \" Black Troop \" , also translated as \" Black Horde \" or \" Black Host \" ) o",
+            "gate_pre_silu": 3.6335465908050537,
+            "value": -9.00819206237793,
+            "activation": -31.889102935791016,
+            "sign_regime": 1,
+            "full_window": "The Brunswicker Ducal Corps , in German : Herzoglich Braunschweigisches Korps , commonly known as the Black Brunswickers in English and the Schwarze Schar ( \" Black Troop \" , also translated as \" Black Horde \" or \" Black Host \" ) or Schwarze Legion ( \" Black Legion \" ) in German were a military unit in the Napoleonic Wars . The corps was raised from volunteers by German @-@ born Frederick William , Duke of Brunswick @-@ Wolfenbüttel ( 1771 – 1815 ) . The Duke was a harsh opponent of Napoleon Bonaparte 's occupation of his native Germany . Formed in 1809 when war broke out between the First French Empire and the Austrian Empire , the corps initially comprised a mixed force , around 2 @,@ 300 strong , of infantry , cavalry and later supporting artillery .\n\nMost units of the corps wore black uniforms , leading to the \" black \" nicknames of the unit , though some light units ( such as sharpshooters and uhlans ) wore green uniforms . The Brunswickers wore a silvered skull badge on their hats . Their title originated from Duke Frederick William , who claimed the Duch",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 38,
+            "neuron": 7563,
+            "passage_index": 298,
+            "passage_id": "p00298",
+            "parsed_source_label": "Twelfth Siege of Gibraltar",
+            "source_rows": [
+              743118,
+              743160
+            ],
+            "token_position": 79,
+            "token_id": 2178,
+            "token_text": "arm",
+            "context": " fortified town of Gibraltar , at the southern tip of Spain , by an Anglo – Dutch naval force led by Sir George Rooke and Prince George of Hesse @-@ D[[arm]]stadt . The members of the Grand Alliance , Holy Roman Empire , England , the Netherlands , Pro @-@ Habsburg Spain , Portugal and the Savoy , had allied to prevent the unification of the French and Spanish thro",
+            "gate_pre_silu": 3.8624556064605713,
+            "value": -8.417559623718262,
+            "activation": -31.843223571777344,
+            "sign_regime": 1,
+            "full_window": "The Twelfth Siege of Gibraltar was fought between September 1704 and May 1705 during the War of the Spanish Succession . It followed the capture in August 1704 of the fortified town of Gibraltar , at the southern tip of Spain , by an Anglo – Dutch naval force led by Sir George Rooke and Prince George of Hesse @-@ Darmstadt . The members of the Grand Alliance , Holy Roman Empire , England , the Netherlands , Pro @-@ Habsburg Spain , Portugal and the Savoy , had allied to prevent the unification of the French and Spanish thrones by supporting the claim of the Habsburg pretender Archduke Charles VI of Austria as Charles III of Spain . They were opposed by the rival claimant , the Bourbon Philip , Duke of Anjou , ruling as Philip V of Spain , and his patron and ally , Louis XIV of France . The war began in northern Europe and was largely contained there until 1703 , when Portugal joined the confederate powers . From then , English naval attentions were focused on mounting a campaign in the Mediterranean to distract the French navy and disrupt French and Bourbon Spanish shipping or capture a port for use as a naval base . The capture",
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ],
+    "shared_window_examples": [
+      {
+        "selection": "lowest sum of source/partner ranks within their shared top-100 windows",
+        "source": {
+          "layer": 14,
+          "neuron": 7563,
+          "passage_index": 8050,
+          "passage_id": "p08050",
+          "parsed_source_label": "Order of Saint Hubert",
+          "source_rows": [
+            437100,
+            437228
+          ],
+          "token_position": 158,
+          "token_id": 6772,
+          "token_text": "lich",
+          "context": "o were descended from a female line of the House of Jülich . The dispute began in the 1430s , when Arnold , Duke of Gelderland claimed the duchy of Jü[[lich]] and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cleves @-@ Berg of the counties of Ravensberg and Mark with the duchies of Clev",
+          "gate_pre_silu": 4.038504123687744,
+          "value": -7.259507179260254,
+          "activation": -28.809810638427734,
+          "sign_regime": 1,
+          "full_window": "The Bavarian Order of Saint Hubert is a Roman Catholic dynastic order of knighthood founded in 1444 or 1445 by Gerhard VII , Duke of Jülich @-@ Berg . He sought to commemorate his victory over the House of Egmond at the Battle of Linnich on 3 November , which is Saint Hubert 's day .\n\nThe establishment of the Order occurred during a long @-@ term , intermittent territorial dispute , initially between the Dukes of Jülich and the Dukes of Guelders , who were descended from a female line of the House of Jülich . The dispute began in the 1430s , when Arnold , Duke of Gelderland claimed the duchy of Jülich and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cleves @-@ Berg of the counties of Ravensberg and Mark with the duchies of Cleves , Jülich and Berg . In 1778 , Charles Theodore , Duke of Jülich and Berg and the Count @-@ Elector Palatine , succeeded his childless"
+        },
+        "partner": {
+          "layer": 38,
+          "neuron": 7563,
+          "passage_index": 8050,
+          "passage_id": "p08050",
+          "parsed_source_label": "Order of Saint Hubert",
+          "source_rows": [
+            437100,
+            437228
+          ],
+          "token_position": 195,
+          "token_id": 2342,
+          "token_text": "ves",
+          "context": " duchy of Jülich and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cle[[ves]] @-@ Berg of the counties of Ravensberg and Mark with the duchies of Cleves , Jülich and Berg . In 1778 , Charles Theodore , Duke of Jülich and Berg and the Count @-@ Elector Palatine , succeeded his childless",
+          "gate_pre_silu": 3.899627685546875,
+          "value": -9.503674507141113,
+          "activation": -36.325225830078125,
+          "sign_regime": 1,
+          "full_window": "The Bavarian Order of Saint Hubert is a Roman Catholic dynastic order of knighthood founded in 1444 or 1445 by Gerhard VII , Duke of Jülich @-@ Berg . He sought to commemorate his victory over the House of Egmond at the Battle of Linnich on 3 November , which is Saint Hubert 's day .\n\nThe establishment of the Order occurred during a long @-@ term , intermittent territorial dispute , initially between the Dukes of Jülich and the Dukes of Guelders , who were descended from a female line of the House of Jülich . The dispute began in the 1430s , when Arnold , Duke of Gelderland claimed the duchy of Jülich and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cleves @-@ Berg of the counties of Ravensberg and Mark with the duchies of Cleves , Jülich and Berg . In 1778 , Charles Theodore , Duke of Jülich and Berg and the Count @-@ Elector Palatine , succeeded his childless"
+        }
+      },
+      {
+        "selection": "lowest sum of source/partner ranks within their shared top-100 windows",
+        "source": {
+          "layer": 14,
+          "neuron": 7563,
+          "passage_index": 9738,
+          "passage_id": "p09738",
+          "parsed_source_label": "Ich bin vergnügt mit meinem Glücke , BWV 84",
+          "source_rows": [
+            360840,
+            360886
+          ],
+          "token_position": 198,
+          "token_id": 10269,
+          "token_text": "burg",
+          "context": " expressed in simple language . The closing chorale is the 12th stanza of the hymn \" Wer weiß , wie nahe mir mein Ende \" by Ämilie Juliane von Schwarz[[burg]] @-@ Rudolstadt . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called \" Cantata \" himself .\n\nBach structured the work in five movements , alternating arias and recitatives , and a closi",
+          "gate_pre_silu": 5.281793117523193,
+          "value": -9.086572647094727,
+          "activation": -47.750667572021484,
+          "sign_regime": 1,
+          "full_window": "Ich bin vergnügt mit meinem Glücke ( I am content in my good fortune ) , BWV 84 , is a church cantata by Johann Sebastian Bach . He composed the solo cantata for soprano in Leipzig in 1727 for the Sunday Septuagesima , and led the first performance , probably on 9 February 1727 .\n\nBach composed the work in his fourth year as Thomaskantor in Leipzig . The text is similar to a cantata text Ich bin vergnügt mit meinem Stande ( I am content with my position ) , which Picander published in 1728 , but it is not certain that he wrote also the cantata text . Its thoughts about being content are in the spirit of the beginning Enlightenment , expressed in simple language . The closing chorale is the 12th stanza of the hymn \" Wer weiß , wie nahe mir mein Ende \" by Ämilie Juliane von Schwarzburg @-@ Rudolstadt . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called \" Cantata \" himself .\n\nBach structured the work in five movements , alternating arias and recitatives , and a closing chorale . The scoring requires"
+        },
+        "partner": {
+          "layer": 38,
+          "neuron": 7563,
+          "passage_index": 9738,
+          "passage_id": "p09738",
+          "parsed_source_label": "Ich bin vergnügt mit meinem Glücke , BWV 84",
+          "source_rows": [
+            360840,
+            360886
+          ],
+          "token_position": 204,
+          "token_id": 44278,
+          "token_text": "stadt",
+          "context": "simple language . The closing chorale is the 12th stanza of the hymn \" Wer weiß , wie nahe mir mein Ende \" by Ämilie Juliane von Schwarzburg @-@ Rudol[[stadt]] . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called \" Cantata \" himself .\n\nBach structured the work in five movements , alternating arias and recitatives , and a closing chorale . Th",
+          "gate_pre_silu": 3.7106311321258545,
+          "value": -8.780810356140137,
+          "activation": -31.80434799194336,
+          "sign_regime": 1,
+          "full_window": "Ich bin vergnügt mit meinem Glücke ( I am content in my good fortune ) , BWV 84 , is a church cantata by Johann Sebastian Bach . He composed the solo cantata for soprano in Leipzig in 1727 for the Sunday Septuagesima , and led the first performance , probably on 9 February 1727 .\n\nBach composed the work in his fourth year as Thomaskantor in Leipzig . The text is similar to a cantata text Ich bin vergnügt mit meinem Stande ( I am content with my position ) , which Picander published in 1728 , but it is not certain that he wrote also the cantata text . Its thoughts about being content are in the spirit of the beginning Enlightenment , expressed in simple language . The closing chorale is the 12th stanza of the hymn \" Wer weiß , wie nahe mir mein Ende \" by Ämilie Juliane von Schwarzburg @-@ Rudolstadt . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called \" Cantata \" himself .\n\nBach structured the work in five movements , alternating arias and recitatives , and a closing chorale . The scoring requires"
+        }
+      }
+    ]
+  },
+  {
+    "selection_rule": "nearest_median_activation_correlation",
+    "source_layer": 20,
+    "target_layer": 44,
+    "neuron": 7369,
+    "correlation": {
+      "source_layer": "20",
+      "target_layer": "44",
+      "neuron": "7369",
+      "segment": "A",
+      "component": "activation",
+      "paired_correlation": "0.05460569284868794",
+      "control_mean": "-0.00016589223878877283",
+      "paired_rank": "3.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "20",
+        "target_layer": "44",
+        "neuron": "7369",
+        "segment": "A",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "1",
+        "paired_jaccard": "0.005025125628140704",
+        "control_shared_mean": "0.9191919191919192",
+        "control_jaccard_mean": "0.004645944924186323",
+        "paired_rank": "40.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "20",
+        "target_layer": "44",
+        "neuron": "7369",
+        "segment": "A",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "3",
+        "paired_jaccard": "0.015228426395939087",
+        "control_shared_mean": "0.8484848484848485",
+        "control_jaccard_mean": "0.004284873925559831",
+        "paired_rank": "6.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "positive",
+    "members": [
+      {
+        "layer": 20,
+        "events": [
+          {
+            "layer": 20,
+            "neuron": 7369,
+            "passage_index": 9034,
+            "passage_id": "p09034",
+            "parsed_source_label": "Russian submarine AG @-@ 22",
+            "source_rows": [
+              642063,
+              642078
+            ],
+            "token_position": 2,
+            "token_id": 57529,
+            "token_text": " submarine",
+            "context": "The Russian[[ submarine]] AG @-@ 22 was an AG @-@ class submarine , designed by the American Holland Torpedo Boat Company / Electric Boat Company , built for the Imperial Russian Navy during World War I. The submarine was fabricated in",
+            "gate_pre_silu": 1.2595961093902588,
+            "value": 0.8719455003738403,
+            "activation": 0.8555272817611694,
+            "sign_regime": 0,
+            "full_window": "The Russian submarine AG @-@ 22 was an AG @-@ class submarine , designed by the American Holland Torpedo Boat Company / Electric Boat Company , built for the Imperial Russian Navy during World War I. The submarine was fabricated in Canada , shipped to Russia and reassembled for service with the Black Sea Fleet . Her reassembly was completed in 1919 by the White Movement during the Russian Civil War , and she joined Wrangel 's fleet as it evacuated the Crimea in 1920 and was interned in Bizerte , Tunisia in 1921 . AG @-@ 22 was abandoned there and subsequently scrapped .\n\nAG @-@ 22 was a single @-@ hulled submarine , with a pressure hull divided into five watertight compartments . The submarine had a length of 150 feet 3 inches ( 45 @.@ 8 m ) overall , a beam of 16 feet ( 4 @.@ 9 m ) and a draft of 12 feet 6 inches ( 3 @.@ 8 m ) . She displaced 355 long tons ( 361 t ) on the surface and 433 long tons ( 4",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 20,
+            "neuron": 7369,
+            "passage_index": 4192,
+            "passage_id": "p04192",
+            "parsed_source_label": "Newton 's parakeet",
+            "source_rows": [
+              127188,
+              127235
+            ],
+            "token_position": 36,
+            "token_id": 12922,
+            "token_text": " island",
+            "context": "Newton 's parakeet or the Rodrigues parakeet ( Psittacula exsul ) is an extinct species of parrot that was endemic to the Mascarene[[ island]] of Rodrigues in the western Indian Ocean . Several of its features diverged from related species , indicating long @-@ term isolation on Rodrigues and subsequent adaptation . The rose @-@ ringed parakeet of th",
+            "gate_pre_silu": 0.8909903168678284,
+            "value": 1.2312103509902954,
+            "activation": 0.777874231338501,
+            "sign_regime": 0,
+            "full_window": "Newton 's parakeet or the Rodrigues parakeet ( Psittacula exsul ) is an extinct species of parrot that was endemic to the Mascarene island of Rodrigues in the western Indian Ocean . Several of its features diverged from related species , indicating long @-@ term isolation on Rodrigues and subsequent adaptation . The rose @-@ ringed parakeet of the same genus is a close relative and probable ancestor . Newton 's parakeet may itself have been ancestral to the endemic parakeets of nearby Mauritius and Réunion .\n\nAround 40 centimetres ( 16 in ) long , Newton 's parakeet was roughly the size of a rose @-@ ringed parakeet . Its plumage was mostly greyish or slate blue in colour , which is unusual in Psittacula , a genus containing mostly green species . The male had stronger colours than the female and possessed a reddish instead of black beak , but details of a mature male 's appearance are uncertain ; only one male specimen is known , and it is believed to be immature . Mature males might have possessed red patches on the wing like the related Alexandrine parakeet . Both sexes had a black collar running from the",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 20,
+            "neuron": 7369,
+            "passage_index": 6407,
+            "passage_id": "p06407",
+            "parsed_source_label": "Broad @-@ billed parrot",
+            "source_rows": [
+              604071,
+              604118
+            ],
+            "token_position": 47,
+            "token_id": 12922,
+            "token_text": " island",
+            "context": "@ billed parrot or raven parrot ( Lophopsittacus mauritianus ) is a large extinct parrot in the family Psittaculidae . It was endemic to the Mascarene[[ island]] of Mauritius in the Indian Ocean east of Madagascar . It is unclear what other species it is most closely related to , but it has been classified as a member of the tribe Psittaculini , along with other Mascar",
+            "gate_pre_silu": 0.8856754302978516,
+            "value": 1.2359989881515503,
+            "activation": 0.7750399112701416,
+            "sign_regime": 0,
+            "full_window": "The broad @-@ billed parrot or raven parrot ( Lophopsittacus mauritianus ) is a large extinct parrot in the family Psittaculidae . It was endemic to the Mascarene island of Mauritius in the Indian Ocean east of Madagascar . It is unclear what other species it is most closely related to , but it has been classified as a member of the tribe Psittaculini , along with other Mascarene parrots . It had similarities with the Rodrigues parrot ( Necropsittacus rodricanus ) , and may have been closely related .\n\nThe broad @-@ billed parrot 's head was large in proportion to its body , and there was a distinct crest of feathers on the front of the head . The bird had a very large beak , comparable in size to that of the hyacinth macaw , which would have enabled it to crack hard seeds . Subfossil bones indicate that the species exhibited greater sexual dimorphism in overall size and head size than any living parrot . The exact colouration is unknown , but a contemporary description indicates that it had multiple colours , including a blue head , and perhaps a red body and beak . It is believed to have been a weak f",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 20,
+            "neuron": 7369,
+            "passage_index": 1952,
+            "passage_id": "p01952",
+            "parsed_source_label": "49th Battalion ( Australia )",
+            "source_rows": [
+              157513,
+              157551
+            ],
+            "token_position": 209,
+            "token_id": 47888,
+            "token_text": " casualties",
+            "context": "ommitted to the fighting in the early stages of the New Guinea campaign , taking part in the Battle of Sanananda in December 1942 , where it took many[[ casualties]] and suffered heavily from disease . The battalion was withdrawn back to Australia in early 1943 and subsequently disbanded in July , with the majority of its personnel being redistributed to other units . Duri",
+            "gate_pre_silu": 1.2253220081329346,
+            "value": 0.6205968260765076,
+            "activation": 0.5878121852874756,
+            "sign_regime": 0,
+            "full_window": "The 49th Battalion was an infantry unit of the Australian Army . Raised as part of the Australian Imperial Force during the First World War , the battalion fought along the Western Front between mid @-@ 1916 and late 1918 , before being disbanded in early 1919 . In 1921 , it was re @-@ formed as a part @-@ time unit based in the state of Queensland . Throughout the 1930s , the battalion was merged a couple of times as a result of manpower shortages , but in early 1940 , as Australia mobilised for the Second World War , the 49th was expanded and the following year deployed to New Guinea to undertake garrison duty . Following Japan 's entry into the war , the 49th was committed to the fighting in the early stages of the New Guinea campaign , taking part in the Battle of Sanananda in December 1942 , where it took many casualties and suffered heavily from disease . The battalion was withdrawn back to Australia in early 1943 and subsequently disbanded in July , with the majority of its personnel being redistributed to other units . During the post @-@ war",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 20,
+            "neuron": 7369,
+            "passage_index": 3318,
+            "passage_id": "p03318",
+            "parsed_source_label": "Walter O 'Malley",
+            "source_rows": [
+              569564,
+              569637
+            ],
+            "token_position": 2,
+            "token_id": 25127,
+            "token_text": " Francis",
+            "context": "Walter[[ Francis]] O 'Malley ( October 9 , 1903 – August 9 , 1979 ) was an American sports executive who owned the Brooklyn / Los Angeles Dodgers team in Major League Baseball from 1950 to 1979 . In 1958 , as owner of the Dodger",
+            "gate_pre_silu": 0.8691726922988892,
+            "value": 0.8959346413612366,
+            "activation": 0.5486668348312378,
+            "sign_regime": 0,
+            "full_window": "Walter Francis O 'Malley ( October 9 , 1903 – August 9 , 1979 ) was an American sports executive who owned the Brooklyn / Los Angeles Dodgers team in Major League Baseball from 1950 to 1979 . In 1958 , as owner of the Dodgers , he brought major league baseball to the West Coast , moving the Dodgers from Brooklyn to Los Angeles despite the Dodgers being the 2nd most profitable team in baseball from 1946 – 1956 , and coordinating the move of the New York Giants to San Francisco at a time when there were no teams west of Kansas City , Missouri . For this , he was long vilified by Brooklyn Dodgers fans . However , Pro @-@ O 'Malley parties describe him as a visionary for the same business action , and many authorities cite him as one of the most influential sportsmen of the 20th century . Other observers say that he was not a visionary , but instead a man who was in the right place at the right time , and regard him as the most powerful and influential owner in baseball after moving the team . He was elected to the National Baseball Hall of Fame for his contributions to and",
+            "strength_tied_windows": 1
+          }
+        ]
+      },
+      {
+        "layer": 44,
+        "events": [
+          {
+            "layer": 44,
+            "neuron": 7369,
+            "passage_index": 437,
+            "passage_id": "p00437",
+            "parsed_source_label": "Downtown Triangle ( Jerusalem )",
+            "source_rows": [
+              639545,
+              639584
+            ],
+            "token_position": 18,
+            "token_id": 13020,
+            "token_text": " lit",
+            "context": "The Downtown Triangle ( Hebrew : המשולש , Ha @-@ Meshulash ,[[ lit]] . \" The Triangle \" ) is a central commercial and entertainment district in Jerusalem , Israel . Measuring 29 @,@ 000 square metres ( 310 @,@ 000 sq ft ) , the area is bounded by Jaffa Road on the north , King ",
+            "gate_pre_silu": 0.9904977083206177,
+            "value": 1.8330581188201904,
+            "activation": 1.323939561843872,
+            "sign_regime": 0,
+            "full_window": "The Downtown Triangle ( Hebrew : המשולש , Ha @-@ Meshulash , lit . \" The Triangle \" ) is a central commercial and entertainment district in Jerusalem , Israel . Measuring 29 @,@ 000 square metres ( 310 @,@ 000 sq ft ) , the area is bounded by Jaffa Road on the north , King George Street on the west , and Ben Yehuda Street on the southeast . Its vertices are the intersections of Jaffa Road and King George Street , King George and Ben Yehuda Streets , and Ben Yehuda Street and Jaffa Road ( the latter known as Zion Square ) .\n\nFrom the mid @-@ 1940s through the 1960s , the Triangle was the commercial and cultural heart of Jerusalem , with many upscale shops and restaurants operated by German @-@ Jewish immigrant businessmen that appealed to an affluent clientele . Following the reunification of Jerusalem in 1967 and the expansion of the city away from the downtown core , the commercial viability of the Triangle declined . The area was revitalized by the conversion of Ben Yehuda Street and the interior streets of the Triangle to an open @-@ air pedestrian mall in",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 44,
+            "neuron": 7369,
+            "passage_index": 2383,
+            "passage_id": "p02383",
+            "parsed_source_label": "Miles Straume",
+            "source_rows": [
+              386196,
+              386246
+            ],
+            "token_position": 25,
+            "token_id": 279,
+            "token_text": " the",
+            "context": "Miles Straume is a fictional character played by Ken Leung on the ABC television series Lost . Miles is introduced early in[[ the]] fourth season as a hotheaded and sarcastic medium as a crew member aboard the freighter called the Kahana that is offshore the island where most of Lost takes place . Miles arrives on the island and is eventua",
+            "gate_pre_silu": 0.9386610388755798,
+            "value": 1.749535322189331,
+            "activation": 1.1804760694503784,
+            "sign_regime": 0,
+            "full_window": "Miles Straume is a fictional character played by Ken Leung on the ABC television series Lost . Miles is introduced early in the fourth season as a hotheaded and sarcastic medium as a crew member aboard the freighter called the Kahana that is offshore the island where most of Lost takes place . Miles arrives on the island and is eventually taken captive by John Locke ( played by Terry O 'Quinn ) , who suspects that those on the freighter are there to harm his fellow crash survivors of Oceanic Airlines Flight 815 and expose the island to the general public . Miles is on a mission to obtain Ben Linus ( Michael Emerson ) ; instead , he tries to cut a deal with Ben to lie to Miles 's employer Charles Widmore ( Alan Dale ) that Ben is dead .\n\nThe writers created the role of Miles specifically for Leung after seeing him guest star on The Sopranos . Leung was the only actor to read for the part . They chose his name because it resembles \" maelstrom \" , another word for a powerful whirlpool . Reaction to the character has been positive .\n\nMiles was born in March 1977 . As a child , he lives with his mother Lara Chang ( Leslie Ishii ) in Enc",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 44,
+            "neuron": 7369,
+            "passage_index": 8186,
+            "passage_id": "p08186",
+            "parsed_source_label": "2 ) and five squares along the other ( 60 / 12",
+            "source_rows": [
+              349817,
+              349824
+            ],
+            "token_position": 46,
+            "token_id": 64828,
+            "token_text": " divides",
+            "context": " the prime factors shared by the two numbers , where a same prime factor can be used multiple times , but only as long as the product of these factors[[ divides]] both a and b . For example , since 1386 can be factored into 2 × 3 × 3 × 7 × 11 , and 3213 can be factored into 3 × 3 × 3 × 7 × 17 , the greatest common divisor of 1386 and 3213 equals 63\n\nAnother definition o",
+            "gate_pre_silu": 1.0042214393615723,
+            "value": 1.5464563369750977,
+            "activation": 1.136610507965088,
+            "sign_regime": 0,
+            "full_window": "5 ) .\n\nThe GCD of two numbers a and b is the product of the prime factors shared by the two numbers , where a same prime factor can be used multiple times , but only as long as the product of these factors divides both a and b . For example , since 1386 can be factored into 2 × 3 × 3 × 7 × 11 , and 3213 can be factored into 3 × 3 × 3 × 7 × 17 , the greatest common divisor of 1386 and 3213 equals 63\n\nAnother definition of the GCD is helpful in advanced mathematics , particularly ring theory . The greatest common divisor g of two nonzero numbers a and b is also their smallest positive integral linear combination , that is , the smallest positive number of the form ua + vb where u and v are integers . The set of all integral linear combinations of a and b is actually the same as the set of all multiples of g ( mg , where m is an integer ) . In modern mathematical language , the ideal generated by a and b is the ideal generated by g alone ( an ideal generated by a single element is called a principal ideal , and all ideals",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 44,
+            "neuron": 7369,
+            "passage_index": 9791,
+            "passage_id": "p09791",
+            "parsed_source_label": "New York State Route 17M",
+            "source_rows": [
+              615788,
+              615828
+            ],
+            "token_position": 84,
+            "token_id": 279,
+            "token_text": " the",
+            "context": "nds for 26 @.@ 63 miles ( 42 @.@ 86 km ) from west of the city of Middletown to what is currently the north – south section of NY 17 just southeast of[[ the]] village of Harriman . It is a busy main street in Middletown and the village of Monroe ; in the former , it divides into a parkway for several blocks and forms the city 's major commercial strip , located betw",
+            "gate_pre_silu": 0.858633279800415,
+            "value": 1.8710485696792603,
+            "activation": 1.12839674949646,
+            "sign_regime": 0,
+            "full_window": "New York State Route 17M ( NY 17M ) is an east – west state highway in Orange County , New York , in the United States . It extends for 26 @.@ 63 miles ( 42 @.@ 86 km ) from west of the city of Middletown to what is currently the north – south section of NY 17 just southeast of the village of Harriman . It is a busy main street in Middletown and the village of Monroe ; in the former , it divides into a parkway for several blocks and forms the city 's major commercial strip , located between the downtown district and an interchange with Interstate 84 ( I @-@ 84 ) . The rest of the road is a two @-@ lane rural route . Between New Hampton and Goshen , the highway overlaps with U.S. Route 6 ( US 6 ) . The easternmost section of that overlap near Goshen is routed on the Quickway , making a three @-@ route concurrency with NY 17 .\n\nMost of NY 17M follows the course used by NY 17 prior to the construction of the Quickway through the Catskill Mountains . The first",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 44,
+            "neuron": 7369,
+            "passage_index": 3637,
+            "passage_id": "p03637",
+            "parsed_source_label": "The Singles 1992 – 2003",
+            "source_rows": [
+              851542,
+              851602
+            ],
+            "token_position": 54,
+            "token_id": 2326,
+            "token_text": " three",
+            "context": "st hits album by American rock band No Doubt , released on November 14 , 2003 by Interscope Records . It features thirteen of the band 's singles from[[ three]] studio albums — Tragic Kingdom ( 1995 ) , Return of Saturn ( 2000 ) , and Rock Steady ( 2001 ) — and the single \" Trapped in a Box \" from their 1992 self @-@ titled debut album . The album also included a cove",
+            "gate_pre_silu": 0.9190457463264465,
+            "value": 1.6957130432128906,
+            "activation": 1.1140456199645996,
+            "sign_regime": 0,
+            "full_window": "The Singles 1992 – 2003 is a greatest hits album by American rock band No Doubt , released on November 14 , 2003 by Interscope Records . It features thirteen of the band 's singles from three studio albums — Tragic Kingdom ( 1995 ) , Return of Saturn ( 2000 ) , and Rock Steady ( 2001 ) — and the single \" Trapped in a Box \" from their 1992 self @-@ titled debut album . The album also included a cover of Talk Talk 's 1984 song \" It 's My Life \" , the only new song on the album and which was released as a single . It was released alongside the DVD Rock Steady Live , a video of a concert as part of the band 's Rock Steady tour in 2002 , and the box set Boom Box , which contained The Singles 1992 – 2003 , Everything in Time , The Videos 1992 – 2003 , and Live in the Tragic Kingdom .\n\nNo Doubt went into hiatus in April 2003 after the release",
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ],
+    "shared_window_examples": [
+      {
+        "selection": "lowest sum of source/partner ranks within their shared top-100 windows",
+        "source": {
+          "layer": 20,
+          "neuron": 7369,
+          "passage_index": 476,
+          "passage_id": "p00476",
+          "parsed_source_label": "Modern Life Is Rubbish",
+          "source_rows": [
+            121993,
+            122069
+          ],
+          "token_position": 123,
+          "token_id": 1885,
+          "token_text": "arn",
+          "context": "us in the UK .\n\nUnder threat of being dropped by Food Records , for their next album Blur underwent an image makeover championed by frontman Damon Alb[[arn]] . The band incorporated influences from traditional British guitar pop groups such as the Kinks and the Small Faces , and the resulting sound was melodic and lushly produced , featuring brass , woodwind and ba",
+          "gate_pre_silu": -1.3478776216506958,
+          "value": -1.4027901887893677,
+          "activation": 0.38991403579711914,
+          "sign_regime": 3,
+          "full_window": "Modern Life Is Rubbish is the second studio album by the English alternative rock band Blur , released in May 1993 . Although their debut album Leisure ( 1991 ) had been commercially successful , Blur faced a severe media backlash soon after its release , and fell out of public favour . After the group returned from an unsuccessful tour of the United States , poorly received live performances and the rising popularity of rival band Suede further diminished Blur 's status in the UK .\n\nUnder threat of being dropped by Food Records , for their next album Blur underwent an image makeover championed by frontman Damon Albarn . The band incorporated influences from traditional British guitar pop groups such as the Kinks and the Small Faces , and the resulting sound was melodic and lushly produced , featuring brass , woodwind and backing vocalists . Albarn 's lyrics on Modern Life Is Rubbish use \" poignant humour and Ray Davies characterisation to investigate the dreams , traditions and prejudices of suburban England \" , according to writer David Cavanagh .\n\nModern Life Is Rubbish was a moderate chart success in the UK ; the album peaked at number 15 , while the singles taken from the album charted in the Top 30 . Applauded by the music press , the"
+        },
+        "partner": {
+          "layer": 44,
+          "neuron": 7369,
+          "passage_index": 476,
+          "passage_id": "p00476",
+          "parsed_source_label": "Modern Life Is Rubbish",
+          "source_rows": [
+            121993,
+            122069
+          ],
+          "token_position": 83,
+          "token_id": 315,
+          "token_text": " of",
+          "context": " public favour . After the group returned from an unsuccessful tour of the United States , poorly received live performances and the rising popularity[[ of]] rival band Suede further diminished Blur 's status in the UK .\n\nUnder threat of being dropped by Food Records , for their next album Blur underwent an image makeover championed by frontman Damon Albarn . The b",
+          "gate_pre_silu": 0.8873388171195984,
+          "value": 1.0719082355499268,
+          "activation": 0.6737352609634399,
+          "sign_regime": 0,
+          "full_window": "Modern Life Is Rubbish is the second studio album by the English alternative rock band Blur , released in May 1993 . Although their debut album Leisure ( 1991 ) had been commercially successful , Blur faced a severe media backlash soon after its release , and fell out of public favour . After the group returned from an unsuccessful tour of the United States , poorly received live performances and the rising popularity of rival band Suede further diminished Blur 's status in the UK .\n\nUnder threat of being dropped by Food Records , for their next album Blur underwent an image makeover championed by frontman Damon Albarn . The band incorporated influences from traditional British guitar pop groups such as the Kinks and the Small Faces , and the resulting sound was melodic and lushly produced , featuring brass , woodwind and backing vocalists . Albarn 's lyrics on Modern Life Is Rubbish use \" poignant humour and Ray Davies characterisation to investigate the dreams , traditions and prejudices of suburban England \" , according to writer David Cavanagh .\n\nModern Life Is Rubbish was a moderate chart success in the UK ; the album peaked at number 15 , while the singles taken from the album charted in the Top 30 . Applauded by the music press , the"
+        }
+      }
+    ]
+  },
+  {
+    "selection_rule": "lowest_signed_activation_correlation",
+    "source_layer": 23,
+    "target_layer": 47,
+    "neuron": 5461,
+    "correlation": {
+      "source_layer": "23",
+      "target_layer": "47",
+      "neuron": "5461",
+      "segment": "A",
+      "component": "activation",
+      "paired_correlation": "-0.06067670216822274",
+      "control_mean": "0.0006250420329307516",
+      "paired_rank": "101.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "23",
+        "target_layer": "47",
+        "neuron": "5461",
+        "segment": "A",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "1",
+        "paired_jaccard": "0.005025125628140704",
+        "control_shared_mean": "2.04",
+        "control_jaccard_mean": "0.01040549783296959",
+        "paired_rank": "66.5",
+        "usable_controls": "100",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "23",
+        "target_layer": "47",
+        "neuron": "5461",
+        "segment": "A",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "2",
+        "paired_jaccard": "0.010101010101010102",
+        "control_shared_mean": "0.9393939393939394",
+        "control_jaccard_mean": "0.0047448034046373945",
+        "paired_rank": "16.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "positive",
+    "members": [
+      {
+        "layer": 23,
+        "events": [
+          {
+            "layer": 23,
+            "neuron": 5461,
+            "passage_index": 794,
+            "passage_id": "p00794",
+            "parsed_source_label": "Anytime You Need a Friend",
+            "source_rows": [
+              355628,
+              355682
+            ],
+            "token_position": 5,
+            "token_id": 264,
+            "token_text": " a",
+            "context": "\" Anytime You Need[[ a]] Friend \" is a song by American singer @-@ songwriter Mariah Carey . The song was written and produced by Carey and Walter Afanasieff , for her third studio album , Music Box ( 1993 ) . It was released on May 3",
+            "gate_pre_silu": 1.4600492715835571,
+            "value": 1.3259077072143555,
+            "activation": 1.571053147315979,
+            "sign_regime": 0,
+            "full_window": "\" Anytime You Need a Friend \" is a song by American singer @-@ songwriter Mariah Carey . The song was written and produced by Carey and Walter Afanasieff , for her third studio album , Music Box ( 1993 ) . It was released on May 31 , 1994 through Columbia Records , as the fourth and final single from the album . The song is influenced by pop , R & B and gospel music genres . While the album focused heavily on pop oriented and radio friendly material , \" Anytime You Need a Friend \" deviated from the formula , finishing as the only gospel @-@ infused song on Music Box . Lyrically , the song 's protagonist tells her love interest that anytime he may need a friend , she will be there unconditionally for him . Throughout the song 's bridge and climax , critics noted the lyrics altering from those of a friend , to those of a lover .\n\nThe song was well received by contemporary music critics , many of which praised Carey 's large spanning vocal range , as well as its gospel influence that they felt was missing on most of Music Box . Aside from its critical acceptance , the song achieved strong worldwide chart positions and peaked at number twelve on the US Billboard Hot ",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 23,
+            "neuron": 5461,
+            "passage_index": 7752,
+            "passage_id": "p07752",
+            "parsed_source_label": "I Can See the Whole Room ... and There 's Nobody in It !",
+            "source_rows": [
+              891797,
+              891813
+            ],
+            "token_position": 4,
+            "token_id": 40493,
+            "token_text": " Whole",
+            "context": "I Can See the[[ Whole]] Room ... and There 's Nobody in It ! ( sometimes I Can See the Whole Room and There 's Nobody in It ! or simply I Can See the Whole Room ! ) is a 1961 painting by Roy Lichtenstein . It is a painting of a man l",
+            "gate_pre_silu": 1.714279294013977,
+            "value": 1.017516016960144,
+            "activation": 1.4781088829040527,
+            "sign_regime": 0,
+            "full_window": "I Can See the Whole Room ... and There 's Nobody in It ! ( sometimes I Can See the Whole Room and There 's Nobody in It ! or simply I Can See the Whole Room ! ) is a 1961 painting by Roy Lichtenstein . It is a painting of a man looking through a peephole . It formerly held the record for highest auction price for a Lichtenstein painting .\n\nThe work is based on a William Overgard @-@ drawn comics panel from a Steve Roper cartoon . Lichtenstein 's derivation augments the presentation of the narrative and expands the use of color in the image . As with the original the image employs the theme of vision , and focuses specifically on mechanized vision as well as monocularity .\n\nBased on a 1961 William Overgard drawing for a Steve Roper cartoon story published by the Publishers Syndicate on August 6 , 1961 , Lichtenstein ’ s I Can See the Whole Room ! ... and There 's Nobody in It ! ( 1961 ) measures four @-@ foot by four @-@ foot and is in graphite and oil . The painting depicts a man looking through a hole in a door . His finger is extended to",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 23,
+            "neuron": 5461,
+            "passage_index": 3674,
+            "passage_id": "p03674",
+            "parsed_source_label": "That We Can Play",
+            "source_rows": [
+              344894,
+              344940
+            ],
+            "token_position": 2,
+            "token_id": 2980,
+            "token_text": " Can",
+            "context": "That We[[ Can]] Play is the debut EP of the American electronic @-@ music project Games , consisting of producers Daniel Lopatin and Joel Ford . Lopatin and Ford ( who had made electronic music together since their school day",
+            "gate_pre_silu": 1.5898643732070923,
+            "value": 1.02107572555542,
+            "activation": 1.3483679294586182,
+            "sign_regime": 0,
+            "full_window": "That We Can Play is the debut EP of the American electronic @-@ music project Games , consisting of producers Daniel Lopatin and Joel Ford . Lopatin and Ford ( who had made electronic music together since their school days ) produced That We Can Play in an apartment studio , using vintage synthesizers and sequencers to recapture the sound and style of 1980s power pop .\n\nThat We Can Play contains six songs , including four original Games tracks ( one , the opener \" Strawberry Skies \" , with vocals by Laurel Halo ) . It also has two remixes : a remix of \" Strawberry Skies \" by the Chicago duo Gatekeeper and a reprise of a song by Canadian musician CFCF . The EP , released in November 2010 on the Hippos in Tanks label , was promoted with music videos and singles . It was well @-@ received by critics , who appreciated the duo 's use of its 1980s power @-@ pop influences , and made the top ten of MP3 blog Gorilla vs. Bear 's year @-@ end list .\n\nFord and Lopatin , who met in a science class , began playing music together in high school . During their practice sessions they experimented",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 23,
+            "neuron": 5461,
+            "passage_index": 8872,
+            "passage_id": "p08872",
+            "parsed_source_label": "1988 – 94 British broadcasting voice restrictions",
+            "source_rows": [
+              700430,
+              700468
+            ],
+            "token_position": 134,
+            "token_id": 5489,
+            "token_text": " anyone",
+            "context": " to prevent Sinn Féin from using the media for political advantage .\n\nBroadcasters quickly found ways around the ban , chiefly by dubbing the voice of[[ anyone]] who was prevented from speaking with the voice of an actor . The legislation did not apply during election campaigns , and under certain other circumstances . The restrictions caused difficulties for British j",
+            "gate_pre_silu": 1.446563959121704,
+            "value": 1.1325783729553223,
+            "activation": 1.3261911869049072,
+            "sign_regime": 0,
+            "full_window": "From October 1988 to September 1994 the voices of representatives from Sinn Féin and several Irish republican and loyalist groups were banned by the British government from being broadcast on television and radio in the United Kingdom . The restrictions , announced by the Home Secretary , Douglas Hurd , on 19 October 1988 , covered eleven organisations based in Northern Ireland and followed a heightened period of violence in the history of the Troubles , as well as the government 's belief in a need to prevent Sinn Féin from using the media for political advantage .\n\nBroadcasters quickly found ways around the ban , chiefly by dubbing the voice of anyone who was prevented from speaking with the voice of an actor . The legislation did not apply during election campaigns , and under certain other circumstances . The restrictions caused difficulties for British journalists who objected to censorship in various other countries , such as Iraq and India . The Republic of Ireland had its own similar legislation that banned anyone with links to paramilitary groups from the airwaves , but repealed this in January 1994 . This added pressure on the British government to do likewise . The broadcast ban was finally lifted on 16 September 1994 , a fortnight after the first Provisional Irish Republican",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 23,
+            "neuron": 5461,
+            "passage_index": 9772,
+            "passage_id": "p09772",
+            "parsed_source_label": "0 ) , the remainders r − 2 and r − 1 equal a and b , the numbers for which the GCD is sought . In the next step ( k",
+            "source_rows": [
+              349841,
+              349859
+            ],
+            "token_position": 200,
+            "token_id": 26313,
+            "token_text": " remainder",
+            "context": "tial remainder r0 and zero .\n\nThe validity of the Euclidean algorithm can be proven by a two @-@ step argument . In the first step , the final nonzero[[ remainder]] rN − 1 is shown to divide both a and b . Since it is a common divisor , it must be less than or equal to the greatest common divisor g . In the second step , it is shown that any common divisor of a and b , in",
+            "gate_pre_silu": 1.187196135520935,
+            "value": 1.4381496906280518,
+            "activation": 1.3082506656646729,
+            "sign_regime": 0,
+            "full_window": "1 ) , the remainders equal b and the remainder r0 of the initial step , and so on . Thus , the algorithm can be written as a sequence of equations\n\n<formula>\n\nIf a is smaller than b , the first step of the algorithm swaps the numbers . For example , if a < b , the initial quotient q0 equals zero , and the remainder r0 is a . Thus , rk is smaller than its predecessor rk − 1 for all k ≥ 0 .\n\nSince the remainders decrease with every step but can never be negative , a remainder rN must eventually equal zero , at which point the algorithm stops . The final nonzero remainder rN − 1 is the greatest common divisor of a and b . The number N cannot be infinite because there are only a finite number of nonnegative integers between the initial remainder r0 and zero .\n\nThe validity of the Euclidean algorithm can be proven by a two @-@ step argument . In the first step , the final nonzero remainder rN − 1 is shown to divide both a and b . Since it is a common divisor , it must be less than or equal to the greatest common divisor g . In the second step , it is shown that any common divisor of a and b , including g ,",
+            "strength_tied_windows": 1
+          }
+        ]
+      },
+      {
+        "layer": 47,
+        "events": [
+          {
+            "layer": 47,
+            "neuron": 5461,
+            "passage_index": 7463,
+            "passage_id": "p07463",
+            "parsed_source_label": "Salyut 6",
+            "source_rows": [
+              50884,
+              50935
+            ],
+            "token_position": 10,
+            "token_id": 69029,
+            "token_text": "ют",
+            "context": "Salyut 6 ( Russian : Сал[[ют]] @-@ 6 ; lit . Salute 6 ) , DOS @-@ 5 , was a Soviet orbital space station , the eighth flown as part of the Salyut programme . Launched on 29 September 1977 by a Proton rocket , the station was the first of th",
+            "gate_pre_silu": 1.3080425262451172,
+            "value": 1.91389799118042,
+            "activation": 1.9706870317459106,
+            "sign_regime": 0,
+            "full_window": "Salyut 6 ( Russian : Салют @-@ 6 ; lit . Salute 6 ) , DOS @-@ 5 , was a Soviet orbital space station , the eighth flown as part of the Salyut programme . Launched on 29 September 1977 by a Proton rocket , the station was the first of the ' second @-@ generation ' type of space station . Salyut 6 possessed several revolutionary advances over the earlier Soviet space stations , which it nevertheless resembled in overall design . These included the addition of a second docking port , a new main propulsion system and the station 's primary scientific instrument , the BST @-@ 1M multispectral telescope . The addition of the second docking port made crew handovers and station resupply by unmanned Progress freighters possible for the first time . The early Salyut stations had no means of resupply or removing accumulated garbage ( aside from the limited amount that cosmonauts could carry in their Soyuz spacecraft ) , nor could the propulsion system be refueled once it exhausted its propellant supply . Consequently , once the consumables launched with the station were used up , its mission had to be concluded and as a result , manned missions had a",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 47,
+            "neuron": 5461,
+            "passage_index": 9955,
+            "passage_id": "p09955",
+            "parsed_source_label": "USS Constellation vs L 'Insurgente",
+            "source_rows": [
+              625713,
+              625735
+            ],
+            "token_position": 16,
+            "token_id": 24,
+            "token_text": "9",
+            "context": "The USS Constellation vs L 'Insurgente , or the Action of [[9]] February 1799 , was a single @-@ ship action fought between frigates of the French Navy and the United States Navy during the Quasi @-@ War , the battle resulted in the USS Constellation 's capture of L 'Insur",
+            "gate_pre_silu": 1.3774583339691162,
+            "value": 1.4671117067337036,
+            "activation": 1.6138434410095215,
+            "sign_regime": 0,
+            "full_window": "The USS Constellation vs L 'Insurgente , or the Action of 9 February 1799 , was a single @-@ ship action fought between frigates of the French Navy and the United States Navy during the Quasi @-@ War , the battle resulted in the USS Constellation 's capture of L 'Insurgente .\n\nThe previous year , an undeclared war had begun between the United States and France due to French privateering attacks against American vessels . An American squadron under Commodore Thomas Truxtun had been sent to patrol the waters between Puerto Rico and Saint Kitts with orders to engage any French forces they found in the area . While Truxtun was sailing independently of his squadron in the Constellation , his flagship , he met and engaged L 'Insurgente . After chasing the French ship through a storm , Constellation was able to force L 'Insurgente into an engagement that lasted an hour and fourteen minutes before the French frigate surrendered . The French sustained heavy casualties in the action , while the numbers of American dead and wounded were low . After the action L 'Insurgente was taken to Saint Kitts and commissioned into the United States Navy as USS Insurgent . With this and later victories , American morale soared",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 47,
+            "neuron": 5461,
+            "passage_index": 9464,
+            "passage_id": "p09464",
+            "parsed_source_label": "Dynamics of the celestial spheres",
+            "source_rows": [
+              48668,
+              48708
+            ],
+            "token_position": 42,
+            "token_id": 95354,
+            "token_text": " movers",
+            "context": "amics of the celestial spheres . They explained the motions of the various nested spheres in terms of the materials of which they were made , external[[ movers]] such as celestial intelligences , and internal movers such as motive souls or impressed forces . Most of these models were qualitative , although a few of them incorporated quantitative analyses that related s",
+            "gate_pre_silu": 1.8681856393814087,
+            "value": 0.9245776534080505,
+            "activation": 1.4962555170059204,
+            "sign_regime": 0,
+            "full_window": "Ancient , medieval and Renaissance astronomers and philosophers developed many different theories about the dynamics of the celestial spheres . They explained the motions of the various nested spheres in terms of the materials of which they were made , external movers such as celestial intelligences , and internal movers such as motive souls or impressed forces . Most of these models were qualitative , although a few of them incorporated quantitative analyses that related speed , motive force and resistance .\n\nIn considering the physics of the celestial spheres , scholars followed two different views about the material composition of the celestial spheres . For Plato , the celestial regions were made \" mostly out of fire \" on account of fire 's mobility . Later Platonists , such as Plotinus , maintained that although fire moves naturally upward in a straight line toward its natural place at the periphery of the universe , when it arrived there , it would either rest or move naturally in a circle . This account was compatible with Aristotle 's meteorology of a fiery region in the upper air , dragged along underneath the circular motion of the lunar sphere . For Aristotle , however , the spheres themselves were made entirely of a special fifth element , Aether ( Αἰθήρ ) , the bright , untainted upper atmosphere in which the gods dwell , as distinct from the dense lower atmosphere",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 47,
+            "neuron": 5461,
+            "passage_index": 1628,
+            "passage_id": "p01628",
+            "parsed_source_label": "2007 Bernard Matthews H5N1 outbreak",
+            "source_rows": [
+              59209,
+              59247
+            ],
+            "token_position": 42,
+            "token_id": 15,
+            "token_text": "0",
+            "context": "he 2007 Bernard Matthews H5N1 outbreak was an occurrence of avian influenza in England caused by the H5N1 subtype of Influenza virus A that began on 3[[0]] January 2007 . The infection affected poultry at one of Bernard Matthews ' farms in Holton in Suffolk . It was the third instance of H5N1 @-@ subtype detected in the United Kingdom and a range of precautions w",
+            "gate_pre_silu": 1.501162052154541,
+            "value": 1.1740928888320923,
+            "activation": 1.4412833452224731,
+            "sign_regime": 0,
+            "full_window": "The 2007 Bernard Matthews H5N1 outbreak was an occurrence of avian influenza in England caused by the H5N1 subtype of Influenza virus A that began on 30 January 2007 . The infection affected poultry at one of Bernard Matthews ' farms in Holton in Suffolk . It was the third instance of H5N1 @-@ subtype detected in the United Kingdom and a range of precautions were instituted to prevent spread of the disease including a large cull of turkeys , the imposition of segregation zones , and a disinfection programme for the plant .\n\nThe cause of the outbreak was not determined . However , it was considered significant that Bernard Matthews regularly transports turkeys and turkey products between the UK and its plant in Hungary , and that the H5N1 strains previously found in Hungary , and those found at Suffolk , were effectively genetically identical .\n\nH5N1 is a subtype of the Influenza A virus , the viruses responsible for influenza in humans and many other animal species . A bird @-@ adapted strain of H5N1 , called HPAI A ( H5N1 ) for \" highly pathogenic avian influenza virus of type A of subtype H5N1 \" , is the",
+            "strength_tied_windows": 1
+          },
+          {
+            "layer": 47,
+            "neuron": 5461,
+            "passage_index": 7182,
+            "passage_id": "p07182",
+            "parsed_source_label": "Mario Party 5",
+            "source_rows": [
+              750967,
+              750997
+            ],
+            "token_position": 10,
+            "token_id": 89862,
+            "token_text": "オ",
+            "context": "Mario Party 5 ( Japanese : マリ[[オ]]パーティ5 , Hepburn : Mario Pāti Faibu ) is a party video game developed by Hudson Soft and published by Nintendo . It is the second game in the Mario Party series for Nintendo GameCube . It was released in North A",
+            "gate_pre_silu": 1.0417243242263794,
+            "value": 1.8297550678253174,
+            "activation": 1.4089561700820923,
+            "sign_regime": 0,
+            "full_window": "Mario Party 5 ( Japanese : マリオパーティ5 , Hepburn : Mario Pāti Faibu ) is a party video game developed by Hudson Soft and published by Nintendo . It is the second game in the Mario Party series for Nintendo GameCube . It was released in North America on November 10 , 2003 ; in Japan on November 28 , 2003 ; and in Europe and Australia on December 5 , 2003 . Mario Party 5 is the fifth installment in the Mario Party series .\n\nThe game is set in the fictional world of the Dream Depot , consisting of seven game boards . The single @-@ player \" Story \" mode involves the player winning multiple games against the Koopa Kids to prevent Bowser from conquering the Dream Depot . The main multiplayer game mode consists of four characters from Mario series playing a board game , with each board having a set theme . The game also features several minigames , which are played after every set of turns . Mario Party 5 introduces the \" Super Duel \" mode to the franchise , which requires players to assemble and control custom made battle vehicles which can be used in combat against other machines . The game features ten playable characters , with playable debuts",
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ],
+    "shared_window_examples": [
+      {
+        "selection": "lowest sum of source/partner ranks within their shared top-100 windows",
+        "source": {
+          "layer": 23,
+          "neuron": 5461,
+          "passage_index": 3513,
+          "passage_id": "p03513",
+          "parsed_source_label": "0 @.@ 999 ...",
+          "source_rows": [
+            288414,
+            288427
+          ],
+          "token_position": 232,
+          "token_id": 7772,
+          "token_text": " largest",
+          "context": "referred , contributing to the misconception that it is the only representation . The same phenomenon occurs in all other bases ( with a given base 's[[ largest]] digit ) or in any similar representation of the real numbers .\n\nThe equality of 0 @.@ 999",
+          "gate_pre_silu": 1.6338962316513062,
+          "value": 0.6765860915184021,
+          "activation": 0.9249509572982788,
+          "sign_regime": 0,
+          "full_window": "In mathematics , the repeating decimal 0 @.@ 999 … ( sometimes written with more or fewer 9s before the final ellipsis , for example as 0 @.@ 9 … , or in a variety of other variants such as 0 @.@ 9 , 0 . ( 9 ) , or <formula> ) denotes a real number that can be shown to be the number one . In other words , the symbols \" 0 @.@ 999 … \" and \" 1 \" represent the same number . Proofs of this equality have been formulated with varying degrees of mathematical rigor , taking into account preferred development of the real numbers , background assumptions , historical context , and target audience .\n\nEvery nonzero , terminating decimal ( with infinitely many trailing 0s ) has an equal twin representation with infinitely many trailing 9s ( for example , 8 @.@ 32 and 8 @.@ 31999 … ) . The terminating decimal representation is usually preferred , contributing to the misconception that it is the only representation . The same phenomenon occurs in all other bases ( with a given base 's largest digit ) or in any similar representation of the real numbers .\n\nThe equality of 0 @.@ 999"
+        },
+        "partner": {
+          "layer": 47,
+          "neuron": 5461,
+          "passage_index": 3513,
+          "passage_id": "p03513",
+          "parsed_source_label": "0 @.@ 999 ...",
+          "source_rows": [
+            288414,
+            288427
+          ],
+          "token_position": 225,
+          "token_id": 320,
+          "token_text": " (",
+          "context": "esentation is usually preferred , contributing to the misconception that it is the only representation . The same phenomenon occurs in all other bases[[ (]] with a given base 's largest digit ) or in any similar representation of the real numbers .\n\nThe equality of 0 @.@ 999",
+          "gate_pre_silu": -1.7820924520492554,
+          "value": -3.865450859069824,
+          "activation": 0.992266833782196,
+          "sign_regime": 3,
+          "full_window": "In mathematics , the repeating decimal 0 @.@ 999 … ( sometimes written with more or fewer 9s before the final ellipsis , for example as 0 @.@ 9 … , or in a variety of other variants such as 0 @.@ 9 , 0 . ( 9 ) , or <formula> ) denotes a real number that can be shown to be the number one . In other words , the symbols \" 0 @.@ 999 … \" and \" 1 \" represent the same number . Proofs of this equality have been formulated with varying degrees of mathematical rigor , taking into account preferred development of the real numbers , background assumptions , historical context , and target audience .\n\nEvery nonzero , terminating decimal ( with infinitely many trailing 0s ) has an equal twin representation with infinitely many trailing 9s ( for example , 8 @.@ 32 and 8 @.@ 31999 … ) . The terminating decimal representation is usually preferred , contributing to the misconception that it is the only representation . The same phenomenon occurs in all other bases ( with a given base 's largest digit ) or in any similar representation of the real numbers .\n\nThe equality of 0 @.@ 999"
+        }
+      }
+    ]
+  }
+]

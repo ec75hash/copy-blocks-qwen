@@ -1,0 +1,13 @@
+{
+  "tokens": 256,
+  "layers_checked": 48,
+  "captured_channels": 2976,
+  "logit_max_absolute_difference": 0.0,
+  "product_max_absolute_error": 3.2128371039163994e-06,
+  "all_capture_nodes_have_exact_token_count": true,
+  "library_sha256": {
+    "libllama.dylib": "7f427f69ea225c0c9df537d8007b4a159585938bb4cd5f291f35d6dd4455263a",
+    "libggml-base.dylib": "9a8cbc308bbdd436c1ac20157b01ad929906084cbd420426894049665d20d15a",
+    "libggml-metal.dylib": "7e9f4e946542790d69c0899f78157fd388d03e8bc130f9725bf093c877ffb88f"
+  }
+}

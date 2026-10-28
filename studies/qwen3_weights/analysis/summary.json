@@ -1,0 +1,133 @@
+{
+  "scope": "Independent, offline review of October 25 outputs; writes only to the separate output directory.\n\nNo historical scanner is imported or executed. Full saved-table reaggregation and\nbounded BF16 payload checks, not a fresh full-model scan or functional experiment.\n",
+  "within": {
+    "gate_proj": {
+      "n_corresponding": 24,
+      "n_remaining": 16,
+      "within_cosine": 0.2202012320962499,
+      "off_cosine": 0.002486819520645107,
+      "within_row_mean": 0.20953175378708846,
+      "off_row_mean": 0.004500017622229293,
+      "within_frac_gt_0.5": 0.0051888020833333335,
+      "off_frac_gt_0.5": 0.0,
+      "within_shuffled_row_mean": 0.004398307709131167,
+      "median": 0.20705123990774155,
+      "p95": 0.37980273663997627,
+      "count_gt_0_7": 109,
+      "count_gt_0_5": 3188,
+      "n": 614400,
+      "segment_means": [
+        0.2304831710838385,
+        0.2723949838764936,
+        0.11785920266564542
+      ],
+      "saved_pairs_checked": 2016,
+      "saved_neuron_vectors_checked": 40
+    },
+    "up_proj": {
+      "n_corresponding": 24,
+      "n_remaining": 16,
+      "within_cosine": 0.2063479740939218,
+      "off_cosine": -2.6017557570867066e-05,
+      "within_row_mean": 0.20053401426006565,
+      "off_row_mean": -2.4992727159852575e-05,
+      "within_frac_gt_0.5": 0.001940104166666667,
+      "off_frac_gt_0.5": 0.0,
+      "within_shuffled_row_mean": -1.569072471056387e-05,
+      "median": 0.19560648500919342,
+      "p95": 0.36839815527200687,
+      "count_gt_0_7": 27,
+      "count_gt_0_5": 1192,
+      "n": 614400,
+      "segment_means": [
+        0.21873845930425775,
+        0.26605559845457627,
+        0.10861778695380048
+      ],
+      "saved_pairs_checked": 2016,
+      "saved_neuron_vectors_checked": 40
+    },
+    "down_proj": {
+      "n_corresponding": 24,
+      "n_remaining": 16,
+      "within_cosine": 0.22953408804690242,
+      "off_cosine": 7.573494604981333e-06,
+      "within_row_mean": 0.22343633767020266,
+      "off_row_mean": 1.1295270741676072e-05,
+      "within_frac_gt_0.5": 0.0050716145833333325,
+      "off_frac_gt_0.5": 0.0,
+      "within_shuffled_row_mean": 3.734447412630145e-05,
+      "median": 0.2154868021607399,
+      "p95": 0.4058993965387344,
+      "count_gt_0_7": 48,
+      "count_gt_0_5": 3116,
+      "n": 614400,
+      "segment_means": [
+        0.2435073932811972,
+        0.2910076734608586,
+        0.12734752931119012
+      ],
+      "saved_pairs_checked": 2016,
+      "saved_neuron_vectors_checked": 40
+    }
+  },
+  "cross": {
+    "k_proj": {
+      "later_mean": 0.7016064411942201,
+      "earlier_mean": 0.2880472949769896
+    },
+    "v_proj": {
+      "later_mean": 0.8064656499303972,
+      "earlier_mean": 0.48859418824808915
+    },
+    "mlp_saved_vectors_checked": 64,
+    "head_recipe": {
+      "exact": 890,
+      "total": 896,
+      "exceptions": [
+        {
+          "family": "self_attn.q_proj",
+          "L14": 14,
+          "L32": 38,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.q_proj",
+          "L14": 20,
+          "L32": 44,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.q_proj",
+          "L14": 39,
+          "L32": 63,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.o_proj",
+          "L14": 8,
+          "L32": 8,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.o_proj",
+          "L14": 14,
+          "L32": 38,
+          "exceptions": 1
+        },
+        {
+          "family": "self_attn.o_proj",
+          "L14": 39,
+          "L32": 63,
+          "exceptions": 1
+        }
+      ],
+      "sampled_layer_pairs_per_family": 7
+    }
+  },
+  "payloads": [],
+  "raw_checks": [],
+  "unavailable_payloads": [],
+  "status": "passed",
+  "raw_scope": "Saved-table and vector reductions only; prior bounded BF16 checks are retained in audit/validation.json."
+}

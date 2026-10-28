@@ -1,0 +1,74 @@
+{
+ "repo_id": "Qwen/Qwen3-32B",
+ "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+ "family": "mlp.up_proj.weight",
+ "shape": [
+  25600,
+  5120
+ ],
+ "dtype": "BF16",
+ "neuron_axis": 0,
+ "region": [
+  8,
+  55
+ ],
+ "period": 24,
+ "top_offsets": [
+  {
+   "offset": 24,
+   "n_pairs": 40,
+   "mean_cosine": 0.12379837743332475,
+   "mean_row_mean_cosine": 0.12031041146517545
+  },
+  {
+   "offset": 63,
+   "n_pairs": 1,
+   "mean_cosine": 7.876730660783503e-05,
+   "mean_row_mean_cosine": 8.722989090913534e-05
+  },
+  {
+   "offset": 40,
+   "n_pairs": 24,
+   "mean_cosine": 3.42885343418267e-05,
+   "mean_row_mean_cosine": 2.9180463353088427e-05
+  },
+  {
+   "offset": 20,
+   "n_pairs": 44,
+   "mean_cosine": 3.323379403188164e-05,
+   "mean_row_mean_cosine": 3.611121869807354e-05
+  },
+  {
+   "offset": 61,
+   "n_pairs": 3,
+   "mean_cosine": 2.982995769054205e-05,
+   "mean_row_mean_cosine": 3.377194921109006e-05
+  }
+ ],
+ "by_period": {
+  "24": {
+   "n_corresponding": 24,
+   "n_remaining": 16,
+   "within_cosine": 0.2063479740939218,
+   "off_cosine": -2.6017557570867066e-05,
+   "within_row_mean": 0.20053401426006565,
+   "off_row_mean": -2.4992727159852575e-05,
+   "within_frac_gt_0.5": 0.001940104166666667,
+   "off_frac_gt_0.5": 0.0,
+   "within_shuffled_row_mean": -1.569072471056387e-05
+  },
+  "48": {
+   "n_corresponding": 0,
+   "n_remaining": 16,
+   "within_cosine": null,
+   "off_cosine": 1.274694256229048e-06,
+   "within_row_mean": null,
+   "off_row_mean": -1.0811520155639905e-05,
+   "within_frac_gt_0.5": null,
+   "off_frac_gt_0.5": 0.0,
+   "within_shuffled_row_mean": null
+  }
+ },
+ "global_pair_mean": 0.002459477188444555,
+ "elapsed_s": 3587.3
+}

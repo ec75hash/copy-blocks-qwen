@@ -1,16 +1,26 @@
 #!/usr/bin/env python3
-"""Hash the tracked release tree after staging changes (excluding checksums.json itself)."""
+"""Hash only this release tree, without depending on a parent Git repository."""
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 
-root = Path(__file__).resolve().parents[1]
-names = subprocess.check_output(["git", "ls-files", "-z"], cwd=root).decode().split("\0")
-checksums = {}
-for name in sorted(n for n in names if n and n != "checksums.json"):
-    path = root / name
-    if path.is_file():
-        checksums[name] = hashlib.sha256(path.read_bytes()).hexdigest()
-(root / "checksums.json").write_text(json.dumps(checksums, indent=2) + "\n")
-print(f"Hashed {len(checksums)} tracked release files")
+ROOT=Path(__file__).resolve().parents[1]
+EXCLUDED={'.git','.cache','.venv','__pycache__','reproduction','dist','build'}
+
+def files():
+    for path in sorted(ROOT.rglob('*')):
+        rel=path.relative_to(ROOT)
+        if any(part in EXCLUDED for part in rel.parts):continue
+        if path.is_file() and path.name!='checksums.json' and path.suffix!='.pyc':
+            yield rel.as_posix(),path
+
+def sha(path):
+    h=hashlib.sha256()
+    with path.open('rb') as f:
+        for b in iter(lambda:f.read(16*1024*1024),b''):h.update(b)
+    return h.hexdigest()
+
+if __name__=='__main__':
+    result={name:sha(path) for name,path in files()}
+    (ROOT/'checksums.json').write_text(json.dumps(result,indent=2)+'\n')
+    print(f'Hashed {len(result)} release files')

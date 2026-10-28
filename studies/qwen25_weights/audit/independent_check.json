@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "method": "Independent BF16 decoding, float64 chunked cross-products, explicit off-map mask",
+  "payloads_verified_against_original_capture": 672,
+  "payload_bytes": 1178304512,
+  "cross_cosines_recomputed": 18432,
+  "max_statistic_error_vs_original_capture": 2.4424906541753444e-13,
+  "max_normalized_diagonal_error": 2.3869795029440866e-14,
+  "fresh_downloads": false,
+  "model_inference": false,
+  "source_capture_commit": "d37c85e29e2410070fdb7c1c2b47e4865157b97f",
+  "source_files": {
+    "cross_qwen25_14b_32b.py": {
+      "sha256": "d4b41ba6178e6c632bc156e36c3f3d3143d3fdd7213f2a9279c76e59aedd3f84",
+      "destination": "code/as_run/cross_qwen25_14b_32b.py"
+    },
+    "cross_qwen25_14b_32b.json": {
+      "sha256": "a50291ffe7e6ca0a16cd9ab290cfaff7bdaeef15df1d7145548e6bf4bdd7139d",
+      "destination": "data/cross_qwen25_14b_32b.json"
+    }
+  },
+  "derived_matrices": "cross_cosines.npz contains all six matrices independently recomputed from the same cached captures",
+  "note": "Corrected source off-map maxima checked; endpoint differences are not dated training updates"
+}

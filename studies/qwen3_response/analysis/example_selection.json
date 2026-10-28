@@ -1,0 +1,662 @@
+[
+  {
+    "selection_rule": "highest_positive_top100_overlap",
+    "source_layer": 30,
+    "target_layer": 54,
+    "neuron": 11460,
+    "correlation": {
+      "source_layer": "30",
+      "target_layer": "54",
+      "neuron": "11460",
+      "segment": "B",
+      "component": "activation",
+      "paired_correlation": "0.08573613105416496",
+      "control_mean": "0.000716648863791451",
+      "paired_rank": "1.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "30",
+        "target_layer": "54",
+        "neuron": "11460",
+        "segment": "B",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "76",
+        "paired_jaccard": "0.6129032258064516",
+        "control_shared_mean": "8.12",
+        "control_jaccard_mean": "0.04547557191555604",
+        "paired_rank": "1.0",
+        "usable_controls": "100",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "30",
+        "target_layer": "54",
+        "neuron": "11460",
+        "segment": "B",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "53",
+        "paired_jaccard": "0.36054421768707484",
+        "control_shared_mean": "7.122448979591836",
+        "control_jaccard_mean": "0.03926491719267122",
+        "paired_rank": "2.0",
+        "usable_controls": "98",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "positive",
+    "members": [
+      {
+        "layer": 30,
+        "events": [
+          {
+            "passage_index": 2108,
+            "passage_id": "p02108",
+            "token_position": 3,
+            "sign_regime": 0,
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "strength_tied_windows": 4
+          },
+          {
+            "passage_index": 3513,
+            "passage_id": "p03513",
+            "token_position": 3,
+            "sign_regime": 0,
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "strength_tied_windows": 4
+          },
+          {
+            "passage_index": 5815,
+            "passage_id": "p05815",
+            "token_position": 3,
+            "sign_regime": 0,
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "strength_tied_windows": 4
+          },
+          {
+            "passage_index": 9084,
+            "passage_id": "p09084",
+            "token_position": 3,
+            "sign_regime": 0,
+            "gate_pre_silu": 4.990073204040527,
+            "value": 2.6429455280303955,
+            "activation": 13.099349021911621,
+            "strength_tied_windows": 4
+          },
+          {
+            "passage_index": 1058,
+            "passage_id": "p01058",
+            "token_position": 3,
+            "sign_regime": 0,
+            "gate_pre_silu": 4.169161796569824,
+            "value": 2.5444180965423584,
+            "activation": 10.446532249450684,
+            "strength_tied_windows": 3
+          }
+        ]
+      },
+      {
+        "layer": 54,
+        "events": [
+          {
+            "passage_index": 1773,
+            "passage_id": "p01773",
+            "token_position": 148,
+            "sign_regime": 0,
+            "gate_pre_silu": 5.300201892852783,
+            "value": 3.426039934158325,
+            "activation": 18.068531036376953,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 2874,
+            "passage_id": "p02874",
+            "token_position": 197,
+            "sign_regime": 0,
+            "gate_pre_silu": 5.246388912200928,
+            "value": 2.980684757232666,
+            "activation": 15.555906295776367,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 8757,
+            "passage_id": "p08757",
+            "token_position": 27,
+            "sign_regime": 0,
+            "gate_pre_silu": 3.6168222427368164,
+            "value": 3.7426512241363525,
+            "activation": 13.18232250213623,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 768,
+            "passage_id": "p00768",
+            "token_position": 31,
+            "sign_regime": 0,
+            "gate_pre_silu": 4.716248512268066,
+            "value": 2.429320812225342,
+            "activation": 11.355663299560547,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 5251,
+            "passage_id": "p05251",
+            "token_position": 241,
+            "sign_regime": 0,
+            "gate_pre_silu": 4.7823991775512695,
+            "value": 2.3515758514404297,
+            "activation": 11.15276050567627,
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "selection_rule": "highest_negative_top100_overlap",
+    "source_layer": 14,
+    "target_layer": 38,
+    "neuron": 7563,
+    "correlation": {
+      "source_layer": "14",
+      "target_layer": "38",
+      "neuron": "7563",
+      "segment": "A",
+      "component": "activation",
+      "paired_correlation": "0.3918360473005649",
+      "control_mean": "-0.0004768309494450855",
+      "paired_rank": "1.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "14",
+        "target_layer": "38",
+        "neuron": "7563",
+        "segment": "A",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "18",
+        "paired_jaccard": "0.0989010989010989",
+        "control_shared_mean": "1.1414141414141414",
+        "control_jaccard_mean": "0.005783848702045725",
+        "paired_rank": "1.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "14",
+        "target_layer": "38",
+        "neuron": "7563",
+        "segment": "A",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "54",
+        "paired_jaccard": "0.3698630136986301",
+        "control_shared_mean": "1.25",
+        "control_jaccard_mean": "0.006379174799256895",
+        "paired_rank": "1.0",
+        "usable_controls": "100",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "negative",
+    "members": [
+      {
+        "layer": 14,
+        "events": [
+          {
+            "passage_index": 9738,
+            "passage_id": "p09738",
+            "token_position": 198,
+            "sign_regime": 1,
+            "gate_pre_silu": 5.281793117523193,
+            "value": -9.086572647094727,
+            "activation": -47.750667572021484,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 9394,
+            "passage_id": "p09394",
+            "token_position": 85,
+            "sign_regime": 1,
+            "gate_pre_silu": 4.83952522277832,
+            "value": -6.8504509925842285,
+            "activation": -32.892723083496094,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 6211,
+            "passage_id": "p06211",
+            "token_position": 143,
+            "sign_regime": 1,
+            "gate_pre_silu": 4.428741931915283,
+            "value": -6.843127727508545,
+            "activation": -29.949167251586914,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 9902,
+            "passage_id": "p09902",
+            "token_position": 49,
+            "sign_regime": 1,
+            "gate_pre_silu": 4.048309803009033,
+            "value": -7.492208003997803,
+            "activation": -29.810529708862305,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 8049,
+            "passage_id": "p08049",
+            "token_position": 56,
+            "sign_regime": 1,
+            "gate_pre_silu": 3.9748990535736084,
+            "value": -7.416120529174805,
+            "activation": -28.934898376464844,
+            "strength_tied_windows": 1
+          }
+        ]
+      },
+      {
+        "layer": 38,
+        "events": [
+          {
+            "passage_index": 8050,
+            "passage_id": "p08050",
+            "token_position": 195,
+            "sign_regime": 1,
+            "gate_pre_silu": 3.899627685546875,
+            "value": -9.503674507141113,
+            "activation": -36.325225830078125,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 3909,
+            "passage_id": "p03909",
+            "token_position": 127,
+            "sign_regime": 1,
+            "gate_pre_silu": 4.1590776443481445,
+            "value": -8.742136001586914,
+            "activation": -35.79995346069336,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 3569,
+            "passage_id": "p03569",
+            "token_position": 150,
+            "sign_regime": 1,
+            "gate_pre_silu": 3.733017683029175,
+            "value": -9.482200622558594,
+            "activation": -34.57028579711914,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 3069,
+            "passage_id": "p03069",
+            "token_position": 5,
+            "sign_regime": 1,
+            "gate_pre_silu": 3.6335465908050537,
+            "value": -9.00819206237793,
+            "activation": -31.889102935791016,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 298,
+            "passage_id": "p00298",
+            "token_position": 79,
+            "sign_regime": 1,
+            "gate_pre_silu": 3.8624556064605713,
+            "value": -8.417559623718262,
+            "activation": -31.843223571777344,
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "selection_rule": "nearest_median_activation_correlation",
+    "source_layer": 20,
+    "target_layer": 44,
+    "neuron": 7369,
+    "correlation": {
+      "source_layer": "20",
+      "target_layer": "44",
+      "neuron": "7369",
+      "segment": "A",
+      "component": "activation",
+      "paired_correlation": "0.05460569284868794",
+      "control_mean": "-0.00016589223878877283",
+      "paired_rank": "3.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "20",
+        "target_layer": "44",
+        "neuron": "7369",
+        "segment": "A",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "1",
+        "paired_jaccard": "0.005025125628140704",
+        "control_shared_mean": "0.9191919191919192",
+        "control_jaccard_mean": "0.004645944924186323",
+        "paired_rank": "40.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "20",
+        "target_layer": "44",
+        "neuron": "7369",
+        "segment": "A",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "3",
+        "paired_jaccard": "0.015228426395939087",
+        "control_shared_mean": "0.8484848484848485",
+        "control_jaccard_mean": "0.004284873925559831",
+        "paired_rank": "6.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "positive",
+    "members": [
+      {
+        "layer": 20,
+        "events": [
+          {
+            "passage_index": 9034,
+            "passage_id": "p09034",
+            "token_position": 2,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.2595961093902588,
+            "value": 0.8719455003738403,
+            "activation": 0.8555272817611694,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 4192,
+            "passage_id": "p04192",
+            "token_position": 36,
+            "sign_regime": 0,
+            "gate_pre_silu": 0.8909903168678284,
+            "value": 1.2312103509902954,
+            "activation": 0.777874231338501,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 6407,
+            "passage_id": "p06407",
+            "token_position": 47,
+            "sign_regime": 0,
+            "gate_pre_silu": 0.8856754302978516,
+            "value": 1.2359989881515503,
+            "activation": 0.7750399112701416,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 1952,
+            "passage_id": "p01952",
+            "token_position": 209,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.2253220081329346,
+            "value": 0.6205968260765076,
+            "activation": 0.5878121852874756,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 3318,
+            "passage_id": "p03318",
+            "token_position": 2,
+            "sign_regime": 0,
+            "gate_pre_silu": 0.8691726922988892,
+            "value": 0.8959346413612366,
+            "activation": 0.5486668348312378,
+            "strength_tied_windows": 1
+          }
+        ]
+      },
+      {
+        "layer": 44,
+        "events": [
+          {
+            "passage_index": 437,
+            "passage_id": "p00437",
+            "token_position": 18,
+            "sign_regime": 0,
+            "gate_pre_silu": 0.9904977083206177,
+            "value": 1.8330581188201904,
+            "activation": 1.323939561843872,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 2383,
+            "passage_id": "p02383",
+            "token_position": 25,
+            "sign_regime": 0,
+            "gate_pre_silu": 0.9386610388755798,
+            "value": 1.749535322189331,
+            "activation": 1.1804760694503784,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 8186,
+            "passage_id": "p08186",
+            "token_position": 46,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.0042214393615723,
+            "value": 1.5464563369750977,
+            "activation": 1.136610507965088,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 9791,
+            "passage_id": "p09791",
+            "token_position": 84,
+            "sign_regime": 0,
+            "gate_pre_silu": 0.858633279800415,
+            "value": 1.8710485696792603,
+            "activation": 1.12839674949646,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 3637,
+            "passage_id": "p03637",
+            "token_position": 54,
+            "sign_regime": 0,
+            "gate_pre_silu": 0.9190457463264465,
+            "value": 1.6957130432128906,
+            "activation": 1.1140456199645996,
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "selection_rule": "lowest_signed_activation_correlation",
+    "source_layer": 23,
+    "target_layer": 47,
+    "neuron": 5461,
+    "correlation": {
+      "source_layer": "23",
+      "target_layer": "47",
+      "neuron": "5461",
+      "segment": "A",
+      "component": "activation",
+      "paired_correlation": "-0.06067670216822274",
+      "control_mean": "0.0006250420329307516",
+      "paired_rank": "101.0",
+      "usable_controls": "100",
+      "token_observations": "2560000"
+    },
+    "overlap": {
+      "positive": {
+        "source_layer": "23",
+        "target_layer": "47",
+        "neuron": "5461",
+        "segment": "A",
+        "response_group": "positive_all_regimes",
+        "top_k": "100",
+        "shared_passages": "1",
+        "paired_jaccard": "0.005025125628140704",
+        "control_shared_mean": "2.04",
+        "control_jaccard_mean": "0.01040549783296959",
+        "paired_rank": "66.5",
+        "usable_controls": "100",
+        "source_issue": "",
+        "partner_issue": ""
+      },
+      "negative": {
+        "source_layer": "23",
+        "target_layer": "47",
+        "neuron": "5461",
+        "segment": "A",
+        "response_group": "negative_all_regimes",
+        "top_k": "100",
+        "shared_passages": "2",
+        "paired_jaccard": "0.010101010101010102",
+        "control_shared_mean": "0.9393939393939394",
+        "control_jaccard_mean": "0.0047448034046373945",
+        "paired_rank": "16.0",
+        "usable_controls": "99",
+        "source_issue": "",
+        "partner_issue": ""
+      }
+    },
+    "display_pole": "positive",
+    "members": [
+      {
+        "layer": 23,
+        "events": [
+          {
+            "passage_index": 794,
+            "passage_id": "p00794",
+            "token_position": 5,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.4600492715835571,
+            "value": 1.3259077072143555,
+            "activation": 1.571053147315979,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 7752,
+            "passage_id": "p07752",
+            "token_position": 4,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.714279294013977,
+            "value": 1.017516016960144,
+            "activation": 1.4781088829040527,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 3674,
+            "passage_id": "p03674",
+            "token_position": 2,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.5898643732070923,
+            "value": 1.02107572555542,
+            "activation": 1.3483679294586182,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 8872,
+            "passage_id": "p08872",
+            "token_position": 134,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.446563959121704,
+            "value": 1.1325783729553223,
+            "activation": 1.3261911869049072,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 9772,
+            "passage_id": "p09772",
+            "token_position": 200,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.187196135520935,
+            "value": 1.4381496906280518,
+            "activation": 1.3082506656646729,
+            "strength_tied_windows": 1
+          }
+        ]
+      },
+      {
+        "layer": 47,
+        "events": [
+          {
+            "passage_index": 7463,
+            "passage_id": "p07463",
+            "token_position": 10,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.3080425262451172,
+            "value": 1.91389799118042,
+            "activation": 1.9706870317459106,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 9955,
+            "passage_id": "p09955",
+            "token_position": 16,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.3774583339691162,
+            "value": 1.4671117067337036,
+            "activation": 1.6138434410095215,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 9464,
+            "passage_id": "p09464",
+            "token_position": 42,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.8681856393814087,
+            "value": 0.9245776534080505,
+            "activation": 1.4962555170059204,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 1628,
+            "passage_id": "p01628",
+            "token_position": 42,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.501162052154541,
+            "value": 1.1740928888320923,
+            "activation": 1.4412833452224731,
+            "strength_tied_windows": 1
+          },
+          {
+            "passage_index": 7182,
+            "passage_id": "p07182",
+            "token_position": 10,
+            "sign_regime": 0,
+            "gate_pre_silu": 1.0417243242263794,
+            "value": 1.8297550678253174,
+            "activation": 1.4089561700820923,
+            "strength_tied_windows": 1
+          }
+        ]
+      }
+    ]
+  }
+]

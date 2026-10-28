@@ -1,15 +1,19 @@
 # Methods
 
+This page describes the original within-checkpoint survey. The v0.2.0 additions have
+separate [Qwen2.5 weight methods](studies/qwen25_weights/README.md),
+[Qwen3 weight methods](studies/qwen3_weights/README.md) and [response methods](studies/qwen3_response/README.md).
+
 ## What is measured
 
 For each checkpoint in `models.lock.json`, the scanner reads one or more *parameter families*
 from every decoder block that carries them, flattens each tensor, and computes the cosine
-similarity between every pair of blocks. Three families are used:
+similarity between every pair of blocks. Four parameter families are used:
 
 | Family | Tensor suffix | Where it exists | Why it is used |
 |---|---|---|---|
 | Attention key projection | `self_attn.k_proj.weight` | every block of a standard transformer; the full-attention blocks of a hybrid | present in every model in the survey, so it is the common yardstick |
-| Attention value projection | `self_attn.v_proj.weight` | Qwen3-32B and Qwen2.5-32B only (added 2026-10-21) | a second attention tensor family for the two dense checkpoints; trained together with `k_proj`, so it corroborates rather than independently replicates, and the query/output projections and MLP stay unmeasured |
+| Attention value projection | `self_attn.v_proj.weight` | Qwen3-32B and Qwen2.5-32B only (added 2026-10-21) | a second attention tensor family for the two dense checkpoints; trained together with `k_proj`, so it corroborates rather than independently replicates, query/output and MLP are outside this original survey; separate Qwen3 measurements are linked above |
 | DeltaNet short convolution | `linear_attn.conv1d.weight` | the linear-attention blocks of Qwen3.5/3.6/3.8 and Qwen3-Next hybrids | small (tens of thousands of parameters), sharply block-local, and the family that showed the pattern first |
 | MoE router | `mlp.gate.weight` | every block of a mixture-of-experts model | one row per expert, so its cosine is also computed row-aligned: a copied router keeps its expert ordering |
 
@@ -29,8 +33,8 @@ pairs at that offset. Offsets with fewer than six pairs stay in `data/offsets.cs
 excluded from offset rankings and spectrum plots; that is a reporting rule, not a significance test.
 
 Each lock entry carries a *period* K and a *region* [first, last]: the block hypothesis for
-that checkpoint, taken from the September 2026 survey of the family (the chart this release
-re-measures). The scanner does not use them to select data; it uses them only to split the
+that checkpoint, declared before this scan in the author’s unpublished September 2026 working survey;
+the explicit hypotheses are included in this release’s lock file. The scanner does not use them to select data; it uses them only to split the
 pairs at offsets K and 2K into *within-block* pairs (matching positions in the declared block groups) and
 *off-block* pairs, so the two means can be compared. Explicit `segments` and `pair_groups`
 keep KAT's two independent pairs separate; membership is not determined solely by both
@@ -106,7 +110,7 @@ and to the surveyed controls, is consistent with the paired blocks having starte
 weights; the two disclosed up-scalings in the survey (SOLAR, KAT) show what that produces in the
 same tensor family. It does not establish that this is how the model was built, when any copying
 happened relative to training, how much training followed it, or whether the blocks now compute
-the same function. Cosine magnitude is not a clock. Claims of that kind are outside this release.
+the same function. Cosine magnitude is not a clock. Claims of that kind are not established by this measurement.
 
 Rows within a checkpoint share weights and are not independent samples; there are no
 confidence intervals here. The scan is a deterministic measurement of a pinned artifact,
@@ -115,7 +119,7 @@ and the same bytes give the same numbers up to BLAS rounding.
 ## Reproduction
 
 Offline (`python scripts/verify_release.py`, `python scripts/make_report.py`) checks the
-released files against `checksums.json` and regenerates every table and figure from
+released files against `checksums.json` and regenerates the original survey table and figures from
 `data/`. Online (`python scripts/scan_weights.py --out reproduction/data --provenance
 reproduction/metadata`) re-reads the pinned tensors from the Hub and recomputes everything;
 compare its `data/` to the release numerically. The run needs Python 3.11+, NumPy, requests,

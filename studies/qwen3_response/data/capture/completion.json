@@ -1,0 +1,48 @@
+{
+  "phase": "complete",
+  "stop_reason": "complete",
+  "summary": {
+    "mode": "descriptive measurements only; no predictions, significance tests or semantic labels",
+    "committed_passages": 10000,
+    "planned_passages": 10000,
+    "tokens_per_neuron": 2560000,
+    "neuron_pairs": 288,
+    "layer_pairs": 24,
+    "raw_passages_retained": 512,
+    "correlation_rows": 864,
+    "overlap_rows": 5184,
+    "top_k_values": [
+      10,
+      100,
+      500
+    ],
+    "underlying_captured_components": [
+      "gate_pre_silu",
+      "value",
+      "activation"
+    ],
+    "sign_regimes": [
+      "positive_gate_positive_value",
+      "positive_gate_negative_value",
+      "negative_gate_positive_value",
+      "negative_gate_negative_value"
+    ],
+    "control_design": "100 shared random other-index controls per layer pair",
+    "selection_note": "Four selected neuron indices per segment per layer pair; report segments separately rather than treating equal sampling as population weights",
+    "status_at_report": "writing_measurements"
+  },
+  "validation_status": "passed",
+  "files_to_analyze": [
+    "checkpoint.npz",
+    "peaks.npy",
+    "positions.npy",
+    "sign_counts.npy",
+    "passage_moments.npy",
+    "raw/",
+    "passages.jsonl",
+    "tokens.npy",
+    "reports/"
+  ],
+  "no_predictions": true,
+  "no_interpretation": true
+}

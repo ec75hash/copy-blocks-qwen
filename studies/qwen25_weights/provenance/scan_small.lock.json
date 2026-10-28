@@ -1,0 +1,60 @@
+{
+  "schema_version": 2,
+  "purpose": "Pinned byte-range weight scan for repeated blocks across Qwen-family checkpoints",
+  "models": [
+    {
+      "repo_id": "Qwen/Qwen2.5-32B",
+      "slug": "qwen25-32b",
+      "revision": "1818d35814b8319459f4bd55ed1ac8709630f003",
+      "decoder_prefix": "model.layers.",
+      "depth": 64,
+      "period": 16,
+      "region": [
+        16,
+        47
+      ],
+      "tensors": [
+        "self_attn.q_proj.bias",
+        "self_attn.k_proj.bias",
+        "self_attn.v_proj.bias",
+        "input_layernorm.weight",
+        "post_attention_layernorm.weight"
+      ],
+      "min_pairs": 6,
+      "role": "primary",
+      "note": "chart: L32-47 ~ L16-31; v_proj added 2026-10-21 as a second attention family",
+      "metadata_sha256": {
+        "config.json": "2c003fe40b13d2d1f372254d77177ed753176150f3d424d1b5ad22ff1d78a987",
+        "model.safetensors.index.json": "487c27978b0bad77946ba1a5093acfc7747a62bd5e256d3a083345d133fc3042"
+      },
+      "stage": 1
+    },
+    {
+      "repo_id": "Qwen/Qwen2.5-14B",
+      "slug": "qwen25-14b",
+      "revision": "97e1e76335b7017d8f67c08a19d103c0504298c9",
+      "decoder_prefix": "model.layers.",
+      "depth": 48,
+      "period": 16,
+      "region": [
+        0,
+        47
+      ],
+      "tensors": [
+        "self_attn.q_proj.bias",
+        "self_attn.k_proj.bias",
+        "self_attn.v_proj.bias",
+        "input_layernorm.weight",
+        "post_attention_layernorm.weight"
+      ],
+      "min_pairs": 6,
+      "role": "no_block_reported",
+      "note": "chart: no block",
+      "metadata_sha256": {
+        "config.json": "fdb89460be9a6383451437cdf632a3e087522efa682265461f33507e7069f026",
+        "model.safetensors.index.json": "7b4b616a213f09ae889be05d1b135198589496e817d793e2605d5c5b1fe3ae5d"
+      },
+      "stage": 2
+    }
+  ]
+}

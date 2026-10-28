@@ -1,0 +1,14 @@
+{
+  "status": "protocol draft and initial selection; no activation capture",
+  "checks": {
+    "target_pairs": 288,
+    "layer_segment_groups": 72,
+    "targets_per_group": 4,
+    "random_controls_per_target": 100
+  },
+  "sha256": {
+    "select_neurons.py": "2fb6258fec8f2138a38d182d99f572e84281f1a45eeaae723c856f9578d3e760",
+    "selection.json": "f4fd99d7316346feaf09f0d4702d7c32a2dca34e5847f812695f68e79c4a6ba1"
+  },
+  "manifest_note": "Historical setup record; a protocol draft not distributed in this release was removed from its file list. The selection and selection-script hashes remain unchanged."
+}

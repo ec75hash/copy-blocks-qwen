@@ -1,0 +1,10 @@
+{
+  "source": "Recovered from a local AI-assisted session log; original log is not redistributed.",
+  "source_line": 12527,
+  "timestamp": "2026-10-26T01:04:44.682Z",
+  "command_sha256": "9cd68412e4be48226ad923fbea54fe30843b860cc5a31f8b6b85a55fc0b2552e",
+  "executed_in_review": false,
+  "released_command": "audit/historical_generator.txt",
+  "released_command_sha256": "e4cf9fa003dab14a0f95968d0cbdbc5c1f371b7f46250400c21ecbe3b49829bf",
+  "path_redactions": "The released command uses repository-relative interpreter/import setup; its original command hash is retained above."
+}

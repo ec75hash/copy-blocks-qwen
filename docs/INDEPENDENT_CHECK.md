@@ -3,8 +3,7 @@
 On 2026-10-19 a Codex (GPT-6) session working in a separate workspace wrote its own byte-range
 scanner, kept its own tensor cache, and measured 33 of this release's checkpoints at the same
 pinned revisions (its roster lacks DeepSeek-R1-Distill-Qwen-32B). Its per-pair table
-(`current/[CURRENT] FAMILY_DATA.json` in that workspace, SHA-256 prefix `9980ce0b1acbe7b0` at the
-time of comparison) was diffed against this release's `data/pairs.csv` on matching
+(the second scanner’s pair table; SHA-256 prefix `9980ce0b1acbe7b0` at the time of comparison) was diffed against this release's `data/pairs.csv` on matching
 (repository, tensor, layer_a, layer_b) keys.
 
 | Quantity | Value |
@@ -14,7 +13,11 @@ time of comparison) was diffed against this release's `data/pairs.csv` on matchi
 | Largest absolute difference in flattened cosine | 3.72 × 10⁻¹⁵ |
 | Pairs differing by more than 10⁻⁵ | 0 |
 | Shared tensor payload hashes | 1,552, all equal |
-| Pairs only in this release | 18,410 (k_proj / conv1d families the other scanner did not select for MoEs, plus R1-Distill) |
+| Pairs only in this release | 22,442: 18,410 original unmatched pairs plus 4,032 later value-projection pairs |
+
+The comparison was made on 2026-10-19, before the 4,032 `v_proj` pairs were added
+on 2026-10-21. Those later pairs are outside the shared comparison;
+60,982 current pairs minus 38,540 shared pairs equals 22,442 unmatched pairs.
 
 The two scanners share an ancestor (the Qwen3.6-27B release scanner) but were extended
 separately, read the Hub through separate caches, and compute the row-aligned statistic only on
@@ -22,7 +25,7 @@ this side; the agreement is on the full-tensor cosine.
 
 ## What the comparison caught
 
-The other session's reviewer found that its float32 Gram matrix gave KAT-V1-40B L24↔L32 as
+The independent check found that its float32 Gram matrix gave KAT-V1-40B L24↔L32 as
 0.978407562 where a float64 dot product gives 0.983010680. A two-vector float32 check on this
 side agreed with float64 to 3 × 10⁻⁸ and so missed it; the error appears only when the Gram
 matrix has 32 or more rows of several million elements (NumPy 2.4.2 on macOS arm64 with

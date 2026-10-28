@@ -1,0 +1,190 @@
+NUMERICALLY SELECTED NEURON EXAMPLES — QWEN3-32B Q8
+Exploratory examples selected after collection; no neuron-meaning labels are assigned.
+Selection includes both high-overlap cases, a near-median case, and the lowest signed correlation.
+[[...]] marks the saved token at the measured peak; token indices are zero-based.
+Source labels reproduce the original parser labels; some are equation fragments, not article titles.
+
+SELECTION: highest_positive_top100_overlap
+L30 / L54, neuron 11460
+Full-token correlation 0.085736; mean control 0.000717; rank 1.0/101.
+Top-100 positive: 76 shared; control mean 8.120; usable controls 100.
+Top-100 negative: 53 shared; control mean 7.122; usable controls 98.
+
+L30 — strongest positive windows (ties ordered by stored passage index):
+p02108 | label: Curve @-@ shortening flow | token 3 (' the')
+gate=4.99007, value=2.64295, activation=13.09935, regime=0; equally strong windows=4
+In mathematics ,[[ the]] curve @-@ shortening flow is a process that modifies a smooth curve in the Euclidean plane by moving its points perpendicularly to the curve at a speed proportional to the curvature . The curve @-@ shortening 
+p03513 | label: 0 @.@ 999 ... | token 3 (' the')
+gate=4.99007, value=2.64295, activation=13.09935, regime=0; equally strong windows=4
+In mathematics ,[[ the]] repeating decimal 0 @.@ 999 … ( sometimes written with more or fewer 9s before the final ellipsis , for example as 0 @.@ 9 … , or in a variety of other variants such as 0 @.@ 9 , 0 . ( 9 ) , or <formula> ) den
+p05815 | label: Dirac delta function | token 3 (' the')
+gate=4.99007, value=2.64295, activation=13.09935, regime=0; equally strong windows=4
+In mathematics ,[[ the]] Dirac delta function , or δ function , is a generalized function , or distribution , on the real number line that is zero everywhere except at zero , with an integral of one over the entire real line . The del
+
+L54 — strongest positive windows (ties ordered by stored passage index):
+p01773 | label: 1 ⁄ 3 using a supremum definition , but then insisted that 0 @.@ 999 … < 1 based on her earlier understanding of long division . Others still are able to prove that 1 ⁄ 3 | token 148 (' that')
+gate=5.30020, value=3.42604, activation=18.06853, regime=0; equally strong windows=1
+ldly imagined infinite growing process . "
+
+As part of Ed Dubinsky 's APOS theory of mathematical learning , he and his collaborators ( 2005 ) propose[[ that]] students who conceive of 0 @.@ 999 … as a finite , indeterminate string with an infinitely small distance from 1 have " not yet constructed a complete process conception of the infinite decimal " . Other stude
+p02874 | label: Srinivasa Ramanujan | token 197 (' ')
+gate=5.24639, value=2.98068, activation=15.55591, regime=0; equally strong windows=1
+ had rediscovered previously known theorems in addition to producing new ones .
+
+During his short life , Ramanujan independently compiled nearly 3 @,@[[ ]]900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct , although some were already known . His original and highly unconventional results , such as the Ramanujan p
+p08757 | label: 10 , b | token 27 (' mathematical')
+gate=3.61682, value=3.74265, activation=13.18232, regime=0; equally strong windows=1
+e ( the irrational mathematical constant ≈ 2 @.@ 71828 ) , and b = 2 . In[[ mathematical]] analysis , the logarithm to base e is widespread because of its particular analytical properties explained below . On the other hand , base @-@ 10 logarithms are easy to use for manual calculations in the deci
+
+Same-window comparison:
+L30 p02874 token 172 ('ore'), activation=6.91479
+ famous partnership with the English mathematician G. H. Hardy . The Cambridge professor realized that Ramanujan had rediscovered previously known the[[ore]]ms in addition to producing new ones .
+
+During his short life , Ramanujan independently compiled nearly 3 @,@ 900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct
+L54 p02874 token 197 (' '), activation=15.55591
+ had rediscovered previously known theorems in addition to producing new ones .
+
+During his short life , Ramanujan independently compiled nearly 3 @,@[[ ]]900 results ( mostly identities and equations ) . Nearly all his claims have now been proven correct , although some were already known . His original and highly unconventional results , such as the Ramanujan p
+
+Same-window comparison:
+L30 p09084 token 3 (' the'), activation=13.09935
+In mathematics ,[[ the]] Pythagorean theorem , also known as Pythagoras ' theorem , is a fundamental relation in Euclidean geometry among the three sides of a right triangle . It states that the square of the hypotenuse ( the side opp
+L54 p09084 token 171 (' he'), activation=9.93024
+d that knowledge of the theorem predates him , the theorem is named after the ancient Greek mathematician Pythagoras ( c . 570 – c . 495 BC ) as it is[[ he]] who , by tradition , is credited with its first recorded proof . There is some evidence that Babylonian mathematicians understood the formula , although little of it indicates an application within a mathemati
+
+------------------------------------------------------------------------
+
+SELECTION: highest_negative_top100_overlap
+L14 / L38, neuron 7563
+Full-token correlation 0.391836; mean control -0.000477; rank 1.0/101.
+Top-100 positive: 18 shared; control mean 1.141; usable controls 99.
+Top-100 negative: 54 shared; control mean 1.250; usable controls 100.
+
+L14 — strongest negative windows (ties ordered by stored passage index):
+p09738 | label: Ich bin vergnügt mit meinem Glücke , BWV 84 | token 198 ('burg')
+gate=5.28179, value=-9.08657, activation=-47.75067, regime=1; equally strong windows=1
+ expressed in simple language . The closing chorale is the 12th stanza of the hymn " Wer weiß , wie nahe mir mein Ende " by Ämilie Juliane von Schwarz[[burg]] @-@ Rudolstadt . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called " Cantata " himself .
+
+Bach structured the work in five movements , alternating arias and recitatives , and a closi
+p09394 | label: Princess Elisabeth of Hesse and by Rhine ( 1895 – 1903 ) | token 85 ('urg')
+gate=4.83953, value=-6.85045, activation=-32.89272, regime=1; equally strong windows=1
+November 1903 ) was the only daughter of Ernst Ludwig , Grand Duke of Hesse and by Rhine and his first wife , Princess Victoria Melita of Saxe @-@ Cob[[urg]] and Gotha . She was named after her paternal great @-@ grandmother , who was born Princess Elisabeth of Prussia . Her paternal aunt had the same name and was also nicknamed Ella . Elisabeth 's early death was 
+p06211 | label: Sri Aurobindo | token 143 ('oda')
+gate=4.42874, value=-6.84313, activation=-29.94917, regime=1; equally strong windows=1
+ing 's College , Cambridge , England . After returning to India he took up various civil service works under the maharaja of the princely state of Bar[[oda]] and began to involve himself in politics . He was imprisoned by the British for writing articles against British rule in India . He was released when no evidence was provided . During his stay in the jail he h
+
+L38 — strongest negative windows (ties ordered by stored passage index):
+p08050 | label: Order of Saint Hubert | token 195 ('ves')
+gate=3.89963, value=-9.50367, activation=-36.32523, regime=1; equally strong windows=1
+ duchy of Jülich and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cle[[ves]] @-@ Berg of the counties of Ravensberg and Mark with the duchies of Cleves , Jülich and Berg . In 1778 , Charles Theodore , Duke of Jülich and Berg and the Count @-@ Elector Palatine , succeeded his childless
+p03909 | label: Prussian uprisings | token 127 (' Duke')
+gate=4.15908, value=-8.74214, activation=-35.79995, regime=1; equally strong windows=1
+of the less numerous Teutonic Knights . However , the Prussians rose against their conquerors on five occasions .
+
+The first uprising was supported by[[ Duke]] Swietopelk II , Duke of Pomerania . The Prussians were successful at first , reducing the Knights to only five of their strongest castles . Conversely , the duke suffered a series of military defeats and was e
+p03569 | label: Jauchzet Gott in allen Landen , BWV 51 | token 150 ('els')
+gate=3.73302, value=-9.48220, activation=-34.57029, regime=1; equally strong windows=1
+7 September 1730 in Leipzig . The work may have been composed earlier , possibly for an occasion at the court of Christian , Duke of Saxe @-@ Weissenf[[els]] , for whom Bach had composed the Hunting Cantata and the Shepherd Cantata .
+
+The text was written by an unknown poet who took inspiration from various biblical books , especially from psalms , and included as 
+
+Same-window comparison:
+L14 p08050 token 158 ('lich'), activation=-28.80981
+o were descended from a female line of the House of Jülich . The dispute began in the 1430s , when Arnold , Duke of Gelderland claimed the duchy of Jü[[lich]] and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cleves @-@ Berg of the counties of Ravensberg and Mark with the duchies of Clev
+L38 p08050 token 195 ('ves'), activation=-36.32523
+ duchy of Jülich and the county of Ravensberg , and was resolved in the 1614 Treaty of Xanten , which established the United Duchies of Jülich @-@ Cle[[ves]] @-@ Berg of the counties of Ravensberg and Mark with the duchies of Cleves , Jülich and Berg . In 1778 , Charles Theodore , Duke of Jülich and Berg and the Count @-@ Elector Palatine , succeeded his childless
+
+Same-window comparison:
+L14 p09738 token 198 ('burg'), activation=-47.75067
+ expressed in simple language . The closing chorale is the 12th stanza of the hymn " Wer weiß , wie nahe mir mein Ende " by Ämilie Juliane von Schwarz[[burg]] @-@ Rudolstadt . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called " Cantata " himself .
+
+Bach structured the work in five movements , alternating arias and recitatives , and a closi
+L38 p09738 token 204 ('stadt'), activation=-31.80435
+simple language . The closing chorale is the 12th stanza of the hymn " Wer weiß , wie nahe mir mein Ende " by Ämilie Juliane von Schwarzburg @-@ Rudol[[stadt]] . Ich bin vergnügt mit meinem Glücke is one of the few works which Bach called " Cantata " himself .
+
+Bach structured the work in five movements , alternating arias and recitatives , and a closing chorale . Th
+
+------------------------------------------------------------------------
+
+SELECTION: nearest_median_activation_correlation
+L20 / L44, neuron 7369
+Full-token correlation 0.054606; mean control -0.000166; rank 3.0/101.
+Top-100 positive: 1 shared; control mean 0.919; usable controls 99.
+Top-100 negative: 3 shared; control mean 0.848; usable controls 99.
+
+L20 — strongest positive windows (ties ordered by stored passage index):
+p09034 | label: Russian submarine AG @-@ 22 | token 2 (' submarine')
+gate=1.25960, value=0.87195, activation=0.85553, regime=0; equally strong windows=1
+The Russian[[ submarine]] AG @-@ 22 was an AG @-@ class submarine , designed by the American Holland Torpedo Boat Company / Electric Boat Company , built for the Imperial Russian Navy during World War I. The submarine was fabricated in
+p04192 | label: Newton 's parakeet | token 36 (' island')
+gate=0.89099, value=1.23121, activation=0.77787, regime=0; equally strong windows=1
+Newton 's parakeet or the Rodrigues parakeet ( Psittacula exsul ) is an extinct species of parrot that was endemic to the Mascarene[[ island]] of Rodrigues in the western Indian Ocean . Several of its features diverged from related species , indicating long @-@ term isolation on Rodrigues and subsequent adaptation . The rose @-@ ringed parakeet of th
+p06407 | label: Broad @-@ billed parrot | token 47 (' island')
+gate=0.88568, value=1.23600, activation=0.77504, regime=0; equally strong windows=1
+@ billed parrot or raven parrot ( Lophopsittacus mauritianus ) is a large extinct parrot in the family Psittaculidae . It was endemic to the Mascarene[[ island]] of Mauritius in the Indian Ocean east of Madagascar . It is unclear what other species it is most closely related to , but it has been classified as a member of the tribe Psittaculini , along with other Mascar
+
+L44 — strongest positive windows (ties ordered by stored passage index):
+p00437 | label: Downtown Triangle ( Jerusalem ) | token 18 (' lit')
+gate=0.99050, value=1.83306, activation=1.32394, regime=0; equally strong windows=1
+The Downtown Triangle ( Hebrew : המשולש , Ha @-@ Meshulash ,[[ lit]] . " The Triangle " ) is a central commercial and entertainment district in Jerusalem , Israel . Measuring 29 @,@ 000 square metres ( 310 @,@ 000 sq ft ) , the area is bounded by Jaffa Road on the north , King 
+p02383 | label: Miles Straume | token 25 (' the')
+gate=0.93866, value=1.74954, activation=1.18048, regime=0; equally strong windows=1
+Miles Straume is a fictional character played by Ken Leung on the ABC television series Lost . Miles is introduced early in[[ the]] fourth season as a hotheaded and sarcastic medium as a crew member aboard the freighter called the Kahana that is offshore the island where most of Lost takes place . Miles arrives on the island and is eventua
+p08186 | label: 2 ) and five squares along the other ( 60 / 12 | token 46 (' divides')
+gate=1.00422, value=1.54646, activation=1.13661, regime=0; equally strong windows=1
+ the prime factors shared by the two numbers , where a same prime factor can be used multiple times , but only as long as the product of these factors[[ divides]] both a and b . For example , since 1386 can be factored into 2 × 3 × 3 × 7 × 11 , and 3213 can be factored into 3 × 3 × 3 × 7 × 17 , the greatest common divisor of 1386 and 3213 equals 63
+
+Another definition o
+
+Same-window comparison:
+L20 p00476 token 123 ('arn'), activation=0.38991
+us in the UK .
+
+Under threat of being dropped by Food Records , for their next album Blur underwent an image makeover championed by frontman Damon Alb[[arn]] . The band incorporated influences from traditional British guitar pop groups such as the Kinks and the Small Faces , and the resulting sound was melodic and lushly produced , featuring brass , woodwind and ba
+L44 p00476 token 83 (' of'), activation=0.67374
+ public favour . After the group returned from an unsuccessful tour of the United States , poorly received live performances and the rising popularity[[ of]] rival band Suede further diminished Blur 's status in the UK .
+
+Under threat of being dropped by Food Records , for their next album Blur underwent an image makeover championed by frontman Damon Albarn . The b
+
+------------------------------------------------------------------------
+
+SELECTION: lowest_signed_activation_correlation
+L23 / L47, neuron 5461
+Full-token correlation -0.060677; mean control 0.000625; rank 101.0/101.
+Top-100 positive: 1 shared; control mean 2.040; usable controls 100.
+Top-100 negative: 2 shared; control mean 0.939; usable controls 99.
+
+L23 — strongest positive windows (ties ordered by stored passage index):
+p00794 | label: Anytime You Need a Friend | token 5 (' a')
+gate=1.46005, value=1.32591, activation=1.57105, regime=0; equally strong windows=1
+" Anytime You Need[[ a]] Friend " is a song by American singer @-@ songwriter Mariah Carey . The song was written and produced by Carey and Walter Afanasieff , for her third studio album , Music Box ( 1993 ) . It was released on May 3
+p07752 | label: I Can See the Whole Room ... and There 's Nobody in It ! | token 4 (' Whole')
+gate=1.71428, value=1.01752, activation=1.47811, regime=0; equally strong windows=1
+I Can See the[[ Whole]] Room ... and There 's Nobody in It ! ( sometimes I Can See the Whole Room and There 's Nobody in It ! or simply I Can See the Whole Room ! ) is a 1961 painting by Roy Lichtenstein . It is a painting of a man l
+p03674 | label: That We Can Play | token 2 (' Can')
+gate=1.58986, value=1.02108, activation=1.34837, regime=0; equally strong windows=1
+That We[[ Can]] Play is the debut EP of the American electronic @-@ music project Games , consisting of producers Daniel Lopatin and Joel Ford . Lopatin and Ford ( who had made electronic music together since their school day
+
+L47 — strongest positive windows (ties ordered by stored passage index):
+p07463 | label: Salyut 6 | token 10 ('ют')
+gate=1.30804, value=1.91390, activation=1.97069, regime=0; equally strong windows=1
+Salyut 6 ( Russian : Сал[[ют]] @-@ 6 ; lit . Salute 6 ) , DOS @-@ 5 , was a Soviet orbital space station , the eighth flown as part of the Salyut programme . Launched on 29 September 1977 by a Proton rocket , the station was the first of th
+p09955 | label: USS Constellation vs L 'Insurgente | token 16 ('9')
+gate=1.37746, value=1.46711, activation=1.61384, regime=0; equally strong windows=1
+The USS Constellation vs L 'Insurgente , or the Action of [[9]] February 1799 , was a single @-@ ship action fought between frigates of the French Navy and the United States Navy during the Quasi @-@ War , the battle resulted in the USS Constellation 's capture of L 'Insur
+p09464 | label: Dynamics of the celestial spheres | token 42 (' movers')
+gate=1.86819, value=0.92458, activation=1.49626, regime=0; equally strong windows=1
+amics of the celestial spheres . They explained the motions of the various nested spheres in terms of the materials of which they were made , external[[ movers]] such as celestial intelligences , and internal movers such as motive souls or impressed forces . Most of these models were qualitative , although a few of them incorporated quantitative analyses that related s
+
+Same-window comparison:
+L23 p03513 token 232 (' largest'), activation=0.92495
+referred , contributing to the misconception that it is the only representation . The same phenomenon occurs in all other bases ( with a given base 's[[ largest]] digit ) or in any similar representation of the real numbers .
+
+The equality of 0 @.@ 999
+L47 p03513 token 225 (' ('), activation=0.99227
+esentation is usually preferred , contributing to the misconception that it is the only representation . The same phenomenon occurs in all other bases[[ (]] with a given base 's largest digit ) or in any similar representation of the real numbers .
+
+The equality of 0 @.@ 999
+
+------------------------------------------------------------------------
+

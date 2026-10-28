@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "committed_passages": 10000,
+  "token_observations_per_neuron": 2560000,
+  "retained_raw_passages": 512,
+  "raw_passages_independently_reduced": 32,
+  "all_committed_peaks_signs_positions_and_counts_checked": true,
+  "max_global_mean_difference_from_float32_passage_summaries": 4.081865512262084e-09,
+  "max_global_m2_difference_from_float32_passage_summaries": 0.1033580400981009,
+  "checkpoint_sha256": "c59bf8ca537a701e61286c899b45af6dfa3ab780163fbb0210e1301fa73aed80",
+  "dense_array_sha256": {
+    "peaks": "33cc33e02c97bc90eab9464428532af5d18a9ff2396f59f13b0f6a39cf5c5529",
+    "positions": "746d926a4f3ece9d0a5e8807885d823ca75ee355c0c9fbd148d771427c91c022",
+    "sign_counts": "edb46be5fe22fcf0c42aa106ac6445cdb1cbda64b5ebeb34e83f0d978c6f0d92",
+    "passage_moments": "f1271cc013bb4daa94f887f027ae4fc2d45c4399816d68deef4808c693548d26"
+  },
+  "no_interpretation": true
+}

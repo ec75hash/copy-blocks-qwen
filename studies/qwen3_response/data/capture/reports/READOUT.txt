@@ -1,0 +1,17 @@
+OVERNIGHT QWEN3-32B Q8 COLLECTION — MEASUREMENTS ONLY
+
+Committed passages: 10,000 of 10,000
+Token observations per neuron: 2,560,000
+288 corresponding neuron pairs across all 24 layer pairs; original zero-based indices.
+100 shared random different-index controls per layer pair.
+Detailed raw paired-neuron recordings retained for 512 preselected passages.
+
+correlations.csv: separate gate, value and final-activation response correlations.
+passage_overlap.csv: positive/negative response overlap and four gate/value sign regimes.
+strong_passage_references.csv: exact passage/token locations and measured gate/value/product.
+No neuron meanings, predictions, significance tests or pass/fail decisions are assigned.
+
+The .npy files have space reserved for the whole planned run.
+Only rows 0 through committed_passages-1 contain committed observations.
+Raw files contain paired channels only; controls retain streaming correlations and per-passage summaries.
+Exact text is in passages.jsonl; exact token IDs are in tokens.npy (row 0 is instrumentation).

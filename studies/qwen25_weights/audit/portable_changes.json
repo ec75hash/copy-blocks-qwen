@@ -1,0 +1,13 @@
+{
+  "source_sha256": "d4b41ba6178e6c632bc156e36c3f3d3143d3fdd7213f2a9279c76e59aedd3f84",
+  "portable_sha256": "82ab8846c71cba7298be0edf87c57cefad4b7f57157f9f8295fe0b5b179aad51",
+  "changes": [
+    "Release-relative scanner import",
+    "Explicit cache and separate output arguments",
+    "Verify cached payloads against released hashes",
+    "Check normalized diagonals",
+    "Describe endpoint residuals without assigning chronology",
+    "Optional five-family bias/norm subset without key tensors"
+  ],
+  "cross_cosine_mapping_and_residual_formulas": "unchanged"
+}

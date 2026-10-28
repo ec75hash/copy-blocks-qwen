@@ -371,7 +371,7 @@ def write_results(specs, summaries, analyses, pairs, report):
     for header, slugs in DISPLAY:
         for slug in slugs:
             for a in [x for x in analyses if x["model_slug"] == slug]:
-                tops = "; ".join(f"k={t['offset']}: {t['mean_cosine']:.4f} (n={t['n_pairs']})" for t in a["top_offsets"])
+                tops = "; ".join(f"k={t['offset']}: {t['mean_cosine']:.4f} (n={t['n_pairs']})" for t in a["top_offsets"]) or "no eligible offsets"
                 lines.append(f"- **{LABEL.get(slug, slug)}**, `{a['tensor']}`: {tops}")
     report.write_text("\n".join(lines) + "\n")
 

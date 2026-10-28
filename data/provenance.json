@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "models_lock_sha256": "b3ecfaedd9177a85531ce51c816f6a6a2188aea863558e338916ba4c88939cbe",
+  "models_lock_sha256": "c8af27b857074841830bf984396e08a8d9b7b8fcc4d9c0098d11634d04ba14f0",
   "scanner_sha256": "71042fd810b9cc938a3679fdc19426b13cabc4b08191c7f0357d8e756f293a1e",
   "python": "3.14.4",
   "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
@@ -35387,7 +35387,7 @@
       "Qwen/Qwen3-32B"
     ],
     "tensor_added": "self_attn.v_proj.weight",
-    "reason": "Reviewer request: a second attention tensor family (value projection) for the two dense checkpoints named in the emails. K and V are trained together, so this is a second family, not an independent replication; the remainder of each layer is unmeasured.",
+    "reason": "A second attention tensor family (value projection) for the two dense checkpoints (Qwen2.5-32B and Qwen3-32B). K and V are trained together, so this is a second family, not an independent replication; the remainder of each layer is unmeasured.",
     "method": "scan_weights.py --models qwen3-32b qwen25-32b with the amended lock; k_proj re-read and verified byte-identical to the capture-time payload hashes; v_proj payload hashes recorded in the manifests below; all other checkpoints untouched.",
     "models_lock_sha256_before": "34cfeb1d6e7053db8d171658fb7a468c647d0af1a19819ce434cff1af987cd53",
     "models_lock_sha256_after": "b3ecfaedd9177a85531ce51c816f6a6a2188aea863558e338916ba4c88939cbe",
@@ -35442,6 +35442,52 @@
       "scanner_and_models_lock_unchanged": true,
       "new_weight_capture": false,
       "existing_version_tags_unchanged": true
+    },
+    {
+      "date": "2026-10-27",
+      "reason": "Remove a private-correspondence reference from the value-projection amendment description; no measurement changed.",
+      "field": "v_proj_amendment.reason",
+      "tensor_manifests_and_measurement_files_unchanged": true,
+      "new_weight_capture": false
     }
-  ]
+  ],
+  "models_lock_note_amendment": {
+    "date": "2026-10-27",
+    "fields": [
+      {
+        "slug": "qwen3-32b",
+        "field": "note",
+        "previous_value_sha256": "f4de3dad7a3da5e447c7590089601132db5ae8fb32f46ad32ffd556bea5f6cf9",
+        "current_value": "chart: L32-55 ~ L8-31; v_proj added 2026-10-21 as a second attention family"
+      },
+      {
+        "slug": "qwen36-35b-a3b",
+        "field": "note",
+        "previous_value_sha256": "99a1e7e4ddf1b340b2389f2518b5c3f8be2927be962cd8575430499e52f63346",
+        "current_value": "chart: L20-31 ~ L8-19"
+      },
+      {
+        "slug": "qwen35-35b-a3b",
+        "field": "note",
+        "previous_value_sha256": "3e0557acb4fed6f853f0de3e76ba24ec8e88f48ff3ca70726402a2a61ad2bca0",
+        "current_value": "3.6 continues these weights"
+      },
+      {
+        "slug": "qwen25-32b",
+        "field": "note",
+        "previous_value_sha256": "412e2e05df2a45b3028ccc6dcb60ad5101a53ef545e695573ef580f2c316ed5c",
+        "current_value": "chart: L32-47 ~ L16-31; v_proj added 2026-10-21 as a second attention family"
+      },
+      {
+        "slug": "qwen36-27b",
+        "field": "note",
+        "previous_value_sha256": "27f1725b7426807092f2ad7f062daf8270e189c45c88f7a1448f3963529862c2",
+        "current_value": "same pin as the earlier Qwen3.6-27B release"
+      }
+    ],
+    "models_lock_sha256_before": "b3ecfaedd9177a85531ce51c816f6a6a2188aea863558e338916ba4c88939cbe",
+    "models_lock_sha256_after": "c8af27b857074841830bf984396e08a8d9b7b8fcc4d9c0098d11634d04ba14f0",
+    "scan_specifications_unchanged": true,
+    "reason": "Remove personal and private-project annotations from descriptive notes; not scan inputs. Prior note values are represented by hashes to avoid republishing removed text."
+  }
 }

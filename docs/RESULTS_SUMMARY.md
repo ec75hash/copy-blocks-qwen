@@ -1,3 +1,5 @@
+> Historical within-checkpoint survey summary from v0.1.2. Statements below about unmeasured MLPs or weight-only scope describe that survey. For the later Qwen2.5/Qwen3 14B–32B weight comparisons and Q8 responses, see [the v0.2.0 update](UPDATE_20261027.md) and [documentation history](DOCUMENTATION_HISTORY.md).
+
 # Qwen copy-block survey — results summary
 
 Jeffrey Shorthill · release v0.1.2 · documentation checked 2026-10-21
@@ -54,7 +56,8 @@ Family totals: 37 confirmed, 26 no-block and 2 with no eligible offsets.
   4 × 10⁻¹⁵; all 1,552 shared tensor payload hashes match.
 - Both scanners use float64 normalization/accumulation and a Gram-diagonal guard.
   The largest earlier release correction is SOLAR: 0.870722 → 0.871450.
-- The verifier checks the 96 non-manifest release-file hashes, roster/config coverage,
+- The verifier checked 96 non-manifest files in v0.1.2; the current total is the
+  number of entries in `checksums.json`. It also checks roster/config coverage,
   scanner/lock hashes and exact regeneration of RESULTS.md.
 - Routers have nonzero backgrounds, and additional offsets are present in some
   checkpoints. The evidence is the localized aligned-versus-baseline contrast.

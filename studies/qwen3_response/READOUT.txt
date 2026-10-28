@@ -1,0 +1,191 @@
+QWEN3-32B: SAME-INDEX MLP NEURONS 24 LAYERS APART
+Exploratory readout, October 27, 2026.
+
+Question
+Does neuron i at layer L+24 respond to the same passages as neuron i at
+layer L, more often than different-index neurons do?
+
+What held up
+In this sample, same-index partners usually resemble one another more
+than the random controls do. Across all 288 pairs, 264 have a higher
+token-response correlation than their control mean. In 185/288 (64.2%),
+the same-index partner ranks first among the partner and 100 controls.
+Top-100 passage lists also overlap more on average for the true partners.
+
+What did not hold up uniformly
+The resemblance is usually modest. The median activation correlation is
+0.0555; being the best of mostly near-zero controls does not mean the two
+neurons respond nearly identically. The median pair shares four of its
+top 100 positive windows and four of its top 100 negative windows.
+Among the strongest ten windows, the median overlap is zero for both signs.
+Some pairs have much stronger overlap, while others resemble controls.
+
+What was measured
+The official Qwen/Qwen3-32B-GGUF Q8_0 model ran locally on 10,000 fixed
+256-token WikiText-103 windows. Every channel has 2,560,000 token
+observations. Text was fed directly, without a chat template, BOS token,
+or generated answers; context reset between windows. One separate window
+was used for instrumentation and is excluded from these results.
+
+The sample covers original zero-based decoder layers 8-31 paired with
+32-55, with 12 selected neurons in each of the 24 layer pairs. Each source
+layer has four samples from each index segment: A=0-8191, B=8192-17407,
+C=17408-25599. Because these segments have different sizes, the equally
+sampled aggregate is not a population-weighted estimate of all neurons.
+Auxiliary MTP and vision layers are excluded.
+
+Controls are 100 random different-index neurons per target layer, shared
+by its 12 source neurons and excluding all 12 true targets. They were not
+matched to the source neuron's response frequency or strength. Thus
+"unrelated" means different-index random controls in this experiment;
+their semantic relationship was not established.
+
+The main response is the signed MLP scalar SiLU(gate) * value, before
+the down projection. Gate before SiLU and value were measured separately
+as well. This is neither the gate alone nor the neuron's resulting vector
+contribution after the down projection.
+
+How the two comparisons work
+1. Overall similarity: Pearson correlation between the two response
+   curves at the same token positions, over all windows. It measures
+   how much they rise and fall together. A near-zero result means weak
+   linear similarity; it does not establish an absence of all relationships.
+2. Strong-passage overlap: rank each window by its largest positive
+   response, or by the magnitude of its most negative response, and count
+   shared windows in two top-K lists. The two peaks may occur on different
+   words. Positive and negative lists are separate.
+
+Complete-sample numbers
+For token correlation, every row uses all 288 pairs and 100 controls/pair.
+
+Component         Median paired r  Median control mean r  Above mean  First/101
+Gate before SiLU       0.1778              0.00553          278/288     211/288
+Value                  0.1070             -0.00011          276/288     166/288
+Final activation       0.0555             -0.00006          264/288     185/288
+
+Final-activation correlations range from -0.0607 to 0.4610. Their mean
+is 0.0803, versus a mean control correlation of -0.000035. Segment medians
+are A=0.0632, B=0.0843 and C=0.0183 (96 pairs per segment).
+
+The overlap table compares the true pair with the average across that
+pair's usable controls, then averages equally across usable source pairs.
+It reports shared windows, not percentages or Jaccard similarities.
+
+Lists          Usable pairs  Mean pair  Mean control  Median pair  Above control
+Positive 10       283/288       0.537       0.020           0            75/283
+Negative 10       284/288       0.627       0.020           0            84/284
+Positive 100      283/288       9.011       1.309           4           221/283
+Negative 100      285/288       9.537       1.283           4           227/285
+Positive 500      285/288      72.081      26.793          52           252/285
+Negative 500      284/288      73.528      26.698          52           244/284
+
+All true-pair exclusions in these six rows are tied cutoffs: a tie would
+make a top-K list exceed K, so that pair is omitted instead of arbitrarily
+breaking the tie. The minimum usable control counts are respectively
+98, 98, 98, 97, 96 and 96. Other sign-specific analyses can additionally
+exclude insufficient signed responses. Every row and denominator remains
+available in summary.json and the frozen reports/passage_overlap.csv.
+
+The four gate/value sign combinations were also kept separate. Top-100
+mean overlaps are 9.160 vs 1.305 controls for gate+/value+ (282 pairs),
+9.784 vs 1.302 for gate+/value- (283), 2.155 vs 1.077 for gate-/value+
+(284), and 1.955 vs 1.071 for gate-/value- (287). This records which
+measurements differ without treating negative-gate events as missing.
+
+Concrete examples, with selection rules
+These cases were selected after looking at the numerical results. They
+illustrate the range; they are not an independent test of neuron meaning.
+PASSAGE_EXAMPLES.txt gives marked peak tokens, contexts, signs and values.
+examples.json also retains all five strongest windows per member.
+
+L30/L54, neuron 11460: highest positive top-100 overlap, 76 shared windows
+versus 8.12 for controls; token correlation 0.0857. Four equally strongest
+source windows begin "In mathematics , the", with the same response at
+token 3, " the". A shared Pythagorean-theorem window peaks there in L30
+and at token 171, " he", in L54. A shared Ramanujan window peaks at the
+"ore" piece of "theorems" in L30 and a whitespace token before "900" in
+L54. Sharing a passage therefore does not establish the same trigger word
+or a single mathematical concept. Repeated initial context is visible.
+
+L14/L38, neuron 7563: highest negative top-100 overlap, with the higher
+correlation breaking a tie: 54 shared windows versus 1.25 controls;
+correlation 0.3918. In one shared Bach-cantata window, the source peak is
+the "burg" part of Schwarzburg and the deeper peak is the "stadt" part
+of Rudolstadt. In another shared window, the peaks are the "lich" part
+of Jülich and the "ves" part of Cleves. These are literal observations
+about the saved text, not a validated subject or name-detector label.
+
+L20/L44, neuron 7369: nearest the median final-activation correlation,
+r=0.0546; its partner ranks third of 101. It shares one positive top-100
+window (controls 0.919) and three negative windows (controls 0.848).
+Source positive peaks include " submarine" and " island"; deeper peaks
+include " lit", " the" and " divides". The displayed strongest examples
+do not establish a common meaning for this pair.
+
+L23/L47, neuron 5461: lowest signed correlation, r=-0.0607 and rank 101.
+It shares one positive window (controls 2.04) and two negative windows
+(controls 0.939). Source positive peaks include words in opening titles;
+deeper peaks occur elsewhere. Positive correspondence is not uniform in
+this sample. This case does not prove that the two neurons have unrelated
+roles; no opposite-sign feature-equivalence analysis was performed here.
+
+Corpus correction and remaining scope
+The collector's title parser sometimes mistook equation lines for article
+headings. The 10,000 saved window texts are distinct, but they cannot be
+described as 10,000 independent articles. Source rows and token IDs are
+preserved. CORPUS_LABEL_CORRECTION.json records exact offending rows and
+the parser condition. The retained capture inputs preserve the original sampling description;
+CORPUS_LABEL_CORRECTION.json supersedes that independent-article description
+for this run. Metadata path redactions are listed in ../../docs/AMENDMENTS.json.
+This is a real preparation defect, not merely a spelling correction:
+some windows start after false headings, and one underlying article can
+contribute more than one selected window. It does not change the saved
+response measurements, but article-level sampling was not achieved.
+
+A post-hoc check uses the 512 preselected windows with full paired-channel
+curves. Median correlations are 0.0494 using all 256 positions, 0.0488
+after excluding positions 0-7, and 0.0500 after excluding positions 0-31.
+That sample's median does not disappear when initial response positions
+are omitted. Inputs and their prefixes remain unchanged, and raw controls
+were not retained: this is neither a causal prefix test nor a fresh
+paired-versus-control comparison. It does not resolve repeated wording or
+within-article dependence. See analysis/prefix_sensitivity.csv.
+
+The controls and windows are not independent replications. No predictions,
+p-values, confidence intervals or definitive same-feature verdict are
+assigned. Results describe this Q8 checkpoint, corpus and neuron sample;
+direct equivalence to the earlier BF16 weight pin is not asserted. Nor do
+these response comparisons identify a neuron's causal contribution or
+explain why the checkpoint has repeated weight structure.
+
+Open question
+If you understood the earlier neuron from its strongest passages, how
+much of that explanation would you expect to carry to the same-index
+neuron 24 layers deeper? What would you measure next to decide whether
+the overlap represents a shared feature, especially when token peaks
+differ and typical overall similarity is small?
+
+Evidence and verification
+Frozen inputs, relative to this study directory: data/capture/inputs.json,
+data/capture/layout.json, data/capture/tokens.npy, data/capture/passages.jsonl,
+data/capture/checkpoint.npz, data/capture/peaks.npy, data/capture/positions.npy,
+data/capture/sign_counts.npy, data/capture/passage_moments.npy,
+data/capture/reports/ and data/capture/raw/.
+Model revision: 938a7432affaec9157f883a87164e2646ae17555 (official GGUF).
+Model SHA256: 2c50eb8aad05047dbf24fa014eb621adf552e14176cabe0c5db4ef38c91e2169.
+Dataset revision: b08601e04326c79dfdd32d625aee71d232d685c3.
+Dataset shard SHA256: 74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212.
+The completed run passed automatic instrumentation and saved-data checks.
+For this review, all 864 correlation summaries were independently reduced
+from the centered covariance checkpoint and all 5,184 overlap rows were
+recomputed from saved peaks, including control means and exclusion counts;
+maximum numerical discrepancy was zero. Four dense-array hashes match the
+completed run's validation record. See audit/local_readout_validation.json for input hashes.
+The figure shows all 288 correlations and all usable top-10/top-100 overlaps.
+No new model inference was performed. Token annotation used vocabulary only.
+
+
+Reproduction
+From the release root, follow docs/REPRODUCTION_V020.md. The public reducer uses
+only the packaged data and writes into reproduction/. The original local readout
+was repackaged with this portable reproduction paragraph; numerical content is unchanged.

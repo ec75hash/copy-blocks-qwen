@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "frozen_input_hashes_rechecked": 12,
+  "correlation_ranks_recomputed": 864,
+  "annotated_events_checked": 52,
+  "unique_saved_window_texts": 10000,
+  "figure_visual_review": "Passed; all three panels, legend, annotations and scope footnote legible",
+  "source_measurements_edited": false,
+  "new_inference": false
+}

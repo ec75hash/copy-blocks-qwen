@@ -14,3 +14,7 @@ a link to the license, and an indication of changes. See the
 Code is licensed separately under Apache-2.0 (`LICENSE`). Upstream checkpoint metadata
 under `provenance/metadata/` retain their upstream licenses; see `NOTICE`. No model
 weight license is granted by this repository.
+
+## Added studies
+
+Original derived measurements and writing under `studies/` use CC BY 4.0; code remains Apache-2.0. The WikiText/Wikipedia-derived texts in `studies/qwen3_response/data/capture/passages.jsonl` and the quoted contexts in `studies/qwen3_response/analysis/` retain their upstream text terms, whose differing metadata/body declarations are preserved in that study's corpus notice and pinned upstream README. No model weights are redistributed.

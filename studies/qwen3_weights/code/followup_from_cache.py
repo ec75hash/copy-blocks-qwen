@@ -1,0 +1,40 @@
+"""Recovered follow-up, with portable paths; requires cached pinned tensors."""
+import sys, os, json, csv, numpy as np
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "scripts")); import scan_weights as sw
+CACHE=Path(os.environ.get('COPY_BLOCKS_TENSOR_CACHE', str(Path.home()/'.cache/copy-blocks-qwen-tensors')))
+OUT=Path(os.environ.get('COPY_BLOCKS_OUTPUT', str(Path(__file__).resolve().parents[3]/'reproduction/qwen3_weights')))
+(OUT/'cross_qwen3_14b/mlp_gate').mkdir(parents=True,exist_ok=True)
+(OUT/'cross_qwen3_14b/heads').mkdir(parents=True,exist_ok=True)
+S14=('qwen3-14b','40c069824f4251a91eefaf281ebe4c544efd3e18'); S32=('qwen3-32b','9216db5781bf21249d130ec9da846c4624c16137')
+def load(slug, rev, shape, L, fam):
+    name=f'model.layers.{L}.{fam}.weight'; p=CACHE/slug/rev/(sw.digest(name.encode())+'.bin'); return sw.decode_tensor(p.read_bytes(),'BF16',shape).reshape(shape)
+rng=np.random.default_rng(1)
+# ---- recompute and save: neuron duplication test (segment C vs A within 32B; C vs parent) ----
+dup=[]
+for L in (1,2,14,38,56):
+    W=load(*S32,[25600,5120],L,'mlp.gate_proj').astype(np.float32); W/=np.linalg.norm(W,axis=1,keepdims=True)
+    A=W[:8192]; B=W[8192:16384]; C=W[17408:25600]; ca=(C*A).sum(1); cb=(C*B).sum(1); sh=(C*A[rng.permutation(8192)]).sum(1)
+    idx=rng.choice(8192,400,replace=False); S=C[idx]; M=np.abs(S@W.T); M[np.arange(400),17408+idx]=0; bi=M.argmax(1); bv=M.max(1)
+    Lp = L if (L<8 or L in (8,9)) else (L-24 if L>=32 else L)
+    P=load(*S14,[17408,5120],Lp,'mlp.gate_proj').astype(np.float32); P/=np.linalg.norm(P,axis=1,keepdims=True); Mp=np.abs(S@P.T); bp=Mp.argmax(1)
+    dup.append(dict(L32=L, L14=Lp, C_vs_A_aligned_mean=float(ca.mean()), C_vs_A_frac_gt_0_5=float((ca>0.5).mean()), C_vs_B_aligned_mean=float(cb.mean()), C_vs_A_shuffled_mean=float(sh.mean()),
+                    best_other_row_median_abscos=float(np.median(bv)), best_in_A=float((bi<8192).mean()), best_is_A_j=float((bi==idx).mean()), best_in_B=float(((bi>=8192)&(bi<17408)).mean()), best_in_C=float((bi>=17408).mean()),
+                    best_parent_row_median_abscos=float(np.median(Mp.max(1))), best_parent_is_j=float((bp==idx).mean()), C_vs_parent_A_j_aligned_mean=float((S*P[idx]).sum(1).mean())))
+json.dump(dup, open(OUT/'cross_qwen3_14b/mlp_gate/neuron_duplication_test.json','w'), indent=1)
+# ---- recompute and save: group-aware head mapping ----
+def heads(W,n,axis):
+    if axis==1: W=np.ascontiguousarray(W.T)
+    H=W.reshape(n,-1).astype(np.float64); return H/np.linalg.norm(H,axis=1,keepdims=True)
+hd=[]
+from collections import Counter
+for fam,axis,sh14,sh32 in (("self_attn.q_proj",0,[5120,5120],[8192,5120]),("self_attn.o_proj",1,[5120,5120],[5120,8192])):
+    for L14,L32 in ((2,2),(8,8),(14,38),(20,44),(30,54),(35,59),(39,63)):
+        P=heads(load(*S14,sh14,L14,fam),40,axis); C=heads(load(*S32,sh32,L32,fam),64,axis); M=np.abs(C@P.T); best=M.argmax(1); bv=M.max(1)
+        naive=float(np.mean([(P[h]*C[h]).sum() for h in range(40)])); same=float(np.mean([best[h]//5==h//8 for h in range(64)]))
+        maps=Counter((k,int(best[8*g+k]-5*g)) for g in range(8) for k in range(8))
+        rec=dict(family=fam, L14=L14, L32=L32, naive_h_to_h_mean_cos=naive, best_parent_in_same_group_frac=same, median_best_abscos=float(np.median(bv)),
+                 slot_map_counts={f"{k}->{j}":n for (k,j),n in sorted(maps.items())},
+                 group_map_cos_mean=float(np.mean([(P[5*g+j]*C[8*g+k]).sum() for g in range(8) for k,j in enumerate([0,1,2,0,1,2,3,4])])))
+        hd.append(rec)
+json.dump(hd, open(OUT/'cross_qwen3_14b/heads/group_aware_mapping.json','w'), indent=1); print("saved dup + heads json")

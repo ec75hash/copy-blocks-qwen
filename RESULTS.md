@@ -137,9 +137,9 @@ The two near-identical offset-8 pairs and the lower-cosine offset-24/32 correspo
 - **Qwen3-Coder-480B-A35B**, `self_attn.k_proj.weight`: k=39: 0.0002 (n=23); k=56: 0.0002 (n=6); k=3: 0.0002 (n=59); k=29: 0.0002 (n=33)
 - **Qwen3-Coder-480B-A35B**, `mlp.gate.weight`: k=1: 0.5128 (n=61); k=2: 0.4818 (n=60); k=3: 0.4579 (n=59); k=4: 0.4354 (n=58)
 - **Qwen3.5-0.8B**, `linear_attn.conv1d.weight`: k=13: 0.0082 (n=6); k=5: 0.0058 (n=10); k=9: 0.0029 (n=8); k=16: 0.0012 (n=6)
-- **Qwen3.5-0.8B**, `self_attn.k_proj.weight`: 
+- **Qwen3.5-0.8B**, `self_attn.k_proj.weight`: no eligible offsets
 - **Qwen3.5-2B**, `linear_attn.conv1d.weight`: k=13: 0.0063 (n=6); k=5: 0.0056 (n=10); k=6: 0.0024 (n=9); k=9: 0.0022 (n=8)
-- **Qwen3.5-2B**, `self_attn.k_proj.weight`: 
+- **Qwen3.5-2B**, `self_attn.k_proj.weight`: no eligible offsets
 - **Qwen3.5-4B**, `linear_attn.conv1d.weight`: k=19: 0.0074 (n=6); k=6: 0.0048 (n=13); k=21: 0.0028 (n=6); k=12: 0.0009 (n=15)
 - **Qwen3.5-4B**, `self_attn.k_proj.weight`: k=4: 0.0011 (n=7); k=8: 0.0008 (n=6)
 - **Qwen3.5-9B**, `linear_attn.conv1d.weight`: k=19: 0.0070 (n=6); k=6: 0.0040 (n=13); k=21: 0.0025 (n=6); k=9: 0.0007 (n=12)

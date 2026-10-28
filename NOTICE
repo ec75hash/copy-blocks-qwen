@@ -1,4 +1,4 @@
-Repeated blocks in Qwen-family checkpoints: pinned weight scans
+Repeated blocks in Qwen-family checkpoints: pinned weights and neuron responses
 Copyright 2026 Jeffrey Shorthill
 
 This release measures weight similarity between decoder blocks of the following publicly
@@ -27,5 +27,9 @@ SOLAR's disclosed construction, used here as the calibration for a copied-then-t
 The scanner derives from the author's earlier release for Qwen3.6-27B
 (https://github.com/ec75hash/qwen-depth-upscaling-jpp-check, Apache-2.0), which Codex
 assisted with. Claude assisted with this release's scanner extensions, report code,
-figures and documentation. The research direction, the September 2026 family survey this
-release re-measures, and the interpretation are Jeffrey Shorthill's.
+figures and documentation. The research direction, the unpublished September 2026 working survey whose hypotheses this
+release measures, and the interpretation are Jeffrey Shorthill's.
+
+Version 0.2.0 adds the separately documented Qwen3-14B/32B weight comparisons and Qwen3-32B Q8 response measurements. WikiText-103 text excerpts retain their upstream license declarations and attribution; see studies/qwen3_response/corpus/NOTICE.md. Capture and reduction code was developed with Codex assistance; the retained historical weight scripts were developed with Claude assistance.
+
+The Qwen2.5-14B/32B addition includes corrected cached-capture measurements developed with Claude assistance and same-cache byte-level recomputation and packaging developed with Codex assistance; no model weights are bundled.
