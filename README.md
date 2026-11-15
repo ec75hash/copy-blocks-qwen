@@ -62,7 +62,16 @@ configs:
 
 # Repeated blocks in Qwen-family checkpoints: pinned weights and neuron responses
 
+**Author:** Jeffrey William Shorthill · ORCID [0009-0004-3954-2752](https://orcid.org/0009-0004-3954-2752)
+
 [v0.2.1 packaging note](docs/PATCH_V021.md): checksum metadata corrected; measurements unchanged.
+
+**Archived original survey (v0.1.2, 2026-10-21):**
+[10.5281/zenodo.23546828](https://doi.org/10.5281/zenodo.23546828).
+This DOI identifies the original pinned-weight survey snapshot. The current
+[v0.3.0 release (2026-10-27)](https://huggingface.co/datasets/ec75hash/copy-blocks-qwen/tree/v0.3.0)
+adds separate weight, response, and Base-reference studies and has no assigned Zenodo DOI.
+See [`CITATION.cff`](CITATION.cff) for the current release citation and the earlier archive reference.
 
 ## New in v0.3.0: Base-reference checks
 

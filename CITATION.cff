@@ -4,9 +4,22 @@ title: "Repeated blocks in Qwen-family checkpoints: pinned weights and neuron re
 type: dataset
 authors:
   - family-names: Shorthill
-    given-names: Jeffrey
+    given-names: "Jeffrey William"
+    orcid: "https://orcid.org/0009-0004-3954-2752"
 version: 0.3.0
 date-released: 2026-10-27
 license: CC-BY-4.0
 repository-code: "https://github.com/ec75hash/copy-blocks-qwen"
 url: "https://huggingface.co/datasets/ec75hash/copy-blocks-qwen"
+references:
+  - type: dataset
+    title: "Repeated blocks in Qwen-family checkpoints: pinned weight scans (v0.1.2)"
+    authors:
+      - family-names: Shorthill
+        given-names: "Jeffrey William"
+        orcid: "https://orcid.org/0009-0004-3954-2752"
+    version: "0.1.2"
+    date-released: "2026-10-21"
+    doi: "10.5281/zenodo.23546828"
+    url: "https://zenodo.org/records/23546828"
+    notes: "Archived original survey snapshot. This DOI identifies v0.1.2, not the current v0.3.0 weight, response, and Base-reference release."
