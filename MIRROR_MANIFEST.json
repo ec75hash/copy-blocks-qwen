@@ -11,8 +11,8 @@
     },
     "CITATION.cff": {
       "source_sha256": "258e75481b58e7704c57f827b1906c598c5055da5436009b17e093193e97d386",
-      "mirror_sha256": "258e75481b58e7704c57f827b1906c598c5055da5436009b17e093193e97d386",
-      "adaptation": null
+      "mirror_sha256": "dc1111e95a0b1a1c548a170dfbfaf1322847a70f60359d016a4132639663ba50",
+      "adaptation": "Author ORCID and archived-survey citation metadata (2026-11-14)"
     },
     "LICENSE": {
       "source_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
@@ -36,8 +36,8 @@
     },
     "README.md": {
       "source_sha256": "fe4f2c1202a5fbf04bb26ab34e7dcf59b403152b27b76665b06673b2aada53c5",
-      "mirror_sha256": "5df09ef845989a0ea6f5d464722563f57d4d3bab25967bfeffaf78841ab2d1c6",
-      "adaptation": "Mirror note and/or links to omitted canonical evidence"
+      "mirror_sha256": "d99e4a845f7a0ead1f43d98cfb9a90255b4c4a6dd0e982aa739dd2bab8d0b02e",
+      "adaptation": "Mirror note and/or links to omitted canonical evidence; author ORCID and archived-survey DOI documentation (2026-11-14)"
     },
     "RESULTS.md": {
       "source_sha256": "32666175aa3a9039db76dc0b3c17049344fab49db66d56d2914cfe6ad74e6fe9",

@@ -9,9 +9,9 @@ along with the Hub-specific Git LFS configuration. No model weights are included
 For full checksum verification and response re-reduction, download the complete
 Hub snapshot as described in the main README. The copied `checksums.json` is the
 canonical Hub manifest; it deliberately includes files absent from this mirror.
-`MIRROR_MANIFEST.json` lists included/omitted files and hashes, with link-only
-Markdown adaptations recorded separately. Weight-study reductions run directly
-from this mirror without the response arrays.
+`MIRROR_MANIFEST.json` lists included/omitted files and hashes, with
+documentation and citation-metadata adaptations recorded separately.
+Weight-study reductions run directly from this mirror without the response arrays.
 
 Publication history and numerical results belong to the linked canonical release.
 The Base follow-up, when included in the canonical version, remains a separate study under studies/qwen3_base_followup/.
